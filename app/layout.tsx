@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Roboto } from "next/font/google";
 import Footer from "./footer";
-import Header from "./header";
+import Header from "./header/header";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -30,9 +30,11 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className={`${montserrat.variable} ${roboto.variable}`}>
+      <body
+        className={`${montserrat.variable} ${roboto.variable} bg-azure-web`}
+      >
         <Header />
-        {children}
+        <div className="pt-30 pl-20 pr-15 md:px-50">{children}</div>
         <Footer />
       </body>
     </html>
