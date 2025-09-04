@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
+import Loading from "./loading";
 import { Montserrat, Roboto } from "next/font/google";
-import Footer from "./footer";
+import Footer from "./footer/footer";
 import Header from "./header/header";
 import "./globals.css";
 
@@ -33,9 +35,11 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${roboto.variable} bg-azure-web`}
       >
-        <Header />
-        <div className="pt-30 pl-20 pr-15 md:px-50">{children}</div>
-        <Footer />
+        <Suspense fallback={<Loading />}>
+          <Header />
+          <div className="pt-30 pl-20 pr-15 md:px-50">{children}</div>
+          <Footer />
+        </Suspense>
       </body>
     </html>
   );

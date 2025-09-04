@@ -8,4 +8,21 @@
   --color-caf-noir: #56351eff;
   --font-title: var(--font-montserrat);
   --font-text: var(--font-roboto);
+
+  @keyframes l2 {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+}
+
+@layer components {
+  .loader {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid lightblue;
+    border-right-color: orange;
+    animation: l2 1s infinite linear;
+  }
 }
