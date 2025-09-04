@@ -20,13 +20,13 @@ export default function NavbarSmartphone() {
       scaleY: 3,
       scaleX: 1.3,
       x: 0,
-      transition: { duration: 0.5, delay: 0.3 },
+      transition: { duration: 0.3, delay: 0.3 },
     },
     rightLogo: {
       scaleY: 3,
       scaleX: 1.3,
       x: 125,
-      transition: { duration: 0.5, delay: 0.3 },
+      transition: { duration: 0.3, delay: 0.3 },
     },
   };
 
@@ -34,7 +34,7 @@ export default function NavbarSmartphone() {
     container: {
       rotateZ: 0,
       x: 0,
-      transition: { duration: 0.5, delay: 0.3 },
+      transition: { duration: 0.3, delay: 0.1 },
     },
     leftLogo: { scaleY: 1, scaleX: 1, x: 0, transition: { duration: 0.3 } },
     rightLogo: { scaleY: 1, scaleX: 1, x: 0, transition: { duration: 0.3 } },
@@ -64,7 +64,7 @@ export default function NavbarSmartphone() {
             animate={visible ? openAnim.rightLogo : closeAnim.rightLogo}
           >
             <Image
-              className="w-4 z-2"
+              className="w-4"
               src={LogoR}
               alt="Logo du Poteau du Web"
               width={604}
@@ -75,7 +75,7 @@ export default function NavbarSmartphone() {
       </section>
       {visible && (
         <motion.div
-          className="fixed top-10 left-38.5 w-[37.5vw] flex flex-col items-center justify-center py-1 bg-caf-noir text-azure-web text-center z-0"
+          className="fixed top-10 left-38.5 w-[37.5vw] flex flex-col items-center justify-center py-1 bg-caf-noir text-azure-web text-center"
           animate={
             visible
               ? {
@@ -91,16 +91,59 @@ export default function NavbarSmartphone() {
           }
           transition={
             visible
-              ? { duration: 0.3, times: [0, 0.5, 1], delay: 0.4 }
-              : { duration: 0.3, times: [0, 0.5, 1] }
+              ? { duration: 0.2, times: [0, 0.5, 1], delay: 0.4 }
+              : { duration: 0.2, times: [0, 0.5, 1] }
           }
         >
-          <MdClose />
-          <Link href={"/about"}>A Propos</Link>
-          <Link href={"/services"}>Services</Link>
-          <Link href={"/portfolio"}>Portfolio</Link>
-          <Link href={"/tarifs"}>Tarifs</Link>
-          <Link href={"/contact"}>Contact</Link>
+          <button
+            aria-label="Boutton de fermetutre du menu"
+            onClick={() => toggleVisible()}
+            className="hover:text-copper transition-all duration-150"
+          >
+            <MdClose size={20} />
+          </button>
+          <Link
+            href={"/"}
+            onClick={() => toggleVisible()}
+            className="hover:font-bold transition-all duration-150"
+          >
+            Accueil
+          </Link>
+          <Link
+            href={"/about"}
+            onClick={() => toggleVisible()}
+            className="hover:font-bold transition-all duration-150"
+          >
+            A Propos
+          </Link>
+          <Link
+            onClick={() => toggleVisible()}
+            href={"/services"}
+            className="hover:font-bold transition-all duration-150"
+          >
+            Services
+          </Link>
+          <Link
+            onClick={() => toggleVisible()}
+            href={"/portfolio"}
+            className="hover:font-bold transition-all duration-150"
+          >
+            Portfolio
+          </Link>
+          <Link
+            href={"/tarifs"}
+            onClick={() => toggleVisible()}
+            className="hover:font-bold transition-all duration-150"
+          >
+            Tarifs
+          </Link>
+          <Link
+            href={"/contact"}
+            onClick={() => toggleVisible()}
+            className="hover:font-bold transition-all duration-150"
+          >
+            Contact
+          </Link>
         </motion.div>
       )}
     </div>
