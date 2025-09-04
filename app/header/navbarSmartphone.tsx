@@ -5,13 +5,15 @@ import LogoR from "@/public/logo-descript-free-right.png";
 import LogoL from "@/public/logo-descript-free-left.png";
 import { useState } from "react";
 import { motion } from "motion/react";
+import Link from "next/link";
+import { MdClose } from "react-icons/md";
 
 export default function NavbarSmartphone() {
   const [visible, setVisible] = useState(false);
 
   const toggleVisible = () => setVisible((prev) => !prev);
 
-  // Animations prédéfinies
+  // Animations
   const openAnim = {
     container: { rotateZ: 90, x: "40vw", transition: { duration: 0.3 } },
     leftLogo: {
@@ -23,7 +25,7 @@ export default function NavbarSmartphone() {
     rightLogo: {
       scaleY: 3,
       scaleX: 1.3,
-      x: "30vh",
+      x: 125,
       transition: { duration: 0.5, delay: 0.3 },
     },
   };
@@ -39,18 +41,19 @@ export default function NavbarSmartphone() {
   };
 
   return (
-    <div className="fixed flex justify-start items-center w-full py-2 px-7">
+    <div className="fixed flex justify-start items-center w-full h-fit py-2 px-7">
       <section id="logo">
         <motion.div
-          className="flex w-fit cursor-pointer"
+          className="relative flex justify-center items-center w-fit h-hit cursor-pointer"
           onClick={toggleVisible}
           animate={visible ? openAnim.container : closeAnim.container}
         >
           <motion.div
+            className="flex"
             animate={visible ? openAnim.leftLogo : closeAnim.leftLogo}
           >
             <Image
-              className="w-[3vw] sm:w-[2vw] md:w-[1.8vw] lg:w-[1.5vw]"
+              className="w-4"
               src={LogoL}
               alt="Logo du Poteau du Web"
               width={604}
@@ -61,7 +64,7 @@ export default function NavbarSmartphone() {
             animate={visible ? openAnim.rightLogo : closeAnim.rightLogo}
           >
             <Image
-              className="w-[3vw] sm:w-[2vw] md:w-[1.8vw] lg:w-[1.5vw]"
+              className="w-4 z-2"
               src={LogoR}
               alt="Logo du Poteau du Web"
               width={604}
@@ -70,6 +73,36 @@ export default function NavbarSmartphone() {
           </motion.div>
         </motion.div>
       </section>
+      {visible && (
+        <motion.div
+          className="fixed top-10 left-38.5 w-[37.5vw] flex flex-col items-center justify-center py-1 bg-caf-noir text-azure-web text-center z-0"
+          animate={
+            visible
+              ? {
+                  opacity: [0, 1, 1],
+                  scaleX: [0, 0, 1],
+                  scaleY: [0, 0, 1],
+                }
+              : {
+                  opacity: [1, 1, 0],
+                  scaleX: [1, 1, 0],
+                  scaleY: [1, 1, 0],
+                }
+          }
+          transition={
+            visible
+              ? { duration: 0.3, times: [0, 0.5, 1], delay: 0.4 }
+              : { duration: 0.3, times: [0, 0.5, 1] }
+          }
+        >
+          <MdClose />
+          <Link href={"/about"}>A Propos</Link>
+          <Link href={"/services"}>Services</Link>
+          <Link href={"/portfolio"}>Portfolio</Link>
+          <Link href={"/tarifs"}>Tarifs</Link>
+          <Link href={"/contact"}>Contact</Link>
+        </motion.div>
+      )}
     </div>
   );
 }
