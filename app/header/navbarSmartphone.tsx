@@ -13,9 +13,18 @@ export default function NavbarSmartphone() {
 
   const toggleVisible = () => setVisible((prev) => !prev);
 
+  const menus = [
+    ["Accueil", "/"],
+    ["A propos", "/about"],
+    ["Services", "/services"],
+    ["Portfolio", "/portfolio"],
+    ["Tarifs", "/tarifs"],
+    ["Contact", "/contact"],
+  ];
+
   // Animations
   const openAnim = {
-    container: { rotateZ: 90, x: "40vw", transition: { duration: 0.3 } },
+    container: { rotateZ: 90, x: 200, transition: { duration: 0.3 } },
     leftLogo: {
       scaleY: 3,
       scaleX: 1.3,
@@ -25,7 +34,7 @@ export default function NavbarSmartphone() {
     rightLogo: {
       scaleY: 3,
       scaleX: 1.3,
-      x: 125,
+      x: 253,
       transition: { duration: 0.3, delay: 0.3 },
     },
   };
@@ -44,7 +53,7 @@ export default function NavbarSmartphone() {
     <div className="fixed flex justify-start items-center w-full h-fit py-2 px-7">
       <section id="logo">
         <motion.div
-          className="relative flex justify-center items-center w-fit h-hit cursor-pointer"
+          className="flex justify-center items-center w-fit h-hit cursor-pointer z-5"
           onClick={toggleVisible}
           animate={visible ? openAnim.container : closeAnim.container}
         >
@@ -75,23 +84,19 @@ export default function NavbarSmartphone() {
       </section>
       {visible && (
         <motion.div
-          className="fixed top-10 left-38.5 w-[37.5vw] flex flex-col items-center justify-center py-1 bg-caf-noir text-azure-web text-center"
+          className="fixed translate-x-[117px] translate-y-[125.5px] w-[198px] flex flex-col gap-3 uppercase items-center justify-center py-1 bg-caf-noir/90 text-azure-web text-center z-3"
           animate={
             visible
               ? {
-                  opacity: [0, 1, 1],
-                  scaleX: [0, 0, 1],
-                  scaleY: [0, 0, 1],
+                  opacity: [0, 0.5, 1],
                 }
               : {
-                  opacity: [1, 1, 0],
-                  scaleX: [1, 1, 0],
-                  scaleY: [1, 1, 0],
+                  opacity: [1, 0.5, 0],
                 }
           }
           transition={
             visible
-              ? { duration: 0.2, times: [0, 0.5, 1], delay: 0.4 }
+              ? { duration: 0.2, times: [0, 0.5, 1], delay: 0.5 }
               : { duration: 0.2, times: [0, 0.5, 1] }
           }
         >
@@ -100,50 +105,22 @@ export default function NavbarSmartphone() {
             onClick={() => toggleVisible()}
             className="hover:text-copper transition-all duration-150"
           >
-            <MdClose size={20} />
+            <MdClose size={25} />
           </button>
-          <Link
-            href={"/"}
-            onClick={() => toggleVisible()}
-            className="hover:font-bold transition-all duration-150"
-          >
-            Accueil
-          </Link>
-          <Link
-            href={"/about"}
-            onClick={() => toggleVisible()}
-            className="hover:font-bold transition-all duration-150"
-          >
-            A Propos
-          </Link>
-          <Link
-            onClick={() => toggleVisible()}
-            href={"/services"}
-            className="hover:font-bold transition-all duration-150"
-          >
-            Services
-          </Link>
-          <Link
-            onClick={() => toggleVisible()}
-            href={"/portfolio"}
-            className="hover:font-bold transition-all duration-150"
-          >
-            Portfolio
-          </Link>
-          <Link
-            href={"/tarifs"}
-            onClick={() => toggleVisible()}
-            className="hover:font-bold transition-all duration-150"
-          >
-            Tarifs
-          </Link>
-          <Link
-            href={"/contact"}
-            onClick={() => toggleVisible()}
-            className="hover:font-bold transition-all duration-150"
-          >
-            Contact
-          </Link>
+
+          {menus.map((menu: string[]) => {
+            return (
+              <Link
+                key={menu[0]}
+                aria-label={menu[0]}
+                href={menu[1]}
+                onClick={() => toggleVisible()}
+                className="hover:font-bold hover:text-copper transition-all duration-150"
+              >
+                {menu[0]}
+              </Link>
+            );
+          })}
         </motion.div>
       )}
     </div>

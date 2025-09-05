@@ -1,9 +1,19 @@
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 import LogoR from "@/public/logo-descript-free-right.png";
 import LogoL from "@/public/logo-descript-free-left.png";
 
 export default function NavbarDesktop() {
+  const menus = [
+    ["Accueil", "/"],
+    ["A propos", "/about"],
+    ["Services", "/services"],
+    ["Portfolio", "/portfolio"],
+    ["Tarifs", "/tarifs"],
+    ["Contact", "/contact"],
+  ];
+
   return (
     <div className="fixed grid grid-cols-3 w-[100vw] h-30 bg-transparent">
       <section id="logo" className="ml-2 sm:ml-10 col-start-1 self-center">
@@ -57,9 +67,10 @@ export default function NavbarDesktop() {
           </motion.div>
         </motion.div>
       </section>
-      <section id="navbar" className="justify-self-center self-center">
+      <section id="navbar" className="relative justify-self-center self-center">
         <motion.div
           className="flex justify-center items-center w-fit gap-5 px-10 py-3 backdrop-blur-sm border-2 rounded-4xl"
+          /*CHECK QUID MASK-CLIP*/
           initial={{ opacity: 0, x: 0 }}
           animate={{
             opacity: [0, 0.7, 1],
@@ -72,11 +83,15 @@ export default function NavbarDesktop() {
             ease: "easeInOut",
           }}
         >
-          <p className="w-20">A Propos</p>
-          <p className="w-20">Services</p>
-          <p className="w-20">Portfolio</p>
-          <p className="w-20">Tarifs</p>
-          <p className="w-20">Contact</p>
+          {menus.map((menu) => (
+            <Link
+              key={menu[0]}
+              href={menu[1]}
+              className="w-20 hover:font-bold hover:text-copper text-center transition-all duration:200 ease-in-out"
+            >
+              {menu[0]}
+            </Link>
+          ))}
         </motion.div>
       </section>
     </div>
