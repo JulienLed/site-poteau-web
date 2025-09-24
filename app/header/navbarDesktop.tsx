@@ -69,8 +69,7 @@ export default function NavbarDesktop() {
       </section>
       <section id="navbar" className="relative justify-self-center self-center">
         <motion.div
-          className="flex justify-center items-center w-fit gap-5 px-10 py-3 backdrop-blur-sm border-2 rounded-4xl"
-          /*CHECK QUID MASK-CLIP*/
+          className="flex justify-center items-center w-fit gap-5 px-10 py-3 backdrop-blur-sm border-2 rounded-4xl !z-10"
           initial={{ opacity: 0, x: 0 }}
           animate={{
             opacity: [0, 0.7, 1],
@@ -93,6 +92,20 @@ export default function NavbarDesktop() {
             </Link>
           ))}
         </motion.div>
+        <motion.div
+          className="absolute top-0 left-0 w-[calc(100%+5px)] h-[calc(100%+5px)] bg-red-600 rounded-4xl !z-0 px-10 py-3"
+          initial={{ opacity: 0, x: 0 }}
+          animate={{
+            opacity: [0, 0.7, 1],
+            x: ["-80%", 0, 0],
+          }}
+          transition={{
+            duration: 2,
+            times: [0, 0.5, 1],
+            delay: 0.3,
+            ease: "easeInOut",
+          }}
+        ></motion.div>
       </section>
     </div>
   );
