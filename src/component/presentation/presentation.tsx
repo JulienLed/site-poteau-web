@@ -6,26 +6,36 @@ import { useInView } from "react-intersection-observer";
 
 export default function Presentation() {
   const { ref, inView } = useInView({
-    threshold: 0.5,
+    threshold: 0.9,
+    triggerOnce: false,
+    initialInView: true,
   });
   return (
-    <motion.div
-      ref={ref}
-      initial={{ x: "-100vw" }}
-      animate={inView ? { x: ["-100vw", "-40vw"] } : { x: ["-40vw", "-100vw"] }}
-      transition={{
-        duration: 1.8,
-        ease: "easeOut",
-        times: [0, 0.5, 1],
-      }}
-      className="col-span-2"
-    >
-      <Card>
-        <CardHeader>
-          <CardTitle>Le Poteau</CardTitle>
-        </CardHeader>
-        <CardContent></CardContent>
-      </Card>
-    </motion.div>
+    <div ref={ref}>
+      <motion.div
+        initial={{ x: "-100vw" }}
+        animate={inView ? { x: 0 } : { x: "-100vw" }}
+        transition={{
+          duration: 0.6,
+          ease: "easeOut",
+          times: [0, 1],
+        }}
+        className="col-span-2"
+      >
+        <Card>
+          <CardHeader>
+            <CardTitle>Le Poteau</CardTitle>
+          </CardHeader>
+          <CardContent>
+            Mes solides compétences professionnelles en tant qu'assistant social
+            et développeur web me permettent d'avoir une approche à la fois
+            humaine et technique dans la réalisation de votre projet. C'est
+            cette approche qui me permet de concevoir et de maintenir des
+            solutions numériques simples et fonctionnelles pour votre
+            institution, votre association ou pour votre entreprise.
+          </CardContent>
+        </Card>
+      </motion.div>
+    </div>
   );
 }
