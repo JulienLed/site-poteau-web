@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import Loading from "./loading";
 import { Montserrat, Roboto } from "next/font/google";
-import Footer from "./footer/footer";
-import Header from "./header/header";
+import Footer from "@/src/component/footer/footer";
+import Header from "@/src/component/header/header";
+import bg from "@/public/bg.svg";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -33,11 +34,13 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
-        className={`${montserrat.variable} ${roboto.variable} bg-azure-web`}
+        className={`${montserrat.variable} ${roboto.variable} flex flex-col w-full min-h-screen bg-[url(/bg.svg)] bg-no-repeat bg-cover`}
       >
         <Suspense fallback={<Loading />}>
           <Header />
-          <div className="pt-30 pl-20 pr-15 md:px-50">{children}</div>
+          <div className="pt-30 pl-20 pr-15 md:px-50 flex-1 overflow-hidden">
+            {children}
+          </div>
           <Footer />
         </Suspense>
       </body>

@@ -6,10 +6,9 @@ import LogoL from "@/public/logo-descript-free-left.png";
 
 export default function NavbarDesktop() {
   const menus = [
-    ["Accueil", "/"],
     ["A propos", "/about"],
     ["Services", "/services"],
-    ["Portfolio", "/portfolio"],
+    ["Projets", "/portfolio"],
     ["Tarifs", "/tarifs"],
     ["Contact", "/contact"],
   ];
@@ -30,7 +29,7 @@ export default function NavbarDesktop() {
           }}
         >
           <motion.div
-            className="w-[3vw] sm:w-[2vw] md:[1.8vw] lg:w-[1.5vw]"
+            className="w-[3vw] sm:w-[2vw] md:w-[1.8vw] lg:w-[1.5vw]"
             initial={{ x: [0, 0, 0, 0, 0] }}
             animate={{ x: [0, -30, -30, -30, 0] }}
             transition={{
@@ -48,7 +47,7 @@ export default function NavbarDesktop() {
             />
           </motion.div>
           <motion.div
-            className="w-[3vw] sm:w-[2vw] md:[1.8vw] lg:w-[1.5vw]"
+            className="w-[3vw] sm:w-[2vw] md:w-[1.8vw] lg:w-[1.5vw]"
             initial={{ x: [0, 0, 0, 0, 0] }}
             animate={{ x: [0, 30, 30, 30, 0] }}
             transition={{
@@ -67,9 +66,27 @@ export default function NavbarDesktop() {
           </motion.div>
         </motion.div>
       </section>
-      <section id="navbar" className="relative justify-self-center self-center">
+      <section
+        id="navbar"
+        className="relative w-fit justify-self-center self-center"
+      >
         <motion.div
-          className="flex justify-center items-center w-fit gap-5 px-10 py-3 backdrop-blur-sm border-2 rounded-4xl !z-10"
+          className="absolute -inset-[3px] bg-[radial-gradient(circle,_#264864,_#d79b48,_#cfe2f3)] 
+              bg-[length:400%_400%] animate-marbre rounded-4xl px-10 py-3"
+          initial={{ opacity: 0, x: 0 }}
+          animate={{
+            opacity: [0, 0, 1],
+            x: ["-80%", 0, 0],
+          }}
+          transition={{
+            duration: 2,
+            times: [0, 0.5, 1],
+            delay: 0.3,
+            ease: "easeInOut",
+          }}
+        ></motion.div>
+        <motion.div
+          className="flex justify-center items-center w-fit gap-5 px-10 py-3 backdrop-blur-2xl bg-azure-web/70 rounded-4xl"
           initial={{ opacity: 0, x: 0 }}
           animate={{
             opacity: [0, 0.7, 1],
@@ -86,26 +103,12 @@ export default function NavbarDesktop() {
             <Link
               key={menu[0]}
               href={menu[1]}
-              className="w-20 hover:font-bold hover:text-copper text-center transition-all duration:200 ease-in-out"
+              className="w-20 hover:font-bold hover:text-copper text-center text-lg transition-all duration:200 ease-in-out"
             >
               {menu[0]}
             </Link>
           ))}
         </motion.div>
-        <motion.div
-          className="absolute top-0 left-0 w-[calc(100%+5px)] h-[calc(100%+5px)] bg-red-600 rounded-4xl !z-0 px-10 py-3"
-          initial={{ opacity: 0, x: 0 }}
-          animate={{
-            opacity: [0, 0.7, 1],
-            x: ["-80%", 0, 0],
-          }}
-          transition={{
-            duration: 2,
-            times: [0, 0.5, 1],
-            delay: 0.3,
-            ease: "easeInOut",
-          }}
-        ></motion.div>
       </section>
     </div>
   );

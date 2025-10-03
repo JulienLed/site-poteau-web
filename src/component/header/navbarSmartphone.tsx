@@ -3,13 +3,26 @@
 import Image from "next/image";
 import LogoR from "@/public/logo-descript-free-right.png";
 import LogoL from "@/public/logo-descript-free-left.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { MdClose } from "react-icons/md";
 
 export default function NavbarSmartphone() {
   const [visible, setVisible] = useState(false);
+  const [screenDim, setScreenDim] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenDim({ width: window.innerWidth, height: window.innerHeight });
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resise", handleResize);
+  }, []);
 
   const toggleVisible = () => setVisible((prev) => !prev);
 
@@ -24,7 +37,11 @@ export default function NavbarSmartphone() {
 
   // Animations
   const openAnim = {
-    container: { rotateZ: 90, x: 200, transition: { duration: 0.3 } },
+    container: {
+      rotateZ: 90,
+      x: screenDim.width / 2 - 50,
+      transition: { duration: 0.3 },
+    },
     leftLogo: {
       scaleY: 3,
       scaleX: 1.3,
@@ -34,7 +51,7 @@ export default function NavbarSmartphone() {
     rightLogo: {
       scaleY: 3,
       scaleX: 1.3,
-      x: 253,
+      x: 262,
       transition: { duration: 0.3, delay: 0.3 },
     },
   };
@@ -50,8 +67,49 @@ export default function NavbarSmartphone() {
   };
 
   return (
-    <div className="fixed flex justify-start items-center w-full h-fit py-2 px-7">
-      <section id="logo">
+    <div className="fixed flex justify-start items-center w-full h-fit">
+      {visible && (
+        <motion.div
+          className="fixed top-[35px]
+                     w-[198px] flex flex-col gap-3 uppercase items-center 
+                     justify-center py-4 bg-caf-noir/90 text-azure-web 
+                     text-center rounded-xl z-1"
+          style={{
+            left: screenDim.width / 2 - 118,
+          }}
+          animate={
+            visible ? { opacity: [0, 0.5, 1] } : { opacity: [1, 0.5, 0] }
+          }
+          transition={
+            visible
+              ? { duration: 0.2, times: [0, 0.5, 1], delay: 0.5 }
+              : { duration: 0.2, times: [0, 0.5, 1] }
+          }
+        >
+          {/* Bouton fermer */}
+          <button
+            aria-label="Bouton de fermeture du menu"
+            onClick={toggleVisible}
+            className="hover:text-copper transition-all duration-150"
+          >
+            <MdClose size={25} />
+          </button>
+
+          {/* Liens */}
+          {menus.map((menu: string[]) => (
+            <Link
+              key={menu[0]}
+              aria-label={menu[0]}
+              href={menu[1]}
+              onClick={toggleVisible}
+              className="hover:font-bold hover:text-copper transition-all duration-150"
+            >
+              {menu[0]}
+            </Link>
+          ))}
+        </motion.div>
+      )}
+      <section id="logo" className="py-2 px-4 z-50">
         <motion.div
           className="flex justify-center items-center w-fit h-hit cursor-pointer z-5"
           onClick={toggleVisible}
@@ -82,47 +140,6 @@ export default function NavbarSmartphone() {
           </motion.div>
         </motion.div>
       </section>
-      {visible && (
-        <motion.div
-          className="fixed translate-x-[117px] translate-y-[125.5px] w-[198px] flex flex-col gap-3 uppercase items-center justify-center py-1 bg-caf-noir/90 text-azure-web text-center z-3"
-          animate={
-            visible
-              ? {
-                  opacity: [0, 0.5, 1],
-                }
-              : {
-                  opacity: [1, 0.5, 0],
-                }
-          }
-          transition={
-            visible
-              ? { duration: 0.2, times: [0, 0.5, 1], delay: 0.5 }
-              : { duration: 0.2, times: [0, 0.5, 1] }
-          }
-        >
-          <button
-            aria-label="Boutton de fermetutre du menu"
-            onClick={() => toggleVisible()}
-            className="hover:text-copper transition-all duration-150"
-          >
-            <MdClose size={25} />
-          </button>
-
-          {menus.map((menu: string[]) => {
-            return (
-              <Link
-                key={menu[0]}
-                aria-label={menu[0]}
-                href={menu[1]}
-                onClick={() => toggleVisible()}
-                className="hover:font-bold hover:text-copper transition-all duration-150"
-              >
-                {menu[0]}
-              </Link>
-            );
-          })}
-        </motion.div>
-      )}
     </div>
   );
 }

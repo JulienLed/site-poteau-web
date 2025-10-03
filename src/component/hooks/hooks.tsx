@@ -1,11 +1,8 @@
 "use client";
 
-import NavbarDesktop from "./navbarDesktop";
-import NavbarSmartphone from "./navbarSmartphone";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function Header() {
-  const [isMounted, setIsMounted] = useState<boolean>(false);
+export const useScreenDim = () => {
   const [windowSize, setWindowSize] = useState({
     width: 0,
     height: 0,
@@ -20,23 +17,11 @@ export default function Header() {
         });
       };
       handleResize();
-      setIsMounted(true);
 
       window.addEventListener("resize", handleResize);
 
       return () => window.removeEventListener("resize", handleResize);
     }
   }, []);
-
-  if (!isMounted) {
-    return null;
-  }
-
-  return (
-    <div>
-      <section id="navbar">
-        {windowSize.width > 640 ? <NavbarDesktop /> : <NavbarSmartphone />}
-      </section>
-    </div>
-  );
-}
+  return windowSize;
+};

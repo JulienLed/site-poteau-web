@@ -1,131 +1,18 @@
+import Presentation from "@/src/component/presentation/presentation";
+import AnimHero from "@/src/component/animHero/animHero";
+
 export default function Home() {
   return (
-    <div>
-      <section id="hero">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas
-        veritatis dignissimos harum laudantium hic aliquam fugit quaerat nihil
-        deserunt accusamus obcaecati repudiandae, consequatur iure ipsum nam
-        quos, perspiciatis rem!Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Eveniet quas veritatis dignissimos harum laudantium
-        hic aliquam fugit quaerat nihil deserunt accusamus obcaecati
-        repudiandae, consequatur iure ipsum nam quos, perspiciatis rem!Lorem
-        ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas
-        veritatis dignissimos harum laudantium hic aliquam fugit quaerat nihil
-        deserunt accusamus obcaecati repudiandae, consequatur iure ipsum nam
-        quos, perspiciatis rem!Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Eveniet quas veritatis dignissimos harum laudantium
-        hic aliquam fugit quaerat nihil deserunt accusamus obcaecati
-        repudiandae, consequatur iure ipsum nam quos, perspiciatis rem!Lorem
-        ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas
-        veritatis dignissimos harum laudantium hic aliquam fugit quaerat nihil
-        deserunt accusamus obcaecati repudiandae, consequatur iure ipsum nam
-        quos, perspiciatis rem!Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Eveniet quas veritatis dignissimos harum laudantium
-        hic aliquam fugit quaerat nihil deserunt accusamus obcaecati
-        repudiandae, consequatur iure ipsum nam quos, perspiciatis rem!Lorem
-        ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas
-        veritatis dignissimos harum laudantium hic aliquam fugit quaerat nihil
-        deserunt accusamus obcaecati repudiandae, consequatur iure ipsum nam
-        quos, perspiciatis rem!Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Eveniet quas veritatis dignissimos harum laudantium
-        hic aliquam fugit quaerat nihil deserunt accusamus obcaecati
-        repudiandae, consequatur iure ipsum nam quos, perspiciatis rem!Lorem
-        ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas
-        veritatis dignissimos harum laudantium hic aliquam fugit quaerat nihil
-        deserunt accusamus obcaecati repudiandae, consequatur iure ipsum nam
-        quos, perspiciatis rem!Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Eveniet quas veritatis dignissimos harum laudantium
-        hic aliquam fugit quaerat nihil deserunt accusamus obcaecati
-        repudiandae, consequatur iure ipsum nam quos, perspiciatis rem!Lorem
-        ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas
-        veritatis dignissimos harum laudantium hic aliquam fugit quaerat nihil
-        deserunt accusamus obcaecati repudiandae, consequatur iure ipsum nam
-        quos, perspiciatis rem!Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Eveniet quas veritatis dignissimos harum laudantium
-        hic aliquam fugit quaerat nihil deserunt accusamus obcaecati
-        repudiandae, consequatur iure ipsum nam quos, perspiciatis rem!Lorem
-        ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas
-        veritatis dignissimos harum laudantium hic aliquam fugit quaerat nihil
-        deserunt accusamus obcaecati repudiandae, consequatur iure ipsum nam
-        quos, perspiciatis rem!Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Eveniet quas veritatis dignissimos harum laudantium
-        hic aliquam fugit quaerat nihil deserunt accusamus obcaecati
-        repudiandae, consequatur iure ipsum nam quos, perspiciatis rem!Lorem
-        ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas
-        veritatis dignissimos harum laudantium hic aliquam fugit quaerat nihil
-        deserunt accusamus obcaecati repudiandae, consequatur iure ipsum nam
-        quos, perspiciatis rem!Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Eveniet quas veritatis dignissimos harum laudantium
-        hic aliquam fugit quaerat nihil deserunt accusamus obcaecati
-        repudiandae, consequatur iure ipsum nam quos, perspiciatis rem!Lorem
-        ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas
-        veritatis dignissimos harum laudantium hic aliquam fugit quaerat nihil
-        deserunt accusamus obcaecati repudiandae, consequatur iure ipsum nam
-        quos, perspiciatis rem!Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Eveniet quas veritatis dignissimos harum laudantium
-        hic aliquam fugit quaerat nihil deserunt accusamus obcaecati
-        repudiandae, consequatur iure ipsum nam quos, perspiciatis rem!Lorem
-        ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas
-        veritatis dignissimos harum laudantium hic aliquam fugit quaerat nihil
-        deserunt accusamus obcaecati repudiandae, consequatur iure ipsum nam
-        quos, perspiciatis rem!Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Eveniet quas veritatis dignissimos harum laudantium
-        hic aliquam fugit quaerat nihil deserunt accusamus obcaecati
-        repudiandae, consequatur iure ipsum nam quos, perspiciatis rem!Lorem
-        ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas
-        veritatis dignissimos harum laudantium hic aliquam fugit quaerat nihil
-        deserunt accusamus obcaecati repudiandae, consequatur iure ipsum nam
-        quos, perspiciatis rem!Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Eveniet quas veritatis dignissimos harum laudantium
-        hic aliquam fugit quaerat nihil deserunt accusamus obcaecati
-        repudiandae, consequatur iure ipsum nam quos, perspiciatis rem!Lorem
-        ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas
-        veritatis dignissimos harum laudantium hic aliquam fugit quaerat nihil
-        deserunt accusamus obcaecati repudiandae, consequatur iure ipsum nam
-        quos, perspiciatis rem!Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Eveniet quas veritatis dignissimos harum laudantium
-        hic aliquam fugit quaerat nihil deserunt accusamus obcaecati
-        repudiandae, consequatur iure ipsum nam quos, perspiciatis rem!Lorem
-        ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas
-        veritatis dignissimos harum laudantium hic aliquam fugit quaerat nihil
-        deserunt accusamus obcaecati repudiandae, consequatur iure ipsum nam
-        quos, perspiciatis rem!Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Eveniet quas veritatis dignissimos harum laudantium
-        hic aliquam fugit quaerat nihil deserunt accusamus obcaecati
-        repudiandae, consequatur iure ipsum nam quos, perspiciatis rem!Lorem
-        ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas
-        veritatis dignissimos harum laudantium hic aliquam fugit quaerat nihil
-        deserunt accusamus obcaecati repudiandae, consequatur iure ipsum nam
-        quos, perspiciatis rem!Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Eveniet quas veritatis dignissimos harum laudantium
-        hic aliquam fugit quaerat nihil deserunt accusamus obcaecati
-        repudiandae, consequatur iure ipsum nam quos, perspiciatis rem!Lorem
-        ipsum dolor sit amet consectetur adipisicing elit. Eveniet quas
-        veritatis dignissimos harum laudantium hic aliquam fugit quaerat nihil
-        deserunt accusamus obcaecati repudiandae, consequatur iure ipsum nam
-        quos, perspiciatis rem!Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Eveniet quas veritatis dignissimos harum laudantium
-        hic aliquam fugit quaerat nihil deserunt accusamus obcaecati
-        repudiandae, consequatur iure ipsum nam quos, perspiciatis rem!
+    <div className="w-full">
+      <section id="hero" className="w-full h-[20vw] py-10">
+        <AnimHero />
       </section>
-      <section id="presentation">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit qui
-        laboriosam, ipsam quasi molestiae eaque, tempore voluptates obcaecati
-        temporibus quidem nostrum? Ratione, modi voluptas. Modi voluptatibus
-        esse exercitationem nulla. Possimus.
+      <div className="h-[20vw]"></div>
+      <section id="presentation" className="grid grid-cols-3">
+        <Presentation />
       </section>
-      <section id="services-resume">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti sit
-        dolorem, similique nobis, iusto quam provident facere omnis modi
-        obcaecati, corrupti vitae! Illum, quae neque. Ullam praesentium veniam
-        exercitationem illum!
-      </section>
-      <section id="to-contact-and-tarifs">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
-        excepturi assumenda repellendus iure enim! Dolor maxime quas nihil sunt
-        ipsa sint totam omnis possimus nam? Consectetur provident veritatis
-        magnam eaque?
-      </section>
+      <section id="services-resume"></section>
+      <section id="to-contact-and-tarifs"></section>
     </div>
   );
 }

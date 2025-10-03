@@ -4,10 +4,10 @@ import Logo from "@/public/logo-bg-free.png";
 
 export default function Footer() {
   return (
-    <div className="bottom-0 left-0 right-0 grid grid-cols-4 bg-gradient-to-t from-lapis-lazuli to-azure-web text-azure-web h-fit w-full">
+    <div className="bottom-0 left-0 right-0 grid grid-cols-4 bg-gradient-to-t from-black/30 to-transparent text-azure-web h-fit w-full">
       <section
         id="logo"
-        className="col-start-1 w-30 sm:w-40 pt-5 sm:pt-10 pl-2 sm:pl-10 pb-5"
+        className="col-start-1 w-40 sm:w-50 pt-5 sm:pt-10 pl-1 sm:pl-5 pb-5"
       >
         <Image src={Logo} alt="Logo de la société" width={604} height={329} />
       </section>
