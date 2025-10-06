@@ -2,6 +2,7 @@
 
 import Presentation from "@/src/component/presentation/presentation";
 import AnimHero from "@/src/component/animHero/animHero";
+import ServiceResume from "@/src/component/services-resume/service";
 import { FaAnglesDown } from "react-icons/fa6";
 import { useRef } from "react";
 import { motion } from "motion/react";
@@ -9,7 +10,7 @@ import { motion } from "motion/react";
 export default function Home() {
   const refDown = useRef<HTMLDivElement>(null);
   const handleOnClick = () => {
-    refDown.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    refDown.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
   return (
     <div className="w-full">
@@ -33,6 +34,7 @@ export default function Home() {
         <Presentation />
       </section>
       <section id="services-resume"></section>
+      <ServiceResume />
       <section id="to-contact-and-tarifs"></section>
     </div>
   );

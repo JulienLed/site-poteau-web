@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function AnimHeroDesktop() {
   const { ref, inView } = useInView({
     threshold: 0.9,
-    triggerOnce: false,
+    triggerOnce: true,
     initialInView: true,
   });
   return (
@@ -61,7 +61,7 @@ export default function AnimHeroDesktop() {
           <p className="border-l-2 border-sandy-brown md:text-xs lg:text-lg text-left lg:text-justify pl-1 md:pl-5 m-2 md:m-5">
             Julien, Developpeur Web. <br /> Avec Le Poteau du Web, je vous
             propose de réaliser votre site web de façon professionnelle et en
-            toute sérénité
+            toute sérénité.
           </p>
         </div>
         <div></div>
