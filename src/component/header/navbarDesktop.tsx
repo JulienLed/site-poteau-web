@@ -39,12 +39,14 @@ export default function NavbarDesktop() {
               ease: "easeInOut",
             }}
           >
-            <Image
-              src={LogoL}
-              alt="Image coté gauche du logo de la société"
-              width={157}
-              height={329}
-            />
+            <Link href={"/"}>
+              <Image
+                src={LogoL}
+                alt="Image coté gauche du logo de la société"
+                width={157}
+                height={329}
+              />
+            </Link>
           </motion.div>
           <motion.div
             className="w-[3vw] sm:w-[2vw] md:w-[1.8vw] lg:w-[1.5vw]"
@@ -57,12 +59,14 @@ export default function NavbarDesktop() {
               ease: "easeInOut",
             }}
           >
-            <Image
-              src={LogoR}
-              alt="Image coté droit du logo de la société"
-              width={157}
-              height={329}
-            />
+            <Link href={"/"}>
+              <Image
+                src={LogoR}
+                alt="Image coté droit du logo de la société"
+                width={157}
+                height={329}
+              />
+            </Link>
           </motion.div>
         </motion.div>
       </section>

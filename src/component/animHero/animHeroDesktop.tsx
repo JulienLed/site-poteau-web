@@ -16,7 +16,7 @@ export default function AnimHeroDesktop() {
         className="grid grid-cols-2 bg-logo-blue sm:w-[40vw] md:w-[60vw] h-fit shadow-lg rounded-3xl text-sandy-brown p-10"
         initial={{ x: -100 }}
         animate={
-          inView ? { x: ["-100vw", "-40vw"] } : { x: ["-40vw", "-100vw"] }
+          inView ? { x: ["-100vw", "-30vw"] } : { x: ["-30vw", "-100vw"] }
         }
         transition={{
           duration: 0.6,

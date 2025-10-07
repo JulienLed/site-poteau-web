@@ -30,7 +30,11 @@ export default function Home() {
           onClick={() => handleOnClick()}
         />
       </motion.div>
-      <section ref={refDown} id="presentation" className="grid grid-cols-3">
+      <section
+        ref={refDown}
+        id="presentation"
+        className="grid grid-cols-3 scroll-mt-20"
+      >
         <Presentation />
       </section>
       <section id="services-resume"></section>

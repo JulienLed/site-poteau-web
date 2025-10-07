@@ -4,9 +4,7 @@ import Loading from "./loading";
 import { Montserrat, Roboto } from "next/font/google";
 import Footer from "@/src/component/footer/footer";
 import Header from "@/src/component/header/header";
-import { FaChevronUp } from "react-icons/fa";
 import "./globals.css";
-import { ChevronDown } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Le site du Poteau du Web",
