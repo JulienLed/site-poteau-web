@@ -49,7 +49,7 @@ export default function ServiceResume() {
       initial={{ y: "50vh" }}
       animate={inView ? { y: 0 } : { y: "50vh" }}
       transition={{ duration: 0.6 }}
-      className="flex flex-col w-full my-30"
+      className="flex flex-col w-full"
     >
       <div className="flex justify-center">
         <Carousel
@@ -67,9 +67,9 @@ export default function ServiceResume() {
                   <Image
                     src={design}
                     alt="vitrine sur site web sur ordinateur"
-                    width={1598}
-                    height={1236}
-                    className="w-[20vw] rounded-xl"
+                    width={688}
+                    height={688}
+                    className="w-[15vw] rounded-xl animate-move"
                   />
                   <ul className="flex flex-col items-left list-disc text-sandy-brown gap-2 py-5">
                     <li>
@@ -103,9 +103,9 @@ export default function ServiceResume() {
                   <Image
                     src={vitrine}
                     alt="vitrine sur site web sur ordinateur"
-                    width={1598}
-                    height={1236}
-                    className="w-[20vw] rounded-xl"
+                    width={688}
+                    height={688}
+                    className="w-[15vw] rounded-xl animate-move"
                   />
                   <ul className="flex flex-col items-left list-disc text-sandy-brown gap-2 py-5">
                     <li>
@@ -139,9 +139,9 @@ export default function ServiceResume() {
                   <Image
                     src={support}
                     alt="vitrine sur site web sur ordinateur"
-                    width={1598}
-                    height={1236}
-                    className="w-[20vw] rounded-xl"
+                    width={688}
+                    height={688}
+                    className="w-[15vw] rounded-xl animate-move"
                   />
                   <ul className="flex flex-col items-left list-disc text-sandy-brown gap-2 py-5">
                     <li>

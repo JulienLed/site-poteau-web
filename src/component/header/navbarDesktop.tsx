@@ -6,6 +6,7 @@ import LogoL from "@/public/logo-descript-free-left.png";
 
 export default function NavbarDesktop() {
   const menus = [
+    ["Accueil", "/"],
     ["A propos", "/about"],
     ["Services", "/services"],
     ["Projets", "/portfolio"],

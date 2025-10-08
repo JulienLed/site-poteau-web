@@ -1,7 +1,7 @@
 "use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { useState, useEffect } from "react";
 import { Toggle } from "@/components/ui/toggle";
 import { motion, AnimatePresence } from "motion/react";
 import { useInView } from "react-intersection-observer";
@@ -16,6 +16,12 @@ import Image from "next/image";
 export default function About() {
   const [isToolSwitch, setIsToolSwitch] = useState<boolean>(false);
 
+  const [hasMounted, setHasMounted] = useState<boolean>(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
   const [ref1, inView1] = useInView({
     threshold: 0.9,
     triggerOnce: true,
@@ -23,21 +29,18 @@ export default function About() {
   });
 
   const [ref2, inView2] = useInView({
-    threshold: 0.9,
+    threshold: 0.2,
     triggerOnce: true,
     initialInView: false,
   });
 
   const [ref3, inView3] = useInView({
-    threshold: 0.9,
+    threshold: 0.5,
     triggerOnce: true,
     initialInView: false,
   });
-  const [ref4, inView4] = useInView({
-    threshold: 0.9,
-    triggerOnce: true,
-    initialInView: false,
-  });
+
+  if (!hasMounted) return null;
   return (
     <div className="py-15">
       <section id="about" className="flex flex-col gap-10">
@@ -46,7 +49,9 @@ export default function About() {
             className="bg-logo-blue h-fit shadow-lg rounded-3xl sm:w-[40vw] md:w-[60vw] text-sandy-brown p-10 m-5 grid grid-cols-3"
             initial={{ x: "-100vw" }}
             animate={
-              inView1 ? { x: ["-100vw", "-40vw"] } : { x: ["-40vw", "-100vw"] }
+              hasMounted && inView1
+                ? { x: ["-100vw", "-40vw"] }
+                : { x: ["-40vw", "-100vw"] }
             }
             transition={{
               duration: 0.6,
@@ -54,15 +59,15 @@ export default function About() {
               times: [0, 1],
             }}
           >
-            <h2 className="text-2xl text-sandy-brown text-right py-5 font-title font-bold col-start-3">
+            <h2 className="text-2xl text-sandy-brown text-right py-5 font-title font-bold col-start-3 animate-bounce animate-infinite animate-duration-[2000ms] animate-ease-linear">
               Qui suis-je ?
             </h2>
           </motion.div>
         </div>
-        <div ref={ref2} className="w-[50vw]">
+        <div ref={ref2} className="w-[50vw] z-5">
           <motion.div
             initial={{ x: "100vw" }}
-            animate={inView2 ? { x: "25vw" } : { x: "100vw" }}
+            animate={hasMounted && inView2 ? { x: "25vw" } : { x: "100vw" }}
             transition={{
               duration: 0.6,
               ease: "easeOut",
@@ -86,8 +91,8 @@ export default function About() {
                       <Image
                         src={"/social.png"}
                         alt="Assistant social"
-                        width={1953}
-                        height={1953}
+                        width={662}
+                        height={486}
                       />
                     </div>
                   </div>
@@ -96,8 +101,8 @@ export default function About() {
                       <Image
                         alt="Code"
                         src={"/code.png"}
-                        width={1953}
-                        height={1953}
+                        width={680}
+                        height={555}
                       />
                     </div>
                     <p>
@@ -142,7 +147,7 @@ export default function About() {
         <div ref={ref3} className="w-[50vw]">
           <motion.div
             initial={{ x: "-100vw" }}
-            animate={inView3 ? { x: "-5vw" } : { x: "-100vw" }}
+            animate={hasMounted && inView3 ? { x: "-5vw" } : { x: "-100vw" }}
             transition={{
               duration: 0.6,
               ease: "easeOut",
@@ -270,37 +275,6 @@ export default function About() {
                 </motion.div>
               </AnimatePresence>
             </div>
-          </motion.div>
-        </div>
-        <div ref={ref4}>
-          <motion.div
-            initial={{ x: "100vw" }}
-            animate={inView4 ? { x: "25vw" } : { x: "100vw" }}
-            transition={{
-              duration: 0.6,
-              ease: "easeOut",
-              times: [0, 1],
-            }}
-          >
-            <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl px-5 p-10 my-20">
-              <CardContent>
-                <div className="grid grid-cols-3">
-                  <div className="col-span-2 text-justify">
-                    <h2 className="text-xl text-sandy-brown font-title font-bold pt-2 pb-5">
-                      Mes hobbies
-                    </h2>
-                    <p>
-                      La mécanique, le montage d'ordinateurs gaming, la
-                      rénovation et la réparation de consoles rétro ainsi que
-                      les jeux vidéo sont autant de passions qui rythment mes
-                      journées, en parallèle de mon travail et de mon activité
-                      complémentaire.
-                    </p>
-                    {/* Mettre logos pourchaque activité */}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </motion.div>
         </div>
       </section>
