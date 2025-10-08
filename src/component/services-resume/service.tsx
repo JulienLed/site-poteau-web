@@ -88,7 +88,7 @@ export default function ServiceResume() {
                       </p>
                     </li>
                   </ul>
-                  <Button className="bg-sandy-brown hover:!bg-caf-noir active:!translate-0.5 hover:!text-azure-web hover:!shadow-none shadow-2xs text-lapis-lazuli text-lg">
+                  <Button className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-lg transition-all duration-300 ease-in-out">
                     <Link href={"/tarifs"}>En savoir plus</Link>
                   </Button>
                 </CardContent>
@@ -124,7 +124,7 @@ export default function ServiceResume() {
                       </p>
                     </li>
                   </ul>
-                  <Button className="bg-sandy-brown hover:!bg-caf-noir active:!translate-0.5 hover:!text-azure-web hover:!shadow-none shadow-2xs text-lapis-lazuli text-lg">
+                  <Button className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-lg transition-all duration-300 ease-in-out">
                     <Link href={"/tarifs"}>En savoir plus</Link>
                   </Button>
                 </CardContent>
@@ -160,7 +160,7 @@ export default function ServiceResume() {
                       </p>
                     </li>
                   </ul>
-                  <Button className="bg-sandy-brown hover:!bg-caf-noir active:!translate-0.5 hover:!text-azure-web hover:!shadow-none shadow-2xs text-lapis-lazuli text-lg">
+                  <Button className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-lg transition-all duration-300 ease-in-out">
                     <Link href={"/tarifs"}>En savoir plus</Link>
                   </Button>
                 </CardContent>
@@ -171,13 +171,13 @@ export default function ServiceResume() {
       </div>
       <div className="flex justify-center gap-5">
         <button
-          className="bg-sandy-brown hover:!bg-caf-noir active:!translate-0.5 hover:!text-azure-web hover:!shadow-none text-lapis-lazuli text-lg cursor-pointer shadow-2xl rounded-xl w-15 flex justify-center transition-all duration-300 p-1"
+          className="bg-sandy-brown hover:!bg-copper hover:!scale-110 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-lg transition-all duration-300 ease-in-out rounded-xl p-1"
           onClick={() => api?.scrollNext()}
         >
           <GrFormPreviousLink size={35} />
         </button>
         <button
-          className="bg-sandy-brown hover:!bg-caf-noir active:!translate-0.5 hover:!text-azure-web hover:!shadow-none text-lapis-lazuli text-lg cursor-pointer shadow-2xl rounded-xl w-15 flex justify-center transition-all duration-300 p-1"
+          className="bg-sandy-brown hover:!bg-copper hover:!scale-110 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-lg transition-all duration-300 ease-in-out rounded-xl p-1"
           onClick={() => api?.scrollPrev()}
         >
           <GrFormNextLink size={35} />

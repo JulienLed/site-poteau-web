@@ -18,6 +18,7 @@ export default function Home() {
         <AnimHero />
       </section>
       <motion.div
+        initial={{ opacity: 0 }}
         animate={{
           opacity: [0, 1],
         }}

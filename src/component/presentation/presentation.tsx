@@ -88,7 +88,7 @@ export default function Presentation() {
         >
           <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl px-5 py-10 mb-20">
             <CardHeader>
-              <CardTitle className="text-2xl text-right font-title font-bold">
+              <CardTitle className="text-2xl font-title font-bold pl-5">
                 ...du Web
               </CardTitle>
             </CardHeader>
