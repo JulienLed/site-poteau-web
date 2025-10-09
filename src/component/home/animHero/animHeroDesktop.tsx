@@ -64,7 +64,6 @@ export default function AnimHeroDesktop() {
             toute sérénité.
           </p>
         </div>
-        <div></div>
       </motion.div>
     </div>
   );

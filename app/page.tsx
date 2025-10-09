@@ -1,8 +1,8 @@
 "use client";
 
-import Presentation from "@/src/component/presentation/presentation";
-import AnimHero from "@/src/component/animHero/animHero";
-import ServiceResume from "@/src/component/services-resume/service";
+import Presentation from "@/src/component/home/presentation/presentation";
+import AnimHero from "@/src/component/home/animHero/animHero";
+import ServiceResume from "@/src/component/home/services-resume/service";
 import { FaAnglesDown } from "react-icons/fa6";
 import { useRef } from "react";
 import { motion } from "motion/react";

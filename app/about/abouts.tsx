@@ -87,7 +87,10 @@ export default function About() {
                       personnes en situation d'addiction. Depuis 2020, j'exerce
                       au sein d'une société de logement social.
                     </p>
-                    <div className="justify-self-center max-w-[15vw]">
+                    <div
+                      className="justify-self-center max-w-[15vw] animate-fade duration-300"
+                      style={{ animationDelay: "0.9s" }}
+                    >
                       <Image
                         src={"/social.png"}
                         alt="Assistant social"
@@ -97,7 +100,10 @@ export default function About() {
                     </div>
                   </div>
                   <div className="grid grid-cols-2 gap-5 items-center">
-                    <div className="justify-self-center max-w-[15vw]">
+                    <div
+                      className="justify-self-center max-w-[15vw] animate-fade duration-300"
+                      style={{ animationDelay: "1.2s" }}
+                    >
                       <Image
                         alt="Code"
                         src={"/code.png"}
@@ -130,7 +136,10 @@ export default function About() {
                         CodeCademy
                       </a>
                     </p>
-                    <div className="justify-self-center max-w-[15vw] hover:scale-300 transition-all duration-700">
+                    <div
+                      className="justify-self-center max-w-[15vw] hover:scale-300 transition-all animate-fade duration-300"
+                      style={{ animationDelay: "1.5s" }}
+                    >
                       <Image
                         src={"/certificate-fullstack.png"}
                         width={500}
