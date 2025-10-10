@@ -48,7 +48,7 @@ const services = [
 
 export default function ServicesMenu({ scrollToService }: ServicesMenuProps) {
   return (
-    <div className="grid grid-cols-2 justify-center items-center w-fit mx-auto my-15 gap-5">
+    <div className="flex justify-center items-center w-fit mx-auto my-50 gap-5">
       {services.map(({ name, key, img }) => {
         return (
           <Card

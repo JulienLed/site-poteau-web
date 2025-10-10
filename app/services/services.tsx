@@ -2,10 +2,7 @@
 
 import ServicesMenu from "@/src/component/services/menu/services-menu";
 import { useRef } from "react";
-import Site from "@/src/component/services/site/site";
-import Referencement from "@/src/component/services/referencement/referencement";
-import Hebergement from "@/src/component/services/hebergement/hebergement";
-import Maintenance from "@/src/component/services/maintenance/maintenance";
+import ServicesAll from "@/src/component/services/servicesAll/servicesAll";
 
 export default function Services() {
   const refSite = useRef<HTMLDivElement>(null);
@@ -41,19 +38,15 @@ export default function Services() {
           }}
         />
       </section>
-      <section id="services" className="mt-30">
-        <div className="" ref={refSite}>
-          <Site />
-        </div>
-        <div className="" ref={refReferencement}>
-          <Referencement />
-        </div>
-        <div className="" ref={refHebergement}>
-          <Hebergement />
-        </div>
-        <div className="" ref={refMaintenance}>
-          <Maintenance />
-        </div>
+      <section id="services" className="mt-30 py-20">
+        <ServicesAll
+          refs={{
+            site: refSite,
+            referencement: refReferencement,
+            hebergement: refHebergement,
+            maintenance: refMaintenance,
+          }}
+        />
       </section>
     </div>
   );
