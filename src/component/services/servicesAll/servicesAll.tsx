@@ -78,8 +78,8 @@ export default function ServicesAll({
                 {service.title}
               </div>
 
-              <div className="flex items-center justify-center w-fit mx-auto">
-                <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl px-5 w-[40vw]">
+              <div className="flex items-center justify-evenly">
+                <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl p-10 w-[45vw]">
                   <CardContent>
                     <div className="flex flex-col gap-4">
                       <div className="flex items-center gap-2 text-xl">
@@ -97,7 +97,7 @@ export default function ServicesAll({
                   src={service.img.src}
                   width={service.img.width}
                   height={service.img.height}
-                  className="w-[15vw] max-w-full justify-self-center"
+                  className="w-[15vw] max-w-full"
                 />
               </div>
             </div>
@@ -114,15 +114,15 @@ export default function ServicesAll({
                 {service.title}
               </div>
 
-              <div className="flex items-center justify-center w-fit mx-auto">
+              <div className="flex items-center justify-evenly">
                 <Image
                   alt={service.title}
                   src={service.img.src}
                   width={service.img.width}
                   height={service.img.height}
-                  className="w-[15vw] max-w-full justify-self-center"
+                  className="w-[15vw] max-w-full"
                 />
-                <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl px-5 w-[40vw]">
+                <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl p-10 w-[45vw]">
                   <CardContent>
                     <div className="flex flex-col gap-4">
                       <div className="flex items-center gap-2 text-xl">

@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardTitle, CardHeader } from "@/components/ui/card";
 import { useState, useEffect } from "react";
 import { Toggle } from "@/components/ui/toggle";
 import { motion, AnimatePresence } from "motion/react";
@@ -11,6 +11,7 @@ import { RiNextjsFill } from "react-icons/ri";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { RiNodejsLine } from "react-icons/ri";
 import { SiStrapi } from "react-icons/si";
+import { PageTitle } from "@/utils/utils";
 import Image from "next/image";
 
 export default function About() {
@@ -23,9 +24,9 @@ export default function About() {
   }, []);
 
   const [ref1, inView1] = useInView({
-    threshold: 0.9,
+    threshold: 0.2,
     triggerOnce: true,
-    initialInView: false,
+    initialInView: true,
   });
 
   const [ref2, inView2] = useInView({
@@ -35,7 +36,13 @@ export default function About() {
   });
 
   const [ref3, inView3] = useInView({
-    threshold: 0.5,
+    threshold: 0.2,
+    triggerOnce: true,
+    initialInView: false,
+  });
+
+  const [ref4, inView4] = useInView({
+    threshold: 0.2,
     triggerOnce: true,
     initialInView: false,
   });
@@ -43,122 +50,203 @@ export default function About() {
   if (!hasMounted) return null;
   return (
     <div className="py-15">
-      <section id="about" className="flex flex-col gap-10">
+      <section id="about" className="flex flex-col gap-30">
+        <PageTitle title="Qui suis-je ?" />
         <div ref={ref1}>
           <motion.div
-            className="bg-logo-blue h-fit shadow-lg rounded-3xl sm:w-[40vw] md:w-[60vw] text-sandy-brown p-10 m-5 grid grid-cols-3"
-            initial={{ x: "-100vw" }}
+            initial={{ x: "-100vw", opacity: 0 }}
             animate={
-              hasMounted && inView1
-                ? { x: ["-100vw", "-40vw"] }
-                : { x: ["-40vw", "-100vw"] }
+              inView1 ? { x: "0vw", opacity: 1 } : { x: "-100vw", opacity: 0 }
             }
             transition={{
-              duration: 0.6,
+              duration: 1,
               ease: "easeOut",
               times: [0, 1],
             }}
+            className="flex justify-evenly gap-10"
           >
-            <h2 className="text-2xl text-sandy-brown text-right py-5 font-title font-bold col-start-3 animate-bounce animate-infinite animate-duration-[2000ms] animate-ease-linear">
-              Qui suis-je ?
-            </h2>
+            <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl">
+              <CardHeader>
+                <CardTitle className="text-2xl font-title font-semibold">
+                  Assistant social
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="flex flex-col items-center text-lg">
+                <p className="text-justify">
+                  Assistant social de formation, j'ai travaillé pendant quatre
+                  ans dans un centre d'hébergement d'urgence pour personnes en
+                  situation d'addiction. Depuis 2020, j'exerce au sein d'une
+                  société de logement social.
+                </p>
+              </CardContent>
+            </Card>
+            <Image
+              src={"/social.png"}
+              alt="Assistant social"
+              width={662}
+              height={486}
+              className="w-[20vw]"
+              style={{ animation: "var(--animate-move)" }}
+            />
           </motion.div>
         </div>
-        <div ref={ref2} className="w-[50vw] z-5">
+        <div ref={ref2}>
           <motion.div
-            initial={{ x: "100vw" }}
-            animate={hasMounted && inView2 ? { x: "25vw" } : { x: "100vw" }}
+            initial={{ x: "100vw", opacity: 0 }}
+            animate={
+              inView2 ? { x: "0vw", opacity: 1 } : { x: "100vw", opacity: 0 }
+            }
             transition={{
-              duration: 0.6,
+              duration: 1,
               ease: "easeOut",
               times: [0, 1],
             }}
+            className="flex justify-evenly gap-10"
           >
-            <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl px-5 py-10 mb-20">
-              <CardContent>
-                <div className="flex flex-col gap-5 text-justify">
-                  <h2 className="text-xl text-sandy-brown font-title font-bold pt-2 pb-5">
-                    Mon parcours professionnel
-                  </h2>
-                  <div className="grid grid-cols-2 gap-5 items-center">
-                    <p>
-                      Assistant social de formation, j'ai travaillé pendant
-                      quatre ans dans un centre d'hébergement d'urgence pour
-                      personnes en situation d'addiction. Depuis 2020, j'exerce
-                      au sein d'une société de logement social.
-                    </p>
-                    <div
-                      className="justify-self-center max-w-[15vw] animate-fade duration-300"
-                      style={{ animationDelay: "0.9s" }}
-                    >
-                      <Image
-                        src={"/social.png"}
-                        alt="Assistant social"
-                        width={662}
-                        height={486}
-                      />
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-5 items-center">
-                    <div
-                      className="justify-self-center max-w-[15vw] animate-fade duration-300"
-                      style={{ animationDelay: "1.2s" }}
-                    >
-                      <Image
-                        alt="Code"
-                        src={"/code.png"}
-                        width={680}
-                        height={555}
-                      />
-                    </div>
-                    <p>
-                      Passionné depuis toujours par l'informatique, l'IA et les
-                      nouvelles technologies, j'ai décidé en juin 2024 de me
-                      lancer dans l'apprentissage du code en autodidacte.
-                      Pendant plusieurs mois, j'ai consacré cinq jours par
-                      semaine à développer mes compétences, jusqu'à atteindre un
-                      niveau professionnel.
-                    </p>
-                  </div>
-                  <div className="grid grid-cols-2 gap-5 items-center">
-                    <p>
-                      Le 16 septembre 2025, j'ai franchi une nouvelle étape en
-                      lançant mon activité en tant qu'indépendant
-                      complémentaire, prêt à offrir des prestations de qualité,
-                      à la hauteur des standards du métier. J'ai d'ailleurs
-                      obtenu une certification d'ingénieur Full-Stack par le
-                      site{" "}
-                      <a
-                        className="text-copper hover:text-lapis-lazuli"
-                        href="https://www.codecademy.com/profiles/py3267013392/certificates/ffd0f42cce1a44e9a0108b365047a0a6"
-                        target="_blank"
-                      >
-                        CodeCademy
-                      </a>
-                    </p>
-                    <div
-                      className="justify-self-center max-w-[15vw] hover:scale-300 transition-all animate-fade duration-300"
-                      style={{ animationDelay: "1.5s" }}
-                    >
-                      <Image
-                        src={"/certificate-fullstack.png"}
-                        width={500}
-                        height={500}
-                        alt="Certificat Ingénieur Fullstack"
-                      />
-                    </div>
-                  </div>
-                </div>
+            <Image
+              alt="Code"
+              src={"/code.png"}
+              width={680}
+              height={555}
+              className="w-[20vw]"
+              style={{ animation: "var(--animate-move)" }}
+            />
+            <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl">
+              <CardHeader>
+                <CardTitle className="text-2xl font-title font-semibold">
+                  Developpeur Web Full-Stack
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="flex flex-col items-center text-lg">
+                <p className="text-justify">
+                  Passionné depuis toujours par l'informatique, l'IA et les
+                  nouvelles technologies, j'ai décidé en juin 2024 de me lancer
+                  dans l'apprentissage du code en autodidacte. Pendant plusieurs
+                  mois, j'ai développé mes compétences, jusqu'à atteindre un
+                  niveau professionnel.
+                </p>
               </CardContent>
             </Card>
           </motion.div>
         </div>
-        <div ref={ref3} className="w-[50vw]">
+        <div ref={ref3}>
           <motion.div
-            initial={{ x: "-100vw" }}
-            animate={hasMounted && inView3 ? { x: "-5vw" } : { x: "-100vw" }}
+            initial={{ x: "-100vw", opacity: 0 }}
+            animate={
+              inView3 ? { x: "0vw", opacity: 1 } : { x: "-100vw", opacity: 0 }
+            }
             transition={{
-              duration: 0.6,
+              duration: 1,
+              ease: "easeOut",
+              times: [0, 1],
+            }}
+            className="flex justify-evenly gap-10"
+          >
+            <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl">
+              <CardHeader>
+                <CardTitle className="text-2xl font-title font-semibold">
+                  Indépendant
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="flex flex-col items-center text-lg">
+                <p className="text-justify">
+                  Le 16 septembre 2025, j'ai franchi une nouvelle étape en
+                  lançant mon activité en tant qu'indépendant complémentaire,
+                  prêt à offrir des prestations de qualité, à la hauteur des
+                  standards du métier. J'ai d'ailleurs obtenu une certification
+                  d'ingénieur Full-Stack par le site CodeCademy.
+                </p>
+              </CardContent>
+            </Card>
+            <Image
+              src={"/certificate-fullstack.png"}
+              width={500}
+              height={500}
+              alt="Certificat Ingénieur Fullstack"
+              className="w-[20vw] hover:scale-220 transition-all duration-600 ease-in-out"
+            />
+          </motion.div>
+        </div>
+        <div ref={ref4}>
+          <motion.div
+            initial={{ x: "100vw", opacity: 0 }}
+            animate={
+              inView4 ? { x: "0vw", opacity: 1 } : { x: "100vw", opacity: 0 }
+            }
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+              times: [0, 1],
+            }}
+            className="flex justify-evenly gap-10"
+          >
+            {inView4 && (
+              <div className="grid grid-cols-3 min-w-[20vw] items-center text-sandy-brown">
+                <RiJavascriptFill
+                  size={50}
+                  className="animate-jump-in duration-600"
+                  style={{
+                    animationDelay: "0s",
+                  }}
+                />
+                <FaReact
+                  size={50}
+                  className="animate-jump-in duration-600"
+                  style={{ animationDelay: "0.3s" }}
+                />
+                <RiNextjsFill
+                  size={50}
+                  className="animate-jump-in duration-600"
+                  style={{ animationDelay: "0.6s" }}
+                />
+                <BiLogoPostgresql
+                  size={50}
+                  className="animate-jump-in duration-600"
+                  style={{ animationDelay: "0.9s" }}
+                />
+                <RiNodejsLine
+                  size={50}
+                  className="animate-jump-in duration-600"
+                  style={{ animationDelay: "1.2s" }}
+                />
+                <SiStrapi
+                  size={50}
+                  className="animate-jump-in duration-600"
+                  style={{ animationDelay: "1.5s" }}
+                />
+              </div>
+            )}
+            <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl">
+              <CardHeader>
+                <CardTitle className="text-2xl font-title font-semibold">
+                  Outils
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="flex flex-col items-center text-lg">
+                <p className="text-justify">
+                  Je développe des sites web modernes et performants avec
+                  Next.js et JavaScript, utilisant Tailwind CSS et shadcn/ui
+                  pour l'interface, Framer Motion et React Icons pour les
+                  animations. Le code est versionné sur GitHub, déployé sur
+                  Vercel, avec domaine OVH. La base de données est sécurisée via
+                  Prisma Postgres, et je peux intégrer un CMS Strapi et Google
+                  Maps pour la visibilité locale.
+                </p>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
+
+        {/* <div ref={ref4} className="w-[50vw]">
+          <motion.div
+            initial={{ x: "100vw", opacity: 0 }}
+            animate={
+              hasMounted && inView4
+                ? { x: "0vw", opacity: 1 }
+                : { x: "100vw", opacity: 0 }
+            }
+            transition={{
+              duration: 1,
               ease: "easeOut",
               times: [0, 1],
             }}
@@ -285,7 +373,7 @@ export default function About() {
               </AnimatePresence>
             </div>
           </motion.div>
-        </div>
+        </div> */}
       </section>
     </div>
   );

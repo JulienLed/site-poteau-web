@@ -3,6 +3,7 @@
 import ServicesMenu from "@/src/component/services/menu/services-menu";
 import { useRef } from "react";
 import ServicesAll from "@/src/component/services/servicesAll/servicesAll";
+import { PageTitle } from "@/utils/utils";
 
 export default function Services() {
   const refSite = useRef<HTMLDivElement>(null);
@@ -16,6 +17,9 @@ export default function Services() {
 
   return (
     <div>
+      <div className="min-h-[25vh]">
+        <PageTitle title="Mes services"></PageTitle>
+      </div>
       <section id="services-menu">
         <ServicesMenu
           scrollToService={(service: string) => {
