@@ -18,7 +18,7 @@ export default function Services() {
   return (
     <div>
       <div className="min-h-[25vh]">
-        <PageTitle title="Mes services"></PageTitle>
+        <PageTitle title="Services"></PageTitle>
       </div>
       <section id="services-menu">
         <ServicesMenu

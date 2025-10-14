@@ -28,7 +28,7 @@ export function PageTitle({ title }: { title: string }) {
           ease: "easeOut",
         }}
       >
-        <h2 className="text-2xl text-sandy-brown text-right py-5 font-title font-bold col-start-2 col-span-2 animate-bounce animate-infinite animate-duration-[2000ms] animate-ease-linear">
+        <h2 className="text-2xl text-sandy-brown text-right py-5 font-title font-bold col-start-2 col-span-2 animate-move">
           {title}
         </h2>
       </motion.div>

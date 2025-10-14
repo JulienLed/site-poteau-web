@@ -5,9 +5,9 @@ export default function Portfolio() {
   return (
     <div className="py-15">
       <section id="presentation">
-        <PageTitle title="Mes productions" />
+        <PageTitle title="Productions" />
       </section>
-      <section id="projets">
+      <section id="projets" className="py-15">
         <Projets />
       </section>
     </div>
