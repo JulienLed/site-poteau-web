@@ -3,9 +3,9 @@ import TarifQCM from "@/src/component/tarifs/TarifQCM";
 
 export default function Tarifs() {
   return (
-    <div>
+    <div className="py-15">
       <PageTitle title="Tarifs" />
-      <section id="tarifs">
+      <section id="tarifs" className="py-15">
         <TarifQCM />
       </section>
     </div>

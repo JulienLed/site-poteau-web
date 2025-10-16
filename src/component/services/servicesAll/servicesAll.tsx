@@ -1,6 +1,10 @@
+"use client";
+
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
+import { useInView } from "react-intersection-observer";
+import { motion } from "motion/react";
 
 const services = [
   {
@@ -53,6 +57,87 @@ const services = [
   },
 ];
 
+function ServiceItem({
+  service,
+  anchorRef,
+  reverse,
+}: {
+  service: (typeof services)[0];
+  anchorRef: React.RefObject<HTMLDivElement | null>;
+  reverse: boolean;
+}) {
+  const [ref, inView] = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+
+  return (
+    <div className="flex flex-col gap-[10vh]" ref={ref}>
+      <div
+        ref={anchorRef}
+        className="flex items-center justify-center text-logo-blue font-title text-xl font-semibold
+               before:content-[''] before:flex-1 before:border-t before:border-logo-blue before:mr-4
+               after:content-[''] after:flex-1 after:border-t after:border-logo-blue after:ml-4"
+      >
+        {service.title}
+      </div>
+
+      <motion.div
+        initial={{ x: reverse ? "100vw" : "-100vw", opacity: 0 }}
+        animate={inView ? { x: "0vw", opacity: 1 } : {}}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="flex items-center justify-evenly"
+      >
+        {reverse ? (
+          <>
+            <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl p-10 w-[45vw]">
+              <CardContent>
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-2 text-xl">
+                    <RiDoubleQuotesL className="text-2xl" />
+                    <span>{service.quote}</span>
+                    <RiDoubleQuotesR className="text-2xl" />
+                  </div>
+                  <p>{service.description}</p>
+                </div>
+              </CardContent>
+            </Card>
+            <Image
+              alt={service.title}
+              src={service.img.src}
+              width={service.img.width}
+              height={service.img.height}
+              className="w-[15vw] max-w-full"
+            />
+          </>
+        ) : (
+          <>
+            <Image
+              alt={service.title}
+              src={service.img.src}
+              width={service.img.width}
+              height={service.img.height}
+              className="w-[15vw] max-w-full"
+            />
+            <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl p-10 w-[45vw]">
+              <CardContent>
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-2 text-xl">
+                    <RiDoubleQuotesL className="text-2xl" />
+                    <span>{service.quote}</span>
+                    <RiDoubleQuotesR className="text-2xl" />
+                  </div>
+                  <p>{service.description}</p>
+                </div>
+              </CardContent>
+            </Card>
+          </>
+        )}
+      </motion.div>
+    </div>
+  );
+}
+
 export default function ServicesAll({
   refs,
 }: {
@@ -65,81 +150,14 @@ export default function ServicesAll({
 }) {
   return (
     <div className="flex flex-col gap-50">
-      {services.map((service, index) => {
-        if (index % 2 > 0) {
-          return (
-            <div key={service.key} className="flex flex-col gap-[10vh]">
-              <div
-                ref={refs[service.key as keyof typeof refs]}
-                className="flex items-center justify-center text-logo-blue font-title text-xl font-semibold
-                   before:content-[''] before:flex-1 before:border-t before:border-logo-blue before:mr-4
-                   after:content-[''] after:flex-1 after:border-t after:border-logo-blue after:ml-4"
-              >
-                {service.title}
-              </div>
-
-              <div className="flex items-center justify-evenly">
-                <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl p-10 w-[45vw]">
-                  <CardContent>
-                    <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-2 text-xl">
-                        <RiDoubleQuotesL className="text-2xl" />
-                        <span>{service.quote}</span>
-                        <RiDoubleQuotesR className="text-2xl" />
-                      </div>
-
-                      <p>{service.description}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-                <Image
-                  alt={service.title}
-                  src={service.img.src}
-                  width={service.img.width}
-                  height={service.img.height}
-                  className="w-[15vw] max-w-full"
-                />
-              </div>
-            </div>
-          );
-        } else if (index % 2 == 0) {
-          return (
-            <div key={service.key} className="flex flex-col gap-[10vh]">
-              <div
-                ref={refs[service.key as keyof typeof refs]}
-                className="flex items-center justify-center text-logo-blue font-title text-xl font-semibold
-                   before:content-[''] before:flex-1 before:border-t before:border-logo-blue before:mr-4
-                   after:content-[''] after:flex-1 after:border-t after:border-logo-blue after:ml-4"
-              >
-                {service.title}
-              </div>
-
-              <div className="flex items-center justify-evenly">
-                <Image
-                  alt={service.title}
-                  src={service.img.src}
-                  width={service.img.width}
-                  height={service.img.height}
-                  className="w-[15vw] max-w-full"
-                />
-                <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl p-10 w-[45vw]">
-                  <CardContent>
-                    <div className="flex flex-col gap-4">
-                      <div className="flex items-center gap-2 text-xl">
-                        <RiDoubleQuotesL className="text-2xl" />
-                        <span>{service.quote}</span>
-                        <RiDoubleQuotesR className="text-2xl" />
-                      </div>
-
-                      <p>{service.description}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          );
-        }
-      })}
+      {services.map((service, index) => (
+        <ServiceItem
+          key={service.key}
+          service={service}
+          anchorRef={refs[service.key as keyof typeof refs]}
+          reverse={index % 2 > 0}
+        />
+      ))}
     </div>
   );
 }

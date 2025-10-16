@@ -1,6 +1,10 @@
 "use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { useState } from "react";
 
 type Answer = {
@@ -15,12 +19,14 @@ type Answer = {
 };
 
 export default function TarifQCM() {
-  const [total, setTotal] = useState<number>(0);
+  const [total, setTotal] = useState(0);
   const [nextQuestion, setNextQuestion] = useState<number | null>(null);
-  const [num, setNum] = useState<number>(0);
-  const [hoursPrice, setHoursPrice] = useState<number>(0);
-  const [pagesPrice, setPagesPrice] = useState<number>(0);
+  const [num, setNum] = useState(0);
   const [checkList, setCheckList] = useState<number[]>([]);
+  const [history, setHistory] = useState<
+    { question: string; answer: string }[]
+  >([]);
+  const [selected, setSelected] = useState<"hidden" | "visible">("hidden");
 
   const qcm = [
     {
@@ -151,6 +157,7 @@ export default function TarifQCM() {
       ],
     },
     { id: 0, message: total },
+    { id: 10, href: "/contact" },
   ];
 
   //Download du tarif
@@ -158,202 +165,172 @@ export default function TarifQCM() {
     const link = document.createElement("a");
     link.href = "/tarif.pdf";
     link.download = "";
-    link.target = "_blanck";
+    link.target = "_blank";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
-  //Checkbox
   const handleCheck = (id: number) => {
     setCheckList((prev) =>
       prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
     );
   };
 
-  // 🔹 Valider une réponse normale
+  const pushHistory = (question: string, answer: string) => {
+    setHistory((prev) => [...prev, { question, answer }]);
+  };
+
   const handleChoice = (answer: Answer) => {
+    const currentQuestion = qcm.find((q) => q.id === nextQuestion) || qcm[0];
+    pushHistory(currentQuestion.question || "", answer.text || "");
     if (answer.value) setTotal((prev) => prev + (answer.value || 0));
+    setNum(0);
     setNextQuestion(answer.next || 0);
   };
 
-  // 🔹 Valider un input (pages ou heures)
   const handleInput = (answer: Answer, value: number) => {
     const price = (answer.unitPrice || 0) * value;
+    const currentQuestion = qcm.find((q) => q.id === nextQuestion);
+    if (currentQuestion) {
+      pushHistory(
+        currentQuestion.question || "",
+        `${value} ${answer.inputType === "pages" ? "pages" : "heures"}`
+      );
+    }
     setTotal((prev) => prev + price);
     setNextQuestion(answer.next || 0);
   };
 
-  // 🔹 Valider les checkboxs de la question 8
   const handleValidateChecks = (answers: Answer[]) => {
     const selected = answers.filter((a) => checkList.includes(a.id || -1));
     const sum = selected.reduce((acc, a) => acc + (a.value || 0), 0);
+    const currentQuestion = qcm.find((q) => q.id === nextQuestion);
+    if (currentQuestion) {
+      pushHistory(
+        currentQuestion.question || "",
+        selected.map((a) => a.text).join(", ") || "Aucun"
+      );
+    }
     setTotal((prev) => prev + sum);
     setNextQuestion(9);
   };
 
-  // //Calculer le prix pour des heures supplémentaires
-  // const countHours = (unitPrice: number, hours: number) => {
-  //   const totalPrice = unitPrice * (hours || 0);
-  //   setHoursPrice((prev) => prev + totalPrice);
-  // };
-
-  // //Calculer le prix pour des pages supplémentaires
-  // const countPages = (unitPrice: number, pages: number) => {
-  //   const totalPrice = unitPrice * (pages || 0);
-  //   setPagesPrice((prev) => prev + totalPrice);
-  // };
-
-  // //Bouton Valider
-  // const handleValidate = (answer: Answer, num?: number) => {
-  //   if (answer.text) {
-  //     const choicePrice = answer.value || 0;
-  //     const next = answer.next || 0;
-  //     const total = hoursPrice + pagesPrice + choicePrice;
-  //     setTotal((prev) => prev + total);
-  //     setNextQuestion(next);
-  //   }
-  //   if (answer.inputType === "pages" && answer.unitPrice && num) {
-  //     countPages(answer.unitPrice, num);
-  //     setTotal((prev) => prev + pagesPrice);
-  //   } else if (answer.inputType === "hours" && answer.unitPrice && num) {
-  //     countHours(answer.unitPrice, num);
-  //     setTotal((prev) => prev + hoursPrice);
-  //   } else if (answer.inputType === "check") {
-  //     let subTotal = 0;
-  //     for (let i = 0; i < checkList.length; i++) {
-  //       if (checkList[i] === answer.id && answer.value) {
-  //         subTotal += answer.value;
-  //       }
-  //       setTotal((prev) => prev + subTotal);
-  //     }
-  //   }
-  // };
-
-  //Rendu d'une réponse individuelle
-  const renderAnswer = (answer: Answer, questionId: number) => {
+  const renderAnswer = (answer: Answer) => {
     if (answer.link)
-      return <button onClick={handleDownload}>{answer.text}</button>;
+      return (
+        <div className="flex">
+          <p
+            className="cursor-pointer text-lg text-sandy-brown w-fit px-3 py-1 hover:bg-lapis-lazuli active:translate-0.5 rounded-md animate-pulse hover:animate-pause transition-all duration-300 ease-in-out"
+            onClick={handleDownload}
+            onMouseEnter={() => setSelected("visible")}
+            onMouseLeave={() => setSelected("hidden")}
+          >
+            {answer.text}
+          </p>
+        </div>
+      );
 
     if (answer.inputType === "check")
       return (
-        <label>
-          <input
-            type="checkbox"
-            checked={checkList.includes(answer.id || -1)}
-            onChange={() => handleCheck(answer.id || -1)}
-          />
-          {answer.text}
-        </label>
+        <div className="flex justify-start">
+          <Label
+            htmlFor="input"
+            className="cursor-pointer text-sandy-brown w-fit"
+          >
+            <Input
+              type="checkbox"
+              name="input"
+              checked={checkList.includes(answer.id || -1)}
+              onChange={() => handleCheck(answer.id || -1)}
+              className="cursor-pointer hover:animate-pause transition-all duration-300 ease-in-out"
+            />
+            <p className="cursor-pointer text-lg text-sandy-brown w-fit px-3 py-1 hover:bg-lapis-lazuli active:translate-0.5 rounded-md animate-pulse hover:animate-pause transition-all duration-300 ease-in-out">
+              {answer.text}
+            </p>
+          </Label>
+        </div>
       );
 
     if (answer.inputType === "hours" || answer.inputType === "pages")
       return (
         <>
-          <input
+          <Input
             type="number"
             value={num}
             onChange={(e) => setNum(Number(e.target.value))}
           />
-          <button onClick={() => handleInput(answer, num)}>OK</button>
+          {answer.inputType === "pages" && (
+            <Button onClick={() => handleInput(answer, num)}>Suivant</Button>
+          )}
         </>
       );
 
-    return <button onClick={() => handleChoice(answer)}>{answer.text}</button>;
+    return (
+      <p
+        className="cursor-pointer text-lg text-sandy-brown w-fit px-3 py-1 hover:bg-lapis-lazuli active:translate-0.5 rounded-md animate-pulse hover:animate-pause transition-all duration-300 ease-in-out"
+        onClick={() => handleChoice(answer)}
+      >
+        {answer.text}
+      </p>
+    );
   };
 
-  // 🔹 Rendu de la question
   const renderQuestion = () => {
     const question = qcm.find((q) => q.id === nextQuestion) || qcm[0];
     if (question.id === 0)
-      return <p>💰 Total à payer : {total.toFixed(2)} €</p>;
+      return (
+        <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl px-6 py-10 text-center">
+          <h3>💰 Total estimé</h3>
+          <p>{total.toFixed(2)} €</p>
+        </Card>
+      );
 
     return (
-      <div>
-        <h3>{question.question}</h3>
-        <ul>
+      <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl px-5 py-10 mb-10">
+        <h3 className="text-xl mb-4">{question.question}</h3>
+        <ul className="flex flex-col gap-2">
           {question.answers?.map((answer) => (
-            <li key={Math.random()}>{renderAnswer(answer, question.id)}</li>
+            <li key={Math.random()}>{renderAnswer(answer)}</li>
           ))}
         </ul>
 
         {question.id === 8 && (
-          <button onClick={() => handleValidateChecks(question.answers!)}>
-            Valider les choix
-          </button>
+          <Button onClick={() => handleValidateChecks(question.answers!)}>
+            Suivant
+          </Button>
         )}
-      </div>
+      </Card>
     );
   };
 
-  // //Affichage question
-  // const renderQuestion = () => {
-  //   const question = qcm.find((q) => q.id === nextQuestion) || qcm[0];
-  //   return (
-  //     <div>
-  //       <h3>{question.question}</h3>
-  //       <ul>
-  //         {question.answers?.map((answer: Answer) => {
-  //           return (
-  //             <li>
-  //               {answer.text && !answer.link && (
-  //                 <button onClick={() => handleValidate(answer)}>
-  //                   {answer.text}
-  //                 </button>
-  //               )}
-  //               {answer.text && answer.link && (
-  //                 <button onClick={() => handleDownload()}>
-  //                   {answer.text}
-  //                 </button>
-  //               )}
-  //               {(answer.inputType === "pages" ||
-  //                 answer.inputType === "hours") && (
-  //                 <>
-  //                   <input
-  //                     type="number"
-  //                     value={num}
-  //                     onChange={(e) => setNum(Number(e.target.value))}
-  //                   />
-  //                   <button onClick={() => handleValidate(answer, num)}>
-  //                     OK
-  //                   </button>
-  //                 </>
-  //               )}
-  //               {answer.inputType === "check" && (
-  //                 <>
-  //                   <input
-  //                     type="checkbox"
-  //                     onChange={() => handleCheck(answer.id || 0)}
-  //                   />
-  //                   <button onClick={() => handleValidate(answer)}>Ok</button>
-  //                 </>
-  //               )}
-  //             </li>
-  //           );
-  //         })}
-  //       </ul>
-  //       {question.id === 7 && (
-  //         <button
-  //           onClick={() => {
-  //             setNextQuestion(3);
-  //           }}
-  //         >
-  //           Suivant
-  //         </button>
-  //       )}
-  //       {question.id === 8 && (
-  //         <button
-  //           onClick={() => {
-  //             setNextQuestion(9);
-  //           }}
-  //         >
-  //           Suivant
-  //         </button>
-  //       )}
-  //       {question.id === 0 && <p>{`Le total a payer est de : ${total}`}</p>}
-  //     </div>
-  //   );
-  // };
+  return (
+    <div className="flex flex-col gap-6">
+      {/* Historique */}
+      {history.map((h, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="bg-logo-blue/70 border border-sandy-brown text-sandy-brown shadow-md p-4 rounded-xl"
+        >
+          <p className="font-semibold">{h.question}</p>
+          <p className="text-sandy-brown/90">➡️ {h.answer}</p>
+        </motion.div>
+      ))}
 
-  return <div>{renderQuestion()}</div>;
+      {/* Question active */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={nextQuestion}
+          initial={{ x: "-100vw", opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: "100vw", opacity: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          {renderQuestion()}
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  );
 }
