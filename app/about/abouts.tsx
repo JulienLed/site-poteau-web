@@ -65,44 +65,6 @@ export default function About() {
             }}
             className="flex justify-evenly gap-10"
           >
-            <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl">
-              <CardHeader>
-                <CardTitle className="text-2xl font-title font-semibold">
-                  Assistant social
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-col items-center text-lg">
-                <p className="text-justify">
-                  Assistant social de formation, j'ai travaillé pendant quatre
-                  ans dans un centre d'hébergement d'urgence pour personnes en
-                  situation d'addiction. Depuis 2020, j'exerce au sein d'une
-                  société de logement social.
-                </p>
-              </CardContent>
-            </Card>
-            <Image
-              src={"/social.png"}
-              alt="Assistant social"
-              width={662}
-              height={486}
-              className="w-[20vw]"
-              style={{ animation: "var(--animate-move)" }}
-            />
-          </motion.div>
-        </div>
-        <div ref={ref2}>
-          <motion.div
-            initial={{ x: "100vw", opacity: 0 }}
-            animate={
-              inView2 ? { x: "0vw", opacity: 1 } : { x: "100vw", opacity: 0 }
-            }
-            transition={{
-              duration: 1,
-              ease: "easeOut",
-              times: [0, 1],
-            }}
-            className="flex justify-evenly gap-10"
-          >
             <Image
               alt="Code"
               src={"/code.png"}
@@ -127,6 +89,44 @@ export default function About() {
                 </p>
               </CardContent>
             </Card>
+          </motion.div>
+        </div>
+        <div ref={ref2}>
+          <motion.div
+            initial={{ x: "100vw", opacity: 0 }}
+            animate={
+              inView2 ? { x: "0vw", opacity: 1 } : { x: "100vw", opacity: 0 }
+            }
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+              times: [0, 1],
+            }}
+            className="flex justify-evenly gap-10"
+          >
+            <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl">
+              <CardHeader>
+                <CardTitle className="text-2xl font-title font-semibold">
+                  Assistant social
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="flex flex-col items-center text-lg">
+                <p className="text-justify">
+                  Assistant social de formation, j'ai travaillé pendant quatre
+                  ans dans un centre d'hébergement d'urgence pour personnes en
+                  situation d'addiction. Depuis 2020, j'exerce au sein d'une
+                  société de logement social.
+                </p>
+              </CardContent>
+            </Card>
+            <Image
+              src={"/social.png"}
+              alt="Assistant social"
+              width={662}
+              height={486}
+              className="w-[20vw]"
+              style={{ animation: "var(--animate-move)" }}
+            />
           </motion.div>
         </div>
         <div ref={ref3}>

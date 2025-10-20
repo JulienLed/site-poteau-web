@@ -2,10 +2,11 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
+import Link from "next/link";
 
 type Answer = {
   text?: string | null;
@@ -24,8 +25,9 @@ export default function TarifQCM() {
   const [num, setNum] = useState(0);
   const [checkList, setCheckList] = useState<number[]>([]);
   const [history, setHistory] = useState<
-    { question: string; answer: string }[]
+    { question: string; answer: string; cost: number }[]
   >([]);
+
   const [selected, setSelected] = useState<"hidden" | "visible">("hidden");
 
   const qcm = [
@@ -73,7 +75,6 @@ export default function TarifQCM() {
       id: 5,
       question: "Quel genre d'espace client souhaitez-vous ?",
       answers: [
-        { text: "Pour finir, ce n'est pas nécessaire", next: 4 },
         {
           text: "Un espace client basique, protégé par mot de passe",
           value: 150,
@@ -85,13 +86,13 @@ export default function TarifQCM() {
           next: 4,
         },
         { text: "Ma demande est plus complexe", next: 10 },
+        { text: "Pour finir, ce n'est pas nécessaire", next: 4 },
       ],
     },
     {
       id: 6,
       question: "Quels types de contenus souhaitez-vous contrôler ?",
       answers: [
-        { text: "Pour finir, ce n'est pas nécessaire", value: 0, next: 8 },
         {
           text: "Quelques images, actus, articles (CMS simple)",
           value: 200,
@@ -103,6 +104,7 @@ export default function TarifQCM() {
           next: 8,
         },
         { text: "Ma demande est plus complexe", next: 10 },
+        { text: "Pour finir, ce n'est pas nécessaire", value: 0, next: 8 },
       ],
     },
     {
@@ -120,7 +122,6 @@ export default function TarifQCM() {
       id: 8,
       question: "Souhaitez-vous ajouter des fonctions supplémentaires ?",
       answers: [
-        { text: "Non, ça ira comme ça", value: 0, next: 9 },
         {
           id: 1,
           text: "Statistiques visiteurs (Google Analytics)",
@@ -142,21 +143,28 @@ export default function TarifQCM() {
           unitPrice: 45,
           next: 9,
         },
+        { text: "Non, ça ira comme ça", value: 0, next: 9 },
       ],
     },
     {
       id: 9,
       question: "Souhaitez-vous un service de maintenance annuelle ?",
       answers: [
-        { text: "Non, ça ira comme ça", value: 0, next: 0 },
         {
           text: "Oui (suivi, mises à jour, backups, corrections mineures)",
           value: 250,
           next: 0,
         },
+        { text: "Non, ça ira comme ça", value: 0, next: 0 },
       ],
     },
-    { id: 0, message: total },
+    {
+      id: 0,
+      message: {
+        total: total,
+        history: history,
+      },
+    },
     { id: 10, href: "/contact" },
   ];
 
@@ -177,14 +185,15 @@ export default function TarifQCM() {
     );
   };
 
-  const pushHistory = (question: string, answer: string) => {
-    setHistory((prev) => [...prev, { question, answer }]);
+  const pushHistory = (question: string, answer: string, cost: number = 0) => {
+    setHistory((prev) => [...prev, { question, answer, cost }]);
   };
 
   const handleChoice = (answer: Answer) => {
     const currentQuestion = qcm.find((q) => q.id === nextQuestion) || qcm[0];
-    pushHistory(currentQuestion.question || "", answer.text || "");
-    if (answer.value) setTotal((prev) => prev + (answer.value || 0));
+    const value = answer.value || 0;
+    pushHistory(currentQuestion.question || "", answer.text || "", value);
+    setTotal((prev) => prev + value);
     setNum(0);
     setNextQuestion(answer.next || 0);
   };
@@ -193,10 +202,10 @@ export default function TarifQCM() {
     const price = (answer.unitPrice || 0) * value;
     const currentQuestion = qcm.find((q) => q.id === nextQuestion);
     if (currentQuestion) {
-      pushHistory(
-        currentQuestion.question || "",
-        `${value} ${answer.inputType === "pages" ? "pages" : "heures"}`
-      );
+      const label = `${value} ${
+        answer.inputType === "pages" ? "pages" : "heures"
+      }`;
+      pushHistory(currentQuestion.question || "", label, price);
     }
     setTotal((prev) => prev + price);
     setNextQuestion(answer.next || 0);
@@ -209,7 +218,8 @@ export default function TarifQCM() {
     if (currentQuestion) {
       pushHistory(
         currentQuestion.question || "",
-        selected.map((a) => a.text).join(", ") || "Aucun"
+        selected.map((a) => a.text).join(", ") || "Aucun",
+        sum
       );
     }
     setTotal((prev) => prev + sum);
@@ -233,37 +243,48 @@ export default function TarifQCM() {
 
     if (answer.inputType === "check")
       return (
-        <div className="flex justify-start">
+        <div className="flex items-center gap-3">
+          <Input
+            id={`check-${answer.id}`}
+            type="checkbox"
+            name={`check-${answer.id}`}
+            checked={checkList.includes(answer.id || -1)}
+            onChange={() => handleCheck(answer.id || -1)}
+            className="cursor-pointer w-5"
+          />
           <Label
-            htmlFor="input"
-            className="cursor-pointer text-sandy-brown w-fit"
+            htmlFor={`check-${answer.id}`}
+            className="cursor-pointer text-lg text-sandy-brown w-fit px-3 py-1 hover:bg-lapis-lazuli rounded-md animate-pulse transition-all duration-300 ease-in-out"
           >
-            <Input
-              type="checkbox"
-              name="input"
-              checked={checkList.includes(answer.id || -1)}
-              onChange={() => handleCheck(answer.id || -1)}
-              className="cursor-pointer hover:animate-pause transition-all duration-300 ease-in-out"
-            />
-            <p className="cursor-pointer text-lg text-sandy-brown w-fit px-3 py-1 hover:bg-lapis-lazuli active:translate-0.5 rounded-md animate-pulse hover:animate-pause transition-all duration-300 ease-in-out">
-              {answer.text}
-            </p>
+            {answer.text}
           </Label>
         </div>
       );
 
     if (answer.inputType === "hours" || answer.inputType === "pages")
       return (
-        <>
-          <Input
-            type="number"
-            value={num}
-            onChange={(e) => setNum(Number(e.target.value))}
-          />
+        <div className="flex justify-evenly w-fit">
+          <Label htmlFor="input">
+            <p className="cursor-pointer text-lg text-sandy-brown w-fit px-3 py-1 hover:bg-lapis-lazuli active:translate-0.5 rounded-md animate-pulse hover:animate-pause transition-all duration-300 ease-in-out">
+              {answer.text}
+            </p>
+            <Input
+              name="input"
+              type="number"
+              value={num}
+              onChange={(e) => setNum(Number(e.target.value))}
+              className="w-fit"
+            />
+          </Label>
           {answer.inputType === "pages" && (
-            <Button onClick={() => handleInput(answer, num)}>Suivant</Button>
+            <Button
+              className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-lg transition-all duration-300 ease-in-out w-fit rounded-xl px-3 py-1"
+              onClick={() => handleInput(answer, num)}
+            >
+              Suivant
+            </Button>
           )}
-        </>
+        </div>
       );
 
     return (
@@ -278,11 +299,66 @@ export default function TarifQCM() {
 
   const renderQuestion = () => {
     const question = qcm.find((q) => q.id === nextQuestion) || qcm[0];
+
     if (question.id === 0)
       return (
-        <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl px-6 py-10 text-center">
-          <h3>💰 Total estimé</h3>
-          <p>{total.toFixed(2)} €</p>
+        <Card className="flex flex-col items-center bg-logo-blue border-0 text-sandy-brown shadow-2xl px-6 py-10 text-center">
+          <h3 className="text-2xl mb-6 font-bold">
+            💰 Estimation de votre projet
+          </h3>
+
+          <div className="overflow-x-auto mb-6">
+            <table className="min-w-full border border-sandy-brown/50 text-left">
+              <thead className="bg-lapis-lazuli text-sandy-brown">
+                <tr>
+                  <th className="px-4 py-2 border-b border-sandy-brown/50">
+                    Service
+                  </th>
+                  <th className="px-4 py-2 border-b border-sandy-brown/50">
+                    Choix / Détail
+                  </th>
+                  <th className="px-4 py-2 border-b border-sandy-brown/50 text-right">
+                    Prix (€)
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {question.message?.history.map((h, i) => (
+                  <tr
+                    key={i}
+                    className="hover:bg-lapis-lazuli/40 transition-colors"
+                  >
+                    <td className="px-4 py-2 border-b border-sandy-brown/30 text-left">
+                      {h.question}
+                    </td>
+                    <td className="px-4 py-2 border-b border-sandy-brown/30 text-left">
+                      {h.answer}
+                    </td>
+                    <td className="px-4 py-2 border-b border-sandy-brown/30 text-right">
+                      {h.cost > 0 ? `${h.cost.toFixed(2)}€` : "-"}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <p className="text-xl font-semibold mt-4">
+            Total estimé pour un an :{" "}
+            <span className="text-2xl">{total.toFixed(2)} €</span>
+          </p>
+          <Link
+            className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-lg transition-all duration-300 ease-in-out w-fit rounded-xl px-3 py-1"
+            href={{
+              pathname: "/contact",
+              query: {
+                history: JSON.stringify(question.message?.history),
+                total: question.message?.total,
+              },
+            }}
+          >
+            Je prends contact
+          </Link>
         </Card>
       );
 
@@ -296,7 +372,10 @@ export default function TarifQCM() {
         </ul>
 
         {question.id === 8 && (
-          <Button onClick={() => handleValidateChecks(question.answers!)}>
+          <Button
+            className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-lg transition-all duration-300 ease-in-out w-fit rounded-xl px-3 py-1"
+            onClick={() => handleValidateChecks(question.answers!)}
+          >
             Suivant
           </Button>
         )}
