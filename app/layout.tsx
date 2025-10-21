@@ -37,7 +37,7 @@ export default function RootLayout({
       >
         <Suspense fallback={<Loading />}>
           <Header />
-          <div className="pt-30 pl-20 pr-15 md:px-50 flex-1 overflow-hidden">
+          <div className="pt-30 pl-20 pr-15 md:px-50 flex-1 overflow-hidden selection:!text-logo-blue selection:bg-sandy-brown">
             {children}
           </div>
           <Footer />

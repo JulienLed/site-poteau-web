@@ -348,7 +348,7 @@ export default function TarifQCM() {
             <span className="text-2xl">{total.toFixed(2)} €</span>
           </p>
           <Link
-            className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-lg transition-all duration-300 ease-in-out w-fit rounded-xl px-3 py-1"
+            className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue font-semibold text-lg transition-all duration-300 ease-in-out w-fit rounded-xl px-3 py-1"
             href={{
               pathname: "/contact",
               query: {
@@ -357,7 +357,7 @@ export default function TarifQCM() {
               },
             }}
           >
-            Je prends contact
+            Je veux réaliser mon projet
           </Link>
         </Card>
       );

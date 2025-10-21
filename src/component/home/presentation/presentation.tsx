@@ -115,7 +115,7 @@ export default function Presentation() {
                   height={320}
                   className="w-[5vw] row-start-2 col-start-1 self-start"
                 />
-                <p className="pb-10 row-start-2 col-start-2text-justify">
+                <p className="pb-10 row-start-2 col-start-2 text-justify">
                   Avec la puissance de Next.js, React et JavaScript moderne, je
                   développe des sites web performants, évolutifs et sur-mesure.
                   Le tout est pensé pour être rapide, fiable et adaptable dans

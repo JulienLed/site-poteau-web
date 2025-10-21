@@ -10,8 +10,8 @@ export default function Contact() {
   const history = JSON.parse(params.get("history") || "[]");
   return (
     <div className="py-15">
-      <PageTitle title="Qui suis-je ?" />
-      <section id="form"></section>
+      <PageTitle title="Contact" />
+      <section id="form" className="py-15"></section>
       <ContactForm history={history} total={total} />
       <section id="contact-infos"></section>
     </div>
