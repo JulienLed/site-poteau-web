@@ -29,6 +29,7 @@ export default function Cookies() {
         onAccept={accept}
         buttonStyle={{ background: "#264864", color: "#edf7f6ff" }}
         declineButtonStyle={{ background: "#264864", color: "#edf7f6ff" }}
+        acceptOnScroll
       >
         Nous utilisons des cookies pour Google Analytics. <br />
         <span className="text-xs">(scroller ou cliquer pour accepter)</span>
