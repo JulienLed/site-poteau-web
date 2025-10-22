@@ -44,7 +44,7 @@ export default function ServiceResume() {
         >
           <CarouselContent className="w-[50vw]">
             <CarouselItem>
-              <Card className="bg-logo-blue border-0 shadow-xl m-10">
+              <Card className="bg-logo-blue border-0 shadow-xl m-10 w-[90%] h-[87%]">
                 <CardContent className="flex flex-col items-center">
                   <h3 className="text-2xl text-sandy-brown font-title font-bold py-5">
                     Design et Expérience Utilisateur
@@ -80,7 +80,7 @@ export default function ServiceResume() {
               </Card>
             </CarouselItem>
             <CarouselItem>
-              <Card className="bg-logo-blue border-0 shadow-xl m-10">
+              <Card className="bg-logo-blue border-0 shadow-xl m-10 w-[90%] h-[87%]">
                 <CardContent className="flex flex-col items-center">
                   <h3 className="text-2xl text-sandy-brown py-5 font-title font-bold">
                     Site Internet
@@ -116,7 +116,7 @@ export default function ServiceResume() {
               </Card>
             </CarouselItem>
             <CarouselItem>
-              <Card className="bg-logo-blue border-0 shadow-xl m-10">
+              <Card className="bg-logo-blue border-0 shadow-xl m-10 w-[90%] h-[87%]">
                 <CardContent className="flex flex-col items-center">
                   <h3 className="text-2xl text-sandy-brown py-5 font-title font-bold">
                     Conseil & Support
