@@ -43,7 +43,7 @@ export default function Projets() {
       {projets.map((projet, i) => (
         <div key={i}>
           <motion.div
-            animate={{ rotateY: click === i ? 180 : 0 }}
+            animate={{ rotateY: click === i ? "180deg" : "0deg" }}
             transition={{
               duration: 0.8,
               ease: "easeInOut",

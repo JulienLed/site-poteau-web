@@ -29,8 +29,6 @@ export default function TarifQCM() {
     { question: string; keyword?: string; answer: string; cost: number }[]
   >([]);
 
-  const [selected, setSelected] = useState<"hidden" | "visible">("hidden");
-
   const qcm = [
     {
       id: 1,
@@ -285,8 +283,6 @@ export default function TarifQCM() {
           <p
             className="cursor-pointer text-lg text-sandy-brown w-fit px-3 py-1 hover:bg-lapis-lazuli active:translate-0.5 rounded-md animate-pulse hover:animate-pause transition-all duration-300 ease-in-out"
             onClick={handleDownload}
-            onMouseEnter={() => setSelected("visible")}
-            onMouseLeave={() => setSelected("hidden")}
           >
             {answer.text}
           </p>

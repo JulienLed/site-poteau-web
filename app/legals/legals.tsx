@@ -21,9 +21,9 @@ export default function Legals() {
           </CardHeader>
           <CardContent className="space-y-6 leading-relaxed">
             <p className="text-lg">
-              Je prends très au sérieux la protection de vos données
-              personnelles. Cette politique explique clairement quelles
-              informations je collecte et comment je les utilise.
+              {
+                " Je prends très au sérieux la protection de vos données personnelles. Cette politique explique clairement quelles informations je collecte et comment je les utilise."
+              }
             </p>
 
             <h2 className="font-semibold text-xl mt-4">
@@ -37,20 +37,20 @@ export default function Legals() {
               <li>Nom (facultatif)</li>
               <li>Adresse e-mail</li>
               <li>Numéro de téléphone</li>
-              <li>Message que vous m'envoyez</li>
+              <li>{"Message que vous m'envoyez"}</li>
             </ul>
             <p>
               Ces informations me servent{" "}
               <strong>uniquement à répondre à vos demandes</strong>. Elles sont
-              accessibles uniquement par moi et sont conservées pendant{" "}
-              <strong>1 an</strong>. Vous pouvez demander leur modification ou
-              suppression à tout moment.
+              accessibles uniquement par moi. Vous pouvez demander leur
+              modification ou suppression à tout moment.
             </p>
 
             <h2 className="font-semibold text-xl mt-4">2. Google Analytics</h2>
             <p>
-              J'utilise Google Analytics pour analyser la fréquentation de mon
-              site et améliorer votre expérience utilisateur.
+              {
+                "J'utilise Google Analytics pour analyser la fréquentation de mon site et améliorer votre expérience utilisateur."
+              }
             </p>
             <ul className="list-disc list-inside ml-6 space-y-1">
               <li>
@@ -58,22 +58,24 @@ export default function Legals() {
                 (adresse IP partiellement masquée).
               </li>
               <li>
-                Aucune information personnelle identifiable n'est collectée par
-                Google Analytics.
+                {
+                  "Aucune information personnelle identifiable n'est collectée par Google Analytics."
+                }
               </li>
             </ul>
             <p>
               Je vous demande votre{" "}
-              <strong>consentement avant d'activer ces cookies</strong>. Vous
-              pouvez accepter ou refuser leur utilisation via la bannière qui
-              s'affiche lors de votre première visite.
+              <strong>{"consentement avant d'activer ces cookies"}</strong>.
+              {
+                " Vous pouvez accepter ou refuser leur utilisation via la bannière qui s'affiche lors de votre première visite."
+              }
             </p>
 
             <h2 className="font-semibold text-xl mt-4">3. Cookies</h2>
             <p>
-              Mon site utilise uniquement des cookies nécessaires au
-              fonctionnement de Google Analytics. Aucun autre cookie n'est
-              utilisé pour le moment.
+              {
+                " Mon site utilise uniquement des cookies nécessaires au fonctionnement de Google Analytics. Aucun autre cookie n'est utilisé pour le moment."
+              }
             </p>
 
             <h2 className="font-semibold text-xl mt-4">4. Sécurité</h2>
@@ -99,7 +101,7 @@ export default function Legals() {
                   className="cursor-pointer underline hover:text-white transition-colors"
                   onClick={() => setShowEmail(true)}
                 >
-                  Afficher l'e-mail
+                  {"Afficher l'e-mail"}
                 </span>
               )}
             </p>

@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     const data = await req.json();
     const { name, email, phone, message } = data;
 
-    const info = await transporter.sendMail({
+    await transporter.sendMail({
       from: `${name} <${email}>`, // sender address
       to: process.env.SMTP_USER, // list of receivers
       subject: `Nouveau message de ${name} - ${phone}`, // Subject line

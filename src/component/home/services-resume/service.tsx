@@ -16,28 +16,13 @@ import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { GrFormNextLink } from "react-icons/gr";
 import { GrFormPreviousLink } from "react-icons/gr";
 
 export default function ServiceResume() {
   // Les bouttons perso Next et Prev
   const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-  }, [api]);
 
   // La ref pour l'animation au scroll
   const { ref, inView } = useInView({

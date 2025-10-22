@@ -1,7 +1,6 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { delay } from "motion/react";
 import Image from "next/image";
 
 type ServicesMenuProps = {

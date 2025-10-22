@@ -2,8 +2,7 @@
 
 import { Card, CardContent, CardTitle, CardHeader } from "@/components/ui/card";
 import { useState, useEffect } from "react";
-import { Toggle } from "@/components/ui/toggle";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import { RiJavascriptFill } from "react-icons/ri";
 import { FaReact } from "react-icons/fa6";
@@ -15,8 +14,6 @@ import { PageTitle } from "@/utils/utils";
 import Image from "next/image";
 
 export default function About() {
-  const [isToolSwitch, setIsToolSwitch] = useState<boolean>(false);
-
   const [hasMounted, setHasMounted] = useState<boolean>(false);
 
   useEffect(() => {
@@ -81,11 +78,9 @@ export default function About() {
               </CardHeader>
               <CardContent className="flex flex-col items-center text-lg">
                 <p className="text-justify">
-                  Passionné depuis toujours par l'informatique, l'IA et les
-                  nouvelles technologies, j'ai décidé en juin 2024 de me lancer
-                  dans l'apprentissage du code en autodidacte. Pendant plusieurs
-                  mois, j'ai développé mes compétences, jusqu'à atteindre un
-                  niveau professionnel.
+                  {
+                    "Passionné depuis toujours par l'informatique, l'IA et les nouvelles technologies, j'ai décidé en juin 2024 de me lancer dans l'apprentissage du code en autodidacte. Pendant plusieurs mois, j'ai développé mes compétences, jusqu'à atteindre un niveau professionnel."
+                  }
                 </p>
               </CardContent>
             </Card>
@@ -112,10 +107,9 @@ export default function About() {
               </CardHeader>
               <CardContent className="flex flex-col items-center text-lg">
                 <p className="text-justify">
-                  Assistant social de formation, j'ai travaillé pendant quatre
-                  ans dans un centre d'hébergement d'urgence pour personnes en
-                  situation d'addiction. Depuis 2020, j'exerce au sein d'une
-                  société de logement social.
+                  {
+                    "Assistant social de formation, j'ai travaillé pendant quatre ans dans un centre d'hébergement d'urgence pour personnes en situation d'addiction. Depuis 2020, j'exerce au sein d'une société de logement social."
+                  }
                 </p>
               </CardContent>
             </Card>
@@ -150,11 +144,9 @@ export default function About() {
               </CardHeader>
               <CardContent className="flex flex-col items-center text-lg">
                 <p className="text-justify">
-                  Le 16 septembre 2025, j'ai franchi une nouvelle étape en
-                  lançant mon activité en tant qu'indépendant complémentaire,
-                  prêt à offrir des prestations de qualité, à la hauteur des
-                  standards du métier. J'ai d'ailleurs obtenu une certification
-                  d'ingénieur Full-Stack par le site CodeCademy.
+                  {
+                    "Le 16 septembre 2025, j'ai franchi une nouvelle étape en lançant mon activité en tant qu'indépendant complémentaire, prêt à offrir des prestations de qualité, à la hauteur des standards du métier. J'ai d'ailleurs obtenu une certification d'ingénieur Full-Stack par le site CodeCademy."
+                  }
                 </p>
               </CardContent>
             </Card>
@@ -224,13 +216,9 @@ export default function About() {
               </CardHeader>
               <CardContent className="flex flex-col items-center text-lg">
                 <p className="text-justify">
-                  Je développe des sites web modernes et performants avec
-                  Next.js et JavaScript, utilisant Tailwind CSS et shadcn/ui
-                  pour l'interface, Framer Motion et React Icons pour les
-                  animations. Le code est versionné sur GitHub, déployé sur
-                  Vercel, avec domaine OVH. La base de données est sécurisée via
-                  Prisma Postgres, et je peux intégrer un CMS Strapi et Google
-                  Maps pour la visibilité locale.
+                  {
+                    " Je développe des sites web modernes et performants avec Next.js et JavaScript, utilisant Tailwind CSS et shadcn/ui pour l'interface, Framer Motion et React Icons pour les animations. Le code est versionné sur GitHub, déployé sur Vercel, avec domaine OVH. La base de données est sécurisée via Prisma Postgres, et je peux intégrer un CMS Strapi et Google Maps pour la visibilité locale."
+                  }
                 </p>
               </CardContent>
             </Card>
