@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import Logo from "@/public/logo-bg-free.png";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -28,9 +29,17 @@ export default function Footer() {
         id="copyright"
         className="col-start-2 row-start-2 col-span-2 justify-self-center self-end"
       >
-        <p className="font-text text-sm sm:text-base">
-          © 2025 Le Poteau du Web
-        </p>
+        <div className="flex gap-5">
+          <p className="font-text text-sm sm:text-base">
+            © 2025 Le Poteau du Web
+          </p>
+          <span>-</span>
+          <Link href={"/legals"}>
+            <p className="font-text text-sm sm:text-base">
+              Politique de confidentialité
+            </p>
+          </Link>
+        </div>
       </section>
     </div>
   );

@@ -1,14 +1,16 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@radix-ui/react-label";
 import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import DialogConfirm from "./dialog";
 
 type History = {
   question: string;
+  keyword: string;
   answer: string;
   cost: number;
 };
@@ -32,6 +34,24 @@ export default function ContactForm({ history, total }: Props) {
     phone: "",
     message: "",
   });
+  const [isSent, setIsSent] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (history.length > 0 && total) {
+      const messageArr = history.map((h) => {
+        if (h.cost !== 0) return `${h.keyword} - ${h.cost}€\n`;
+      });
+      messageArr.unshift(
+        "Je souhaiterai discuter avec vous de mon projet.\nJ'aimerai que s'y retrouve :\n\n"
+      );
+      messageArr.push(
+        `Total: ${total}\nMerci de me recontacter pour en discuter\n\nBien à vous,\n${mail.name}`
+      );
+      const message = messageArr.join("");
+
+      setMail((prev) => ({ ...prev, message: message }));
+    }
+  }, [history, total, mail.name]);
 
   const handleFetchContact = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -43,7 +63,10 @@ export default function ContactForm({ history, total }: Props) {
       body: JSON.stringify(mail),
     });
     const data = await response.json();
-    console.log(data.message);
+    if (data) {
+      setIsSent(true);
+      console.log("Mail envoyé, Dialog devrait s'ouvrir");
+    }
   };
 
   const handleOnChange = (
@@ -54,7 +77,7 @@ export default function ContactForm({ history, total }: Props) {
   };
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center animate-fade-right">
       <Card className="w-[50vw] bg-logo-blue border-0 text-sandy-brown shadow-2xl px-5 py-10 mb-20">
         <CardContent>
           <form onSubmit={(e) => handleFetchContact(e)}>
@@ -102,22 +125,13 @@ export default function ContactForm({ history, total }: Props) {
                 <Label htmlFor="message">
                   <p>Votre message</p>
                 </Label>
-
-                {total > 0 ? (
-                  <Textarea
-                    id="message"
-                    value={mail.message}
-                    onChange={(e) => handleOnChange(e)}
-                    className="w-full h-[30vh] !text-lg"
-                    required
-                  ></Textarea>
-                ) : (
-                  <Textarea
-                    id="message"
-                    className="w-full h-[30vh] !text-lg"
-                    required
-                  ></Textarea>
-                )}
+                <Textarea
+                  id="message"
+                  value={mail.message}
+                  onChange={(e) => handleOnChange(e)}
+                  className="w-full h-[30vh] !text-lg"
+                  required
+                ></Textarea>
               </div>
               <Button
                 className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-lg transition-all duration-300 ease-in-out w-fit rounded-xl px-3 py-1"
@@ -129,6 +143,7 @@ export default function ContactForm({ history, total }: Props) {
           </form>
         </CardContent>
       </Card>
+      <DialogConfirm isSent={isSent} setIsSent={setIsSent} />
     </div>
   );
 }

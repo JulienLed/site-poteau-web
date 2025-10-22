@@ -24,7 +24,6 @@ export async function POST(req: Request) {
       text: message, // plain text body
       html: message, // html body
     });
-    console.log("Mail envoyé : " + message);
     return NextResponse.json({ data: JSON.stringify(data) });
   } catch (error) {
     return NextResponse.json({ message: error });

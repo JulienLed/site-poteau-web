@@ -4,6 +4,7 @@ import Loading from "./loading";
 import { Montserrat, Roboto } from "next/font/google";
 import Footer from "@/src/component/footer/footer";
 import Header from "@/src/component/header/header";
+import Cookies from "@/src/component/cookies/cookies";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -39,6 +40,7 @@ export default function RootLayout({
           <Header />
           <div className="pt-30 pl-20 pr-15 md:px-50 flex-1 overflow-hidden selection:!text-logo-blue selection:bg-sandy-brown">
             {children}
+            <Cookies />
           </div>
           <Footer />
         </Suspense>

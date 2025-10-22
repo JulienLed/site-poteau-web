@@ -17,6 +17,7 @@ type Answer = {
   inputType?: string | null;
   unitPrice?: number | null;
   message?: number | null;
+  keyword?: string | null;
 };
 
 export default function TarifQCM() {
@@ -25,7 +26,7 @@ export default function TarifQCM() {
   const [num, setNum] = useState(0);
   const [checkList, setCheckList] = useState<number[]>([]);
   const [history, setHistory] = useState<
-    { question: string; answer: string; cost: number }[]
+    { question: string; keyword?: string; answer: string; cost: number }[]
   >([]);
 
   const [selected, setSelected] = useState<"hidden" | "visible">("hidden");
@@ -44,13 +45,29 @@ export default function TarifQCM() {
       id: 2,
       question: "Quel genre de site souhaitez-vous ?",
       answers: [
-        { text: "Un site simple (5 pages)", value: 900, next: 3 },
-        { text: "Un site simple avec plus de pages", value: 900, next: 7 },
-        { text: "Un site avec un espace client", value: 900, next: 5 },
+        {
+          text: "Un site simple (5 pages)",
+          value: 900,
+          next: 3,
+          keyword: "Site simple",
+        },
+        {
+          text: "Un site simple avec plus de pages",
+          value: 900,
+          next: 7,
+          keyword: "Site complexe",
+        },
+        {
+          text: "Un site avec un espace client",
+          value: 900,
+          next: 5,
+          keyword: "Espace client",
+        },
         {
           text: "Un site où je peux modifier moi-même le contenu",
           value: 900,
           next: 6,
+          keyword: "CMS",
         },
         { text: "Ma demande est plus complexe", next: 10 },
       ],
@@ -79,11 +96,13 @@ export default function TarifQCM() {
           text: "Un espace client basique, protégé par mot de passe",
           value: 150,
           next: 4,
+          keyword: "Espace client basique",
         },
         {
           text: "Un espace client complexe, avec authentification tierce (Google, Facebook...)",
           value: 300,
           next: 4,
+          keyword: "Espace client complexe",
         },
         { text: "Ma demande est plus complexe", next: 10 },
         { text: "Pour finir, ce n'est pas nécessaire", next: 4 },
@@ -97,11 +116,13 @@ export default function TarifQCM() {
           text: "Quelques images, actus, articles (CMS simple)",
           value: 200,
           next: 8,
+          keyword: "CMS simple",
         },
         {
           text: "Beaucoup de médias / collections (CMS complexe + base de données)",
           value: 350,
           next: 8,
+          keyword: "CMS complexe",
         },
         { text: "Ma demande est plus complexe", next: 10 },
         { text: "Pour finir, ce n'est pas nécessaire", value: 0, next: 8 },
@@ -115,6 +136,7 @@ export default function TarifQCM() {
           inputType: "pages",
           unitPrice: 60,
           next: 3,
+          keyword: "Pages supplémentaires",
         },
       ],
     },
@@ -128,6 +150,7 @@ export default function TarifQCM() {
           inputType: "check",
           value: 50,
           next: 9,
+          keyword: "Google Analytics",
         },
         {
           id: 2,
@@ -135,6 +158,7 @@ export default function TarifQCM() {
           inputType: "check",
           value: 50,
           next: 9,
+          keyword: "Google Maps",
         },
         {
           id: 3,
@@ -142,6 +166,7 @@ export default function TarifQCM() {
           inputType: "hours",
           unitPrice: 45,
           next: 9,
+          keyword: "Heures supplémentaires",
         },
         { text: "Non, ça ira comme ça", value: 0, next: 9 },
       ],
@@ -149,11 +174,13 @@ export default function TarifQCM() {
     {
       id: 9,
       question: "Souhaitez-vous un service de maintenance annuelle ?",
+      keyword: "maintenance",
       answers: [
         {
           text: "Oui (suivi, mises à jour, backups, corrections mineures)",
           value: 250,
           next: 0,
+          keyword: "Maintenance 1 an",
         },
         { text: "Non, ça ira comme ça", value: 0, next: 0 },
       ],
@@ -185,14 +212,25 @@ export default function TarifQCM() {
     );
   };
 
-  const pushHistory = (question: string, answer: string, cost: number = 0) => {
-    setHistory((prev) => [...prev, { question, answer, cost }]);
+  // now keyword instead of full question
+  const pushHistory = (
+    question: string,
+    keyword: string,
+    answer: string,
+    cost: number = 0
+  ) => {
+    setHistory((prev) => [...prev, { question, keyword, answer, cost }]);
   };
 
   const handleChoice = (answer: Answer) => {
     const currentQuestion = qcm.find((q) => q.id === nextQuestion) || qcm[0];
     const value = answer.value || 0;
-    pushHistory(currentQuestion.question || "", answer.text || "", value);
+    pushHistory(
+      currentQuestion.question || "",
+      answer.keyword || "",
+      answer.text || "",
+      value
+    );
     setTotal((prev) => prev + value);
     setNum(0);
     setNextQuestion(answer.next || 0);
@@ -205,7 +243,12 @@ export default function TarifQCM() {
       const label = `${value} ${
         answer.inputType === "pages" ? "pages" : "heures"
       }`;
-      pushHistory(currentQuestion.question || "", label, price);
+      pushHistory(
+        currentQuestion.question || "",
+        answer.keyword || "",
+        label,
+        price
+      );
     }
     setTotal((prev) => prev + price);
     setNextQuestion(answer.next || 0);
@@ -215,13 +258,22 @@ export default function TarifQCM() {
     const selected = answers.filter((a) => checkList.includes(a.id || -1));
     const sum = selected.reduce((acc, a) => acc + (a.value || 0), 0);
     const currentQuestion = qcm.find((q) => q.id === nextQuestion);
+
     if (currentQuestion) {
-      pushHistory(
-        currentQuestion.question || "",
-        selected.map((a) => a.text).join(", ") || "Aucun",
-        sum
-      );
+      const keywords =
+        selected
+          .map((a) => a.keyword)
+          .filter(Boolean)
+          .join(", ") || "";
+      const labels =
+        selected
+          .map((a) => a.text)
+          .filter(Boolean)
+          .join(", ") || "Aucun";
+
+      pushHistory(currentQuestion.question || "", keywords, labels, sum);
     }
+
     setTotal((prev) => prev + sum);
     setNextQuestion(9);
   };

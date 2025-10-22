@@ -13,7 +13,6 @@ export default function Contact() {
       <PageTitle title="Contact" />
       <section id="form" className="py-15"></section>
       <ContactForm history={history} total={total} />
-      <section id="contact-infos"></section>
     </div>
   );
 }

@@ -39,7 +39,7 @@ export default function Projets() {
   };
 
   return (
-    <div className="flex flex-col items-center gap-20">
+    <div className="flex flex-col items-center gap-20 animate-fade-right">
       {projets.map((projet, i) => (
         <div key={i}>
           <motion.div

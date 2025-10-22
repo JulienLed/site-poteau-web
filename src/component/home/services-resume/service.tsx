@@ -169,7 +169,7 @@ export default function ServiceResume() {
           </CarouselContent>
         </Carousel>
       </div>
-      <div className="flex justify-center gap-5">
+      <div className="flex justify-center gap-5 mb-5">
         <button
           className="bg-sandy-brown hover:!bg-copper hover:!scale-110 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-lg transition-all duration-300 ease-in-out rounded-xl p-1"
           onClick={() => api?.scrollNext()}

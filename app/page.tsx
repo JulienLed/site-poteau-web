@@ -40,7 +40,6 @@ export default function Home() {
       </section>
       <section id="services-resume"></section>
       <ServiceResume />
-      <section id="to-contact-and-tarifs"></section>
     </div>
   );
 }
