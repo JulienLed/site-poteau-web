@@ -13,20 +13,20 @@ export default function Legals() {
         <PageTitle title="Politique de confidentialité" />
       </div>
       <div className="py-15 animate-fade-right">
-        <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl px-8 py-12 mb-20 rounded-2xl">
+        <Card className="bg-logo-blue border-0 text-sandy-brown text-base shadow-2xl px-3 md:px-8 py-12 mb-20 rounded-2xl">
           <CardHeader>
             <CardTitle className="text-2xl">
               Politique de confidentialité du Poteau
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-6 leading-relaxed">
-            <p className="text-lg">
+            <p>
               {
                 " Je prends très au sérieux la protection de vos données personnelles. Cette politique explique clairement quelles informations je collecte et comment je les utilise."
               }
             </p>
 
-            <h2 className="font-semibold text-xl mt-4">
+            <h2 className="font-semibold mt-4">
               1. Données collectées via le formulaire de contact
             </h2>
             <p>

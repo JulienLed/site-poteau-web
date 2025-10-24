@@ -72,31 +72,62 @@ export default function Presentation() {
               </CardTitle>
             </CardHeader>
             <CardContent className="flex flex-col items-center text-lg md:text-xl p-5">
-              <div className="grid grid-cols-[20%_60%_20%] md:grid-cols-[10%_80%_10%] items-center">
-                <Image
-                  alt="souris image"
-                  src={souris}
-                  width={320}
-                  height={320}
-                  className="w-[15vw] md:w-[5vw] self-center md:self-start"
-                />
-                <p className="pb-5 md:pb-10 text-justify">
-                  {
-                    "Mes compétences professionnelles solides en tant qu'assistant social et développeur web me permettent d'avoir une approche à la fois humaine et technique dans la réalisation de votre projet."
-                  }
-                </p>
-                <p className="text-justify row-start-2 col-start-2">
-                  {
-                    " C'est cette approche qui me permet de concevoir et de maintenir des solutions numériques simples ou complexe, et fonctionnelles pour votre institution, votre association ou pour votre entreprise."
-                  }
-                </p>
-                <Image
-                  alt="lampe image"
-                  src={light}
-                  width={320}
-                  height={320}
-                  className="w-[15vw] md:w-[5vw] row-start-2 col-start-3 self-center md:self-start justify-self-center"
-                />
+              <div className="flex flex-col md:grid md:grid-cols-[10%_80%_10%] items-center">
+                {windowSize.width > 800 ? (
+                  <>
+                    <Image
+                      alt="souris image"
+                      src={souris}
+                      width={320}
+                      height={320}
+                      className="w-[15vw] md:w-[5vw] self-center md:self-start"
+                    />
+                    <p className="pb-5 md:pb-10 text-justify">
+                      {
+                        "Mes compétences professionnelles solides en tant qu'assistant social et développeur web me permettent d'avoir une approche à la fois humaine et technique dans la réalisation de votre projet."
+                      }
+                    </p>
+                    <p className="text-justify row-start-2 col-start-2">
+                      {
+                        " C'est cette approche qui me permet de concevoir et de maintenir des solutions numériques simples ou complexe, et fonctionnelles pour votre institution, votre association ou pour votre entreprise."
+                      }
+                    </p>
+                    <Image
+                      alt="lampe image"
+                      src={light}
+                      width={320}
+                      height={320}
+                      className="w-[15vw] md:w-[5vw] row-start-2 col-start-3 self-center md:self-start justify-self-center"
+                    />
+                  </>
+                ) : (
+                  <>
+                    <Image
+                      alt="souris image"
+                      src={souris}
+                      width={320}
+                      height={320}
+                      className="w-[15vw] md:w-[5vw] self-center md:self-start"
+                    />
+                    <p className="pb-5 md:pb-10 text-justify text-base">
+                      {
+                        "Mes compétences professionnelles solides en tant qu'assistant social et développeur web me permettent d'avoir une approche à la fois humaine et technique dans la réalisation de votre projet."
+                      }
+                    </p>
+                    <Image
+                      alt="lampe image"
+                      src={light}
+                      width={320}
+                      height={320}
+                      className="w-[15vw] md:w-[5vw] row-start-2 col-start-3 self-center md:self-start justify-self-center"
+                    />
+                    <p className="text-justify row-start-2 col-start-2 text-base">
+                      {
+                        " C'est cette approche qui me permet de concevoir et de maintenir des solutions numériques simples ou complexe, et fonctionnelles pour votre institution, votre association ou pour votre entreprise."
+                      }
+                    </p>
+                  </>
+                )}
               </div>
             </CardContent>
           </Card>
@@ -129,31 +160,63 @@ export default function Presentation() {
               </CardTitle>
             </CardHeader>
             <CardContent className="flex flex-col items-center text-lg md:text-xl p-5">
-              <div className="grid grid-cols-[20%_60%_20%] md:grid-cols-[10%_80%_10%] items-center">
-                <p className="col-start-2 pb-5 md:pb-10 text-justify">
-                  {
-                    "Je veille également à ce que chaque site soit optimisé pour les moteurs de recherche, afin que vos visiteurs puissent vous trouver facilement. Grâce à une structure claire, des temps de chargement rapides et des bonnes pratiques SEO, votre site gagne en visibilité tout en restant agréable à parcourir."
-                  }
-                </p>
-                <Image
-                  alt="roue crantée image"
-                  src={roue}
-                  width={320}
-                  height={320}
-                  className="w-[15w] md:w-[5vw] self-center md:self-start col-start-3 justify-self-center"
-                />
-                <Image
-                  alt="circuit image"
-                  src={circuit}
-                  width={320}
-                  height={320}
-                  className="w-[15vw] md:w-[5vw] row-start-2 col-start-1 self-center md:self-start"
-                />
-                <p className="pb-5 md:pb-10 row-start-2 col-start-2 text-justify">
-                  {
-                    "Avec la puissance de Next.js, React et JavaScript moderne, je développe des sites web performants, évolutifs et sur-mesure. Le tout est pensé pour être rapide, fiable et adaptable dans le temps, bien au-delà des limites d'un CMS classique comme WordPress."
-                  }
-                </p>
+              <div className="flex flex-col md:grid md:grid-cols-[10%_80%_10%] items-center">
+                {windowSize.width > 800 ? (
+                  <>
+                    <p className="col-start-2 pb-5 md:pb-10 text-justify">
+                      {
+                        "Je veille également à ce que chaque site soit optimisé pour les moteurs de recherche, afin que vos visiteurs puissent vous trouver facilement. Grâce à une structure claire, des temps de chargement rapides et des bonnes pratiques SEO, votre site gagne en visibilité tout en restant agréable à parcourir."
+                      }
+                    </p>
+                    <Image
+                      alt="roue crantée image"
+                      src={roue}
+                      width={320}
+                      height={320}
+                      className="w-[15vw] md:w-[5vw] self-center md:self-start col-start-3 justify-self-center"
+                    />
+                    <Image
+                      alt="circuit image"
+                      src={circuit}
+                      width={320}
+                      height={320}
+                      className="w-[15vw] md:w-[5vw] row-start-2 col-start-1 self-center md:self-start"
+                    />
+                    <p className="pb-5 md:pb-10 row-start-2 col-start-2 text-justify">
+                      {
+                        "Avec la puissance de Next.js, React et JavaScript moderne, je développe des sites web performants, évolutifs et sur-mesure. Le tout est pensé pour être rapide, fiable et adaptable dans le temps, bien au-delà des limites d'un CMS classique comme WordPress."
+                      }
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <Image
+                      alt="roue crantée image"
+                      src={roue}
+                      width={320}
+                      height={320}
+                      className="w-[15vw] md:w-[5vw] self-center md:self-start col-start-3 justify-self-center"
+                    />
+                    <p className="col-start-2 pb-5 md:pb-10 text-justify text-base">
+                      {
+                        "Je veille également à ce que chaque site soit optimisé pour les moteurs de recherche, afin que vos visiteurs puissent vous trouver facilement. Grâce à une structure claire, des temps de chargement rapides et des bonnes pratiques SEO, votre site gagne en visibilité tout en restant agréable à parcourir."
+                      }
+                    </p>
+
+                    <Image
+                      alt="circuit image"
+                      src={circuit}
+                      width={320}
+                      height={320}
+                      className="w-[15vw] md:w-[5vw] row-start-2 col-start-1 self-center md:self-start"
+                    />
+                    <p className="pb-5 md:pb-10 row-start-2 col-start-2 text-justify text-base">
+                      {
+                        "Avec la puissance de Next.js, React et JavaScript moderne, je développe des sites web performants, évolutifs et sur-mesure. Le tout est pensé pour être rapide, fiable et adaptable dans le temps, bien au-delà des limites d'un CMS classique comme WordPress."
+                      }
+                    </p>
+                  </>
+                )}
               </div>
             </CardContent>
           </Card>

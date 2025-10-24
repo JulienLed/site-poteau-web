@@ -36,17 +36,17 @@ export default function ServiceResume() {
       transition={{ duration: 0.6 }}
       className="flex flex-col w-full"
     >
-      <div className="flex justify-center">
+      <div className="flex flex-col items-center">
         <Carousel
           plugins={[Autoplay({ delay: 10000, stopOnMouseEnter: true })]}
           opts={{ loop: true }}
           setApi={setApi}
         >
-          <CarouselContent className="w-[50vw]">
+          <CarouselContent className="w-[80vw] md:w-[50vw] mx-auto">
             <CarouselItem>
-              <Card className="bg-logo-blue border-0 shadow-xl m-10 w-[90%] h-[87%]">
-                <CardContent className="flex flex-col items-center">
-                  <h3 className="text-2xl text-sandy-brown font-title font-bold py-5">
+              <Card className="bg-logo-blue border-0 w-full h-[500px] md:h-[600px]">
+                <CardContent className="flex flex-col items-center h-full justify-between">
+                  <h3 className="text-xl md:text-2xl text-center text-sandy-brown font-title font-bold py-5">
                     Design et Expérience Utilisateur
                   </h3>
                   <Image
@@ -54,35 +54,35 @@ export default function ServiceResume() {
                     alt="vitrine sur site web sur ordinateur"
                     width={688}
                     height={688}
-                    className="w-[15vw] rounded-xl animate-move"
+                    className="w-[50%] md:w-[40%] rounded-xl animate-move"
                   />
-                  <ul className="flex flex-col items-left list-disc text-sandy-brown gap-2 py-5">
+                  <ul className="flex flex-col items-left list-disc text-sandy-brown gap-2 p-5">
                     <li>
-                      <p className="text-sandy-brown text-lg">
+                      <p className="text-sandy-brown text-base md:text-lg">
                         Interfaces claires et ergonomiques
                       </p>
                     </li>
                     <li>
-                      <p className="text-sandy-brown text-lg">
+                      <p className="text-sandy-brown text-base md:text-lg">
                         Adapté pour mobile, tablette, ordinateur
                       </p>
                     </li>
                     <li>
-                      <p className="text-sandy-brown text-lg">
+                      <p className="text-sandy-brown text-base md:text-lg">
                         Navigation fluide pour tous les utilisateurs
                       </p>
                     </li>
                   </ul>
-                  <Button className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-lg transition-all duration-300 ease-in-out">
+                  <Button className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-base md:text-lg transition-all duration-300 ease-in-out">
                     <Link href={"/tarifs"}>En savoir plus</Link>
                   </Button>
                 </CardContent>
               </Card>
             </CarouselItem>
             <CarouselItem>
-              <Card className="bg-logo-blue border-0 shadow-xl m-10 w-[90%] h-[87%]">
-                <CardContent className="flex flex-col items-center">
-                  <h3 className="text-2xl text-sandy-brown py-5 font-title font-bold">
+              <Card className="bg-logo-blue border-0 w-full h-[500px] md:h-[600px]">
+                <CardContent className="flex flex-col items-center justify-between h-full">
+                  <h3 className="text-xl md:text-2xl text-center text-sandy-brown py-5 font-title font-bold">
                     Site Internet
                   </h3>
                   <Image
@@ -90,35 +90,35 @@ export default function ServiceResume() {
                     alt="vitrine sur site web sur ordinateur"
                     width={688}
                     height={688}
-                    className="w-[15vw] rounded-xl animate-move"
+                    className="w-[50%] md:w-[40%] rounded-xl animate-move"
                   />
-                  <ul className="flex flex-col items-left list-disc text-sandy-brown gap-2 py-5">
+                  <ul className="flex flex-col items-left list-disc text-sandy-brown gap-2 p-5">
                     <li>
-                      <p className="text-sandy-brown text-lg">
+                      <p className="text-sandy-brown text-base md:text-lg">
                         Votre site rapidement et facilement
                       </p>
                     </li>
                     <li>
-                      <p className="text-sandy-brown text-lg">
+                      <p className="text-sandy-brown text-base md:text-lg">
                         Optimisation des performances et SEO
                       </p>
                     </li>
                     <li>
-                      <p className="text-sandy-brown text-lg">
+                      <p className="text-sandy-brown text-base md:text-lg">
                         Maintenance et évolutivité
                       </p>
                     </li>
                   </ul>
-                  <Button className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-lg transition-all duration-300 ease-in-out">
+                  <Button className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-base md:text-lg transition-all duration-300 ease-in-out">
                     <Link href={"/tarifs"}>En savoir plus</Link>
                   </Button>
                 </CardContent>
               </Card>
             </CarouselItem>
             <CarouselItem>
-              <Card className="bg-logo-blue border-0 shadow-xl m-10 w-[90%] h-[87%]">
-                <CardContent className="flex flex-col items-center">
-                  <h3 className="text-2xl text-sandy-brown py-5 font-title font-bold">
+              <Card className="bg-logo-blue border-0 w-full h-[500px] md:h-[600px]">
+                <CardContent className="flex flex-col items-center justify-between h-full">
+                  <h3 className="text-xl md:text-2xl text-center text-sandy-brown py-5 font-title font-bold">
                     Conseil & Support
                   </h3>
                   <Image
@@ -126,26 +126,26 @@ export default function ServiceResume() {
                     alt="vitrine sur site web sur ordinateur"
                     width={688}
                     height={688}
-                    className="w-[15vw] rounded-xl animate-move"
+                    className="w-[50%] md:w-[40%] rounded-xl animate-move"
                   />
-                  <ul className="flex flex-col items-left list-disc text-sandy-brown gap-2 py-5">
+                  <ul className="flex flex-col items-left list-disc text-sandy-brown gap-2 p-5">
                     <li>
-                      <p className="text-sandy-brown text-lg">
+                      <p className="text-sandy-brown text-base md:text-lg">
                         Stratégie numérique pour associations / entreprises
                       </p>
                     </li>
                     <li>
-                      <p className="text-sandy-brown text-lg">
+                      <p className="text-sandy-brown text-base md:text-lg">
                         Solutions adaptées à vos besoins et budget
                       </p>
                     </li>
                     <li>
-                      <p className="text-sandy-brown text-lg">
+                      <p className="text-sandy-brown text-base md:text-lg">
                         Accompagnement technique et formation
                       </p>
                     </li>
                   </ul>
-                  <Button className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-lg transition-all duration-300 ease-in-out">
+                  <Button className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-base md:text-lg transition-all duration-300 ease-in-out">
                     <Link href={"/tarifs"}>En savoir plus</Link>
                   </Button>
                 </CardContent>
@@ -153,20 +153,20 @@ export default function ServiceResume() {
             </CarouselItem>
           </CarouselContent>
         </Carousel>
-      </div>
-      <div className="flex justify-center gap-5 mb-5">
-        <button
-          className="bg-sandy-brown hover:!bg-copper hover:!scale-110 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-lg transition-all duration-300 ease-in-out rounded-xl p-1"
-          onClick={() => api?.scrollNext()}
-        >
-          <GrFormPreviousLink size={35} />
-        </button>
-        <button
-          className="bg-sandy-brown hover:!bg-copper hover:!scale-110 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-lg transition-all duration-300 ease-in-out rounded-xl p-1"
-          onClick={() => api?.scrollPrev()}
-        >
-          <GrFormNextLink size={35} />
-        </button>
+        <div className="flex justify-center gap-5 my-5">
+          <button
+            className="bg-sandy-brown hover:!bg-copper hover:!scale-110 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-lg transition-all duration-300 ease-in-out rounded-xl p-1"
+            onClick={() => api?.scrollNext()}
+          >
+            <GrFormPreviousLink size={35} />
+          </button>
+          <button
+            className="bg-sandy-brown hover:!bg-copper hover:!scale-110 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-lg transition-all duration-300 ease-in-out rounded-xl p-1"
+            onClick={() => api?.scrollPrev()}
+          >
+            <GrFormNextLink size={35} />
+          </button>
+        </div>
       </div>
     </motion.div>
   );

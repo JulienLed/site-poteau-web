@@ -23,7 +23,7 @@ export default function Home() {
           opacity: [0, 1],
         }}
         transition={{ duration: 5, delay: 3 }}
-        className="flex justify-center items-center h-[10vw] md:h-[30vw] "
+        className="flex justify-center items-center h-[10vw] mt-15 md:h-[30vw] "
       >
         <FaAnglesDown
           size={40}

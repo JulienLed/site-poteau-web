@@ -59,9 +59,9 @@ export default function AnimHeroDesktop() {
             className="w-[15vw] rounded-full shadow-2xl"
           />
           <p className="border-l-2 border-sandy-brown md:text-xs lg:text-lg text-left lg:text-justify pl-1 md:pl-5 m-2 md:m-5">
-            Julien, Developpeur Web. <br /> Avec Le Poteau du Web, je vous
-            propose de réaliser votre site web de façon professionnelle et en
-            toute sérénité.
+            <strong>Julien, Developpeur Web.</strong> <br /> Avec Le Poteau du
+            Web, je vous propose de réaliser votre site web de façon
+            professionnelle et en toute sérénité.
           </p>
         </div>
       </motion.div>

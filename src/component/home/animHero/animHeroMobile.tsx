@@ -33,7 +33,7 @@ export default function AnimHeroMobile() {
           width={400}
           className="w-[70vw]"
         />
-        <p className="text-center text-xs mt-2">
+        <p className="text-center text-base mt-2">
           <span className="mask-text">
             Un pilier solide pour bâtir votre site web
           </span>
@@ -58,7 +58,7 @@ export default function AnimHeroMobile() {
           className="w-[40vw] max-w-[150px] rounded-full shadow-2xl mb-4"
         />
         <p className="text-center text-sm">
-          Julien, Développeur Web. <br />
+          <strong>Julien, Developpeur Web.</strong> <br />
           Avec Le Poteau du Web, je vous propose de réaliser votre site web
           professionnellement et en toute sérénité.
         </p>
