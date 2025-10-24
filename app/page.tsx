@@ -14,7 +14,7 @@ export default function Home() {
   };
   return (
     <div className="w-full">
-      <section id="hero" className="w-full h-[20vw] py-15">
+      <section id="hero" className="w-full h-[75vh] md:h-[40vh] md:py-15">
         <AnimHero />
       </section>
       <motion.div
@@ -23,7 +23,7 @@ export default function Home() {
           opacity: [0, 1],
         }}
         transition={{ duration: 5, delay: 3 }}
-        className="flex justify-center items-center h-[30vw] "
+        className="flex justify-center items-center h-[10vw] md:h-[30vw] "
       >
         <FaAnglesDown
           size={40}
@@ -34,7 +34,7 @@ export default function Home() {
       <section
         ref={refDown}
         id="presentation"
-        className="grid grid-cols-3 scroll-mt-20"
+        className="flex flex-col items-center md:grid md:grid-cols-3 scroll-mt-10 md:scroll-mt-20"
       >
         <Presentation />
       </section>
