@@ -350,7 +350,7 @@ export default function TarifQCM() {
 
     if (question.id === 0)
       return (
-        <Card className="flex flex-col items-center bg-logo-blue border-0 text-sandy-brown shadow-2xl px-6 py-10 text-center">
+        <Card className="flex flex-col items-center bg-logo-blue border-0 text-sandy-brown shadow-2xl md:px-6 py-10 text-center">
           <h3 className="text-lg md:text-2xl mb-6 font-bold">
             💰 Estimation de votre projet
           </h3>
@@ -359,13 +359,13 @@ export default function TarifQCM() {
             <table className="border border-sandy-brown/50 text-left">
               <thead className="bg-lapis-lazuli text-sandy-brown">
                 <tr>
-                  <th className="px-4 py-2 border-b border-sandy-brown/50">
+                  <th className="md:px-4 py-2 border-b border-sandy-brown/50">
                     Service
                   </th>
-                  <th className="px-4 py-2 border-b border-sandy-brown/50">
+                  <th className="md:px-4 py-2 border-b border-sandy-brown/50">
                     Choix / Détail
                   </th>
-                  <th className="px-4 py-2 border-b border-sandy-brown/50 text-right">
+                  <th className="md:px-4 py-2 border-b border-sandy-brown/50 text-right">
                     Prix (€)
                   </th>
                 </tr>
@@ -376,13 +376,13 @@ export default function TarifQCM() {
                     key={i}
                     className="hover:bg-lapis-lazuli/40 transition-colors"
                   >
-                    <td className="px-4 py-2 border-b border-sandy-brown/30 text-left">
+                    <td className="md:px-4 py-2 border-b border-sandy-brown/30 text-left">
                       {h.question}
                     </td>
-                    <td className="px-4 py-2 border-b border-sandy-brown/30 text-left">
+                    <td className="md:px-4 py-2 border-b border-sandy-brown/30 text-left">
                       {h.answer}
                     </td>
-                    <td className="px-4 py-2 border-b border-sandy-brown/30 text-right">
+                    <td className="md:px-4 py-2 border-b border-sandy-brown/30 text-right">
                       {h.cost > 0 ? `${h.cost.toFixed(2)}€` : "-"}
                     </td>
                   </tr>
