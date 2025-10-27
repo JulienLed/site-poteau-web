@@ -14,6 +14,7 @@ export async function POST(req: Request) {
       to: "contact@lepoteauduweb.be",
       subject: `Demande de contact reçue de ${name} - mail:${email} - tel:${phone} `,
       html: message,
+      replyTo: email,
     });
     return NextResponse.json({ success: true });
   } catch (error) {
