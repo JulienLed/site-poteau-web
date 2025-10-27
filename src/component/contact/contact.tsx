@@ -65,7 +65,6 @@ export default function ContactForm({ history, total }: Props) {
     const data = await response.json();
     if (data) {
       setIsSent(true);
-      console.log("Mail envoyé, Dialog devrait s'ouvrir");
     }
   };
 

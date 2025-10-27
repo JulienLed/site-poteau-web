@@ -9,11 +9,11 @@ export async function POST(req: Request) {
   try {
     const { name, email, phone, message } = await req.json();
 
-    resend.emails.send({
+    await resend.emails.send({
       from: "contact@lepoteauduweb.be",
       to: "contact@lepoteauduweb.be",
       subject: `Demande de contact reçue de ${name} - mail:${email} - tel:${phone} `,
-      html: message,
+      html: `<p>Nom: ${name}</p><p>Email: ${email}</p><p>Message: ${message}</p>`,
       replyTo: email,
     });
     return NextResponse.json({ success: true });
