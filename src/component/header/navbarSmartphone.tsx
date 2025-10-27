@@ -72,7 +72,7 @@ export default function NavbarSmartphone() {
         <motion.div
           className="fixed top-[35px]
                      w-[198px] flex flex-col gap-3 uppercase items-center 
-                     justify-center py-4 bg-lapis-lazuli/80 text-sandy-brown 
+                     justify-center py-4 bg-lapis-lazuli/90 text-sandy-brown 
                      text-center rounded-xl z-1"
           style={{
             left: screenDim.width / 2 - 118,

@@ -281,7 +281,7 @@ export default function TarifQCM() {
       return (
         <div className="flex">
           <p
-            className="cursor-pointer text-lg text-sandy-brown w-fit px-3 py-1 hover:bg-lapis-lazuli active:translate-0.5 rounded-md animate-pulse hover:animate-pause transition-all duration-300 ease-in-out"
+            className="cursor-pointer text-base md:text-lg text-sandy-brown w-fit px-3 py-1 hover:bg-lapis-lazuli active:translate-0.5 rounded-md animate-pulse hover:animate-pause transition-all duration-300 ease-in-out"
             onClick={handleDownload}
           >
             {answer.text}
@@ -302,7 +302,7 @@ export default function TarifQCM() {
           />
           <Label
             htmlFor={`check-${answer.id}`}
-            className="cursor-pointer text-lg text-sandy-brown w-fit px-3 py-1 hover:bg-lapis-lazuli rounded-md animate-pulse transition-all duration-300 ease-in-out"
+            className="cursor-pointer text-base md:text-lg text-sandy-brown w-fit px-3 py-1 hover:bg-lapis-lazuli rounded-md animate-pulse transition-all duration-300 ease-in-out"
           >
             {answer.text}
           </Label>
@@ -311,9 +311,9 @@ export default function TarifQCM() {
 
     if (answer.inputType === "hours" || answer.inputType === "pages")
       return (
-        <div className="flex justify-evenly w-fit">
+        <div className="flex justify-center w-fit gap-5">
           <Label htmlFor="input">
-            <p className="cursor-pointer text-lg text-sandy-brown w-fit px-3 py-1 hover:bg-lapis-lazuli active:translate-0.5 rounded-md animate-pulse hover:animate-pause transition-all duration-300 ease-in-out">
+            <p className="cursor-pointer text-base md:text-lg text-sandy-brown w-fit px-3 py-1 hover:bg-lapis-lazuli active:translate-0.5 rounded-md animate-pulse hover:animate-pause transition-all duration-300 ease-in-out">
               {answer.text}
             </p>
             <Input
@@ -321,12 +321,12 @@ export default function TarifQCM() {
               type="number"
               value={num}
               onChange={(e) => setNum(Number(e.target.value))}
-              className="w-fit"
+              className="w-[15vw] md:w-fit"
             />
           </Label>
           {answer.inputType === "pages" && (
             <Button
-              className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-lg transition-all duration-300 ease-in-out w-fit rounded-xl px-3 py-1"
+              className="bg-sandy-brown hover:!bg-sandy-brown/90 hover:cursor-pointer active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-base md:text-lg transition-all duration-300 ease-in-out w-fit rounded-xl px-3 py-1"
               onClick={() => handleInput(answer, num)}
             >
               Suivant
@@ -337,7 +337,7 @@ export default function TarifQCM() {
 
     return (
       <p
-        className="cursor-pointer text-lg text-sandy-brown w-fit px-3 py-1 hover:bg-lapis-lazuli active:translate-0.5 rounded-md animate-pulse hover:animate-pause transition-all duration-300 ease-in-out"
+        className="cursor-pointer text-base md:text-lg text-sandy-brown w-fit px-3 py-1 hover:bg-lapis-lazuli active:translate-0.5 rounded-md animate-pulse hover:animate-pause transition-all duration-300 ease-in-out"
         onClick={() => handleChoice(answer)}
       >
         {answer.text}
@@ -351,12 +351,12 @@ export default function TarifQCM() {
     if (question.id === 0)
       return (
         <Card className="flex flex-col items-center bg-logo-blue border-0 text-sandy-brown shadow-2xl px-6 py-10 text-center">
-          <h3 className="text-2xl mb-6 font-bold">
+          <h3 className="text-lg md:text-2xl mb-6 font-bold">
             💰 Estimation de votre projet
           </h3>
 
-          <div className="overflow-x-auto mb-6">
-            <table className="min-w-full border border-sandy-brown/50 text-left">
+          <div className="mb-3 md:mb-6">
+            <table className="border border-sandy-brown/50 text-left">
               <thead className="bg-lapis-lazuli text-sandy-brown">
                 <tr>
                   <th className="px-4 py-2 border-b border-sandy-brown/50">
@@ -396,7 +396,7 @@ export default function TarifQCM() {
             <span className="text-2xl">{total.toFixed(2)} €</span>
           </p>
           <Link
-            className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue font-semibold text-lg transition-all duration-300 ease-in-out w-fit rounded-xl px-3 py-1"
+            className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue font-semibold text-base md:text-lg transition-all duration-300 ease-in-out w-fit rounded-xl px-3 py-1"
             href={{
               pathname: "/contact",
               query: {
@@ -412,7 +412,7 @@ export default function TarifQCM() {
 
     return (
       <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl px-5 py-10 mb-10">
-        <h3 className="text-xl mb-4">{question.question}</h3>
+        <h3 className="text-lg md:text-xl mb-4">{question.question}</h3>
         <ul className="flex flex-col gap-2">
           {question.answers?.map((answer) => (
             <li key={Math.random()}>{renderAnswer(answer)}</li>
@@ -421,7 +421,7 @@ export default function TarifQCM() {
 
         {question.id === 8 && (
           <Button
-            className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-lg transition-all duration-300 ease-in-out w-fit rounded-xl px-3 py-1"
+            className="bg-sandy-brown hover:!bg-sandy-brown/90 hover:cursor-pointer active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-base md:text-lg transition-all duration-300 ease-in-out w-fit rounded-xl px-3 py-1"
             onClick={() => handleValidateChecks(question.answers!)}
           >
             Suivant

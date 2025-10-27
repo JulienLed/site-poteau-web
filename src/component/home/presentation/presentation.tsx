@@ -44,7 +44,7 @@ export default function Presentation() {
     initialInView: true,
   });
   return (
-    <div className="flex flex-col items-center w-[90vw] md:w-[50vw] pt-10 md:pt-0">
+    <div className="flex flex-col items-center w-[85vw] md:w-[50vw] pt-10 md:pt-0">
       <div ref={ref1}>
         {/* Carte Le Poteau */}
         <motion.div

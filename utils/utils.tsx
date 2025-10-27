@@ -20,7 +20,7 @@ export function PageTitle({ title }: { title: string }) {
   return (
     <div ref={ref} className="flex justify-center">
       <motion.div
-        className="bg-logo-blue h-fit shadow-lg rounded-3xl sm:w-[40vw] md:w-[60vw] text-sandy-brown p-10 m-5 grid grid-cols-3"
+        className="bg-logo-blue h-fit shadow-lg rounded-3xl w-[80vw] md:w-[60vw] text-sandy-brown px-2 py-1 md:p-10 mt-5 md:m-5 grid grid-cols-3"
         initial={{ x: "-100vw" }}
         animate={inView ? { x: ["-100vw", "-40vw"] } : { x: "-100vw" }}
         transition={{

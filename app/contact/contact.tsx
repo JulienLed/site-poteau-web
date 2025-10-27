@@ -11,8 +11,9 @@ export default function Contact() {
   return (
     <div className="py-15">
       <PageTitle title="Contact" />
-      <section id="form" className="py-15"></section>
-      <ContactForm history={history} total={total} />
+      <section id="form" className="py-15">
+        <ContactForm history={history} total={total} />
+      </section>
     </div>
   );
 }

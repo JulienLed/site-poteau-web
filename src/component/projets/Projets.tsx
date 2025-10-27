@@ -48,12 +48,12 @@ export default function Projets() {
               duration: 0.8,
               ease: "easeInOut",
             }}
-            className="relative w-[40vw] h-[60vh] transform-3d"
+            className="relative w-[85vw] md:w-[40vw] h-[70vh] md:h-[60vh] transform-3d"
           >
             {/* Face avant */}
-            <Card className="absolute w-full h-full flex justify-center items-center border-0 backface-hidden bg-logo-blue/50 text-sandy-brown shadow-2xl px-5 py-10 mb-20">
+            <Card className="absolute w-full h-full flex justify-center items-center border-0 backface-hidden bg-logo-blue/50 text-sandy-brown shadow-2xl px-2 md:px-5 py-1 md:py-10 md:mb-20">
               <CardHeader className="w-full">
-                <CardTitle className="text-xl text-sandy-brown py-5 font-title font-bold">
+                <CardTitle className="text-center md:text-left text-lg md:text-xl text-sandy-brown md:py-5 font-title font-bold">
                   {projet.title}
                 </CardTitle>
               </CardHeader>
@@ -67,7 +67,7 @@ export default function Projets() {
                 />
                 <Button
                   onClick={() => handleClick(i)}
-                  className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-lg transition-all duration-200 ease-in-out w-fit self-end animate-vibrate"
+                  className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-base md:text-lg transition-all duration-200 ease-in-out w-fit self-end animate-vibrate"
                 >
                   En savoir plus
                 </Button>

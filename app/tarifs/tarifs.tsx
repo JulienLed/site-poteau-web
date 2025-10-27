@@ -5,7 +5,7 @@ export default function Tarifs() {
   return (
     <div className="py-15">
       <PageTitle title="Tarifs" />
-      <section id="tarifs" className="py-15">
+      <section id="tarifs" className="py-15 w-[85vw] mx-auto md:w-auto">
         <TarifQCM />
       </section>
     </div>

@@ -38,11 +38,13 @@ export default function RootLayout({
       >
         <Suspense fallback={<Loading />}>
           <Header />
-          <div className="md:pt-30 px-15 sm:px-50 flex-1 overflow-hidden selection:!text-logo-blue selection:bg-sandy-brown">
+          <div className="md:pt-30 px-5 sm:px-50 flex-1 overflow-hidden selection:!text-logo-blue selection:bg-sandy-brown">
             {children}
             <Cookies />
           </div>
-          <Footer />
+          <div className="selection:!bg-logo-blue selection:text-sandy-brown">
+            <Footer />
+          </div>
         </Suspense>
       </body>
     </html>

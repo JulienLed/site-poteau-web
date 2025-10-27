@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 import { useInView } from "react-intersection-observer";
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 
 const services = [
@@ -71,6 +72,28 @@ function ServiceItem({
     triggerOnce: true,
   });
 
+  //window size
+  const [windowSize, setWindowSize] = useState({
+    width: 0,
+    height: 0,
+  });
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const handleResize = () => {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      };
+      handleResize();
+
+      window.addEventListener("resize", handleResize);
+
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
+
   return (
     <div className="flex flex-col gap-[10vh]" ref={ref}>
       <div
@@ -86,9 +109,9 @@ function ServiceItem({
         initial={{ x: reverse ? "100vw" : "-100vw", opacity: 0 }}
         animate={inView ? { x: "0vw", opacity: 1 } : {}}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="flex items-center justify-evenly"
+        className="flex flex-col gap-5 md:flex-row items-center justify-evenly"
       >
-        {reverse ? (
+        {reverse && windowSize.width > 800 ? (
           <>
             <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl p-10 w-[45vw]">
               <CardContent>
@@ -117,17 +140,19 @@ function ServiceItem({
               src={service.img.src}
               width={service.img.width}
               height={service.img.height}
-              className="w-[15vw] max-w-full"
+              className="w-[40vw] md:w-[15vw] max-w-full"
             />
-            <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl p-10 w-[45vw]">
+            <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl p-5 md:p-10 w-[85vw] md:w-[45vw]">
               <CardContent>
                 <div className="flex flex-col gap-4">
-                  <div className="flex items-center gap-2 text-xl">
-                    <RiDoubleQuotesL className="text-2xl" />
-                    <span>{service.quote}</span>
-                    <RiDoubleQuotesR className="text-2xl" />
+                  <div className="flex text-center md:text-left items-center md:gap-2 text-base md:text-xl">
+                    <RiDoubleQuotesL className="text-xl md:text-2xl" />
+                    <span className="text-lg md:text-xl">{service.quote}</span>
+                    <RiDoubleQuotesR className="text-xl md:text-2xl" />
                   </div>
-                  <p>{service.description}</p>
+                  <p className="text-justify md:text-left">
+                    {service.description}
+                  </p>
                 </div>
               </CardContent>
             </Card>

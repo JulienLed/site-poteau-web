@@ -52,17 +52,19 @@ const services = [
 
 export default function ServicesMenu({ scrollToService }: ServicesMenuProps) {
   return (
-    <div className="flex justify-center items-center w-fit mx-auto mb-50 mt-5 gap-5">
+    <div className="grid grid-cols-2 gap-2 md:flex md:justify-center md:items-center w-fit mx-auto md:mb-50 md:mt-5 md:gap-5">
       {services.map(({ name, key, img, delay }) => {
         return (
           <Card
             key={key}
             onClick={() => scrollToService(key)}
-            className="bg-logo-blue/70 hover:bg-logo-blue hover:scale-110 transition-all duration-300 ease-in-out border-0 text-sandy-brown px-5 py-5 w-[15vw] h-[30vh] cursor-pointer animate-jump-in"
+            className="bg-logo-blue/70 hover:bg-logo-blue hover:scale-110 transition-all duration-300 ease-in-out border-0 text-sandy-brown px-0 md:px-5 py-5 w-[35vw] md:w-[15vw] h-[33vh] md:h-[30vh] cursor-pointer animate-jump-in"
             style={{ animationDelay: delay }}
           >
             <CardContent>
-              <h2 className="text-xl font-title text-center pb-2">{name}</h2>
+              <h2 className="text-base md:text-xl font-title text-center pb-2">
+                {name}
+              </h2>
               <Image
                 alt={name}
                 src={img.src}

@@ -36,15 +36,15 @@ export default function ServiceResume() {
       transition={{ duration: 0.6 }}
       className="flex flex-col w-full"
     >
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center w-full">
         <Carousel
           plugins={[Autoplay({ delay: 10000, stopOnMouseEnter: true })]}
           opts={{ loop: true }}
           setApi={setApi}
         >
-          <CarouselContent className="w-[80vw] md:w-[50vw] mx-auto">
-            <CarouselItem>
-              <Card className="bg-logo-blue border-0 w-full h-[500px] md:h-[600px]">
+          <CarouselContent className="w-[85vw] md:w-[50vw] mx-auto">
+            <CarouselItem className="px-1">
+              <Card className="bg-logo-blue border-0 w-full h-[520px] md:h-[600px]">
                 <CardContent className="flex flex-col items-center h-full justify-between">
                   <h3 className="text-xl md:text-2xl text-center text-sandy-brown font-title font-bold py-5">
                     Design et Expérience Utilisateur
@@ -79,8 +79,8 @@ export default function ServiceResume() {
                 </CardContent>
               </Card>
             </CarouselItem>
-            <CarouselItem>
-              <Card className="bg-logo-blue border-0 w-full h-[500px] md:h-[600px]">
+            <CarouselItem className="px-1">
+              <Card className="bg-logo-blue border-0 w-full h-[520px] md:h-[600px]">
                 <CardContent className="flex flex-col items-center justify-between h-full">
                   <h3 className="text-xl md:text-2xl text-center text-sandy-brown py-5 font-title font-bold">
                     Site Internet
@@ -115,8 +115,8 @@ export default function ServiceResume() {
                 </CardContent>
               </Card>
             </CarouselItem>
-            <CarouselItem>
-              <Card className="bg-logo-blue border-0 w-full h-[500px] md:h-[600px]">
+            <CarouselItem className="px-1">
+              <Card className="bg-logo-blue border-0 w-full h-[520px] md:h-[600px]">
                 <CardContent className="flex flex-col items-center justify-between h-full">
                   <h3 className="text-xl md:text-2xl text-center text-sandy-brown py-5 font-title font-bold">
                     Conseil & Support

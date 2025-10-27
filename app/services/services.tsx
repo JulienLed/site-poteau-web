@@ -17,10 +17,10 @@ export default function Services() {
 
   return (
     <div className="py-15">
-      <div className="min-h-[25vh]">
+      <div className="min-h-[20vh] md:min-h-[25vh]">
         <PageTitle title="Services"></PageTitle>
       </div>
-      <section id="services-menu" className="py-15">
+      <section id="services-menu" className="py-0 md:py-15">
         <ServicesMenu
           scrollToService={(service: string) => {
             switch (service) {
