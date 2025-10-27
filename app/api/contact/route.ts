@@ -14,18 +14,20 @@ export async function POST(req: Request) {
         pass: process.env.SMTP_PASS,
       },
     });
-    const data = await req.json();
-    const { name, email, phone, message } = data;
+
+    const { name, email, phone, message } = await req.json();
 
     await transporter.sendMail({
-      from: `${name} <${email}>`, // sender address
-      to: process.env.SMTP_USER, // list of receivers
-      subject: `Nouveau message de ${name} - ${phone}`, // Subject line
-      text: message, // plain text body
-      html: message, // html body
+      from: process.env.SMTP_USER, // toujours ton compte OVH
+      replyTo: `${name} <${email}>`, // le client peut répondre
+      to: process.env.SMTP_USER,
+      subject: `Nouveau message de ${name} - ${phone}`,
+      text: message,
+      html: `<p>${message}</p>`,
     });
-    return NextResponse.json({ data: JSON.stringify(data) });
+
+    return NextResponse.json({ success: true });
   } catch (error) {
-    return NextResponse.json({ message: error });
+    return NextResponse.json({ success: false, error: String(error) });
   }
 }
