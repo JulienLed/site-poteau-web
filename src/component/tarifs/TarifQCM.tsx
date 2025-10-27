@@ -355,7 +355,7 @@ export default function TarifQCM() {
             💰 Estimation de votre projet
           </h3>
 
-          <div className="w-[90vw] mb-3 md:mb-6">
+          <div className="max-w-[90%] mx-auto mb-3 md:mb-6">
             <table className="border border-sandy-brown/50 text-left">
               <thead className="bg-lapis-lazuli text-sandy-brown">
                 <tr>
