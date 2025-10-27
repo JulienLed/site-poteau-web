@@ -146,9 +146,11 @@ function ServiceItem({
               <CardContent>
                 <div className="flex flex-col gap-4">
                   <div className="flex text-center md:text-left items-center md:gap-2 text-base md:text-xl">
-                    <RiDoubleQuotesL className="text-xl md:text-2xl" />
-                    <span className="text-lg md:text-xl">{service.quote}</span>
-                    <RiDoubleQuotesR className="text-xl md:text-2xl" />
+                    <RiDoubleQuotesL className="text-2xl" />
+                    <span className="italic text-lg md:text-xl">
+                      {service.quote}
+                    </span>
+                    <RiDoubleQuotesR className="text-2xl" />
                   </div>
                   <p className="text-justify md:text-left">
                     {service.description}

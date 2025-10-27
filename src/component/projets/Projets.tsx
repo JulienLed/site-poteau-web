@@ -48,16 +48,16 @@ export default function Projets() {
               duration: 0.8,
               ease: "easeInOut",
             }}
-            className="relative w-[85vw] md:w-[40vw] h-[70vh] md:h-[60vh] transform-3d"
+            className="relative w-[85vw] md:w-[40vw] h-[50vh] md:h-[60vh] transform-3d"
           >
             {/* Face avant */}
-            <Card className="absolute w-full h-full flex justify-center items-center border-0 backface-hidden bg-logo-blue/50 text-sandy-brown shadow-2xl px-2 md:px-5 py-1 md:py-10 md:mb-20">
+            <Card className="absolute w-full h-full flex flex-col justify-between border-0 backface-hidden bg-logo-blue/50 text-sandy-brown shadow-2xl px-2 md:px-5 py-1 md:py-10 md:mb-20">
               <CardHeader className="w-full">
-                <CardTitle className="text-center md:text-left text-lg md:text-xl text-sandy-brown md:py-5 font-title font-bold">
+                <CardTitle className="text-center md:text-left text-lg md:text-xl text-sandy-brown pt-2 md:py-5 font-title font-bold">
                   {projet.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="flex flex-col gap-5">
+              <CardContent className="flex flex-col justify-evenly gap-5 h-full">
                 <Image
                   alt={projet.title}
                   src={projet.img.src}

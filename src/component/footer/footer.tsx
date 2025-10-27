@@ -58,7 +58,7 @@ export default function Footer() {
         id="copyright"
         className="row-start-2 col-span-2 mx-auto flex gap-5"
       >
-        <div className="flex justify-center gap-5">
+        <div className="flex justify-center gap-1 md:gap-5">
           <p className="font-text text-sm sm:text-base">
             © 2025 Le Poteau du Web
           </p>
