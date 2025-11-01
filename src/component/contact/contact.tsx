@@ -144,10 +144,12 @@ export default function ContactForm({ history, total }: Props) {
                     required
                   ></Textarea>
                 </div>
-                <ReCAPTCHA
-                  sitekey={process.env.NEXT_PUBLIC_SITE_KEY || ""}
-                  ref={captchaRef}
-                />
+                <div className="!scale-60 sm:!scale-70 md:!scale-100 origin-left">
+                  <ReCAPTCHA
+                    sitekey={process.env.NEXT_PUBLIC_SITE_KEY || ""}
+                    ref={captchaRef}
+                  />
+                </div>
                 <Button
                   className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-base md:text-lg transition-all duration-300 ease-in-out w-fit rounded-xl px-3 py-1"
                   type="submit"
