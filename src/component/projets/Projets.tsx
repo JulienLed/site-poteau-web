@@ -75,7 +75,7 @@ export default function Projets() {
             </Card>
 
             {/* Face arrière */}
-            <Card className="absolute w-full h-full flex items-center justify-center border-0 backface-hidden rotate-y-180 bg-logo-blue/50 text-sandy-brown shadow-2xl px-5 py-10 mb-20">
+            <Card className="absolute w-full h-full flex items-center justify-center border-0 backface-hidden rotate-y-180 bg-logo-blue/50 text-sandy-brown shadow-2xl px-1  mdr:px-5 py-10 mb-20">
               <CardContent className="relative flex flex-col items-center gap-5">
                 <p className="text-justify w-[70%]">{projet.description}</p>
                 <div className="flex gap-5">
