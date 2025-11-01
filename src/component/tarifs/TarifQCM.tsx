@@ -196,7 +196,7 @@ export default function TarifQCM() {
   //Download du tarif
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/tarif.pdf";
+    link.href = "/Tarif du Poteau.pdf";
     link.download = "";
     link.target = "_blank";
     document.body.appendChild(link);
