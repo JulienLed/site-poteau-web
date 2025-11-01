@@ -7,8 +7,31 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
-    const { name, email, phone, message } = await req.json();
+    const body = await req.json();
+    const { name, email, phone, message } = body.mail;
+    const token = body.token;
 
+    //reCAPTCHA
+    const secret = process.env.SECRET_CAPTCHA_KEY;
+    const recaptchaRes = await fetch(
+      `https://www.google.com/recaptcha/api/siteverify`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `secret=${secret}&response=${token}`,
+      }
+    );
+
+    const recaptchaData = await recaptchaRes.json();
+
+    if (!recaptchaData.success) {
+      console.log(recaptchaData.sucess);
+      return NextResponse.json({
+        success: false,
+      });
+    }
+
+    //resend
     await resend.emails.send({
       from: "contact@lepoteauduweb.be",
       to: "contact@lepoteauduweb.be",

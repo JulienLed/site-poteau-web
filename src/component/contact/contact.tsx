@@ -3,10 +3,11 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@radix-ui/react-label";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import DialogConfirm from "./dialog";
+import ReCAPTCHA from "react-google-recaptcha";
 
 type History = {
   question: string;
@@ -28,6 +29,8 @@ type Mail = {
 };
 
 export default function ContactForm({ history, total }: Props) {
+  const captchaRef = useRef<ReCAPTCHA | null>(null);
+
   const [mail, setMail] = useState<Mail>({
     name: "",
     email: "",
@@ -55,16 +58,24 @@ export default function ContactForm({ history, total }: Props) {
 
   const handleFetchContact = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(mail),
-    });
-    const data = await response.json();
-    if (data) {
-      setIsSent(true);
+
+    const token = captchaRef.current?.getValue();
+    if (token) {
+      captchaRef.current?.reset();
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ mail: mail, token: token }),
+      });
+      const data = await response.json();
+      if (data) {
+        setIsSent(true);
+      }
+    } else {
+      alert("Veuillez valider le captcha");
     }
   };
 
@@ -133,6 +144,10 @@ export default function ContactForm({ history, total }: Props) {
                     required
                   ></Textarea>
                 </div>
+                <ReCAPTCHA
+                  sitekey={process.env.NEXT_PUBLIC_SITE_KEY || ""}
+                  ref={captchaRef}
+                />
                 <Button
                   className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-base md:text-lg transition-all duration-300 ease-in-out w-fit rounded-xl px-3 py-1"
                   type="submit"
