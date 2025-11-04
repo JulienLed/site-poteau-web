@@ -71,6 +71,8 @@ export default function ServicesMenu({ scrollToService }: ServicesMenuProps) {
                 width={img.widht}
                 height={img.height}
                 className="hover:animate-move"
+                priority
+                fetchPriority="high"
               />
             </CardContent>
           </Card>

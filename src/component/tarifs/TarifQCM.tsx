@@ -326,6 +326,7 @@ export default function TarifQCM() {
           </Label>
           {answer.inputType === "pages" && (
             <Button
+              aria-label="next"
               className="bg-sandy-brown hover:!bg-sandy-brown/90 hover:cursor-pointer active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-base md:text-lg transition-all duration-300 ease-in-out w-fit rounded-xl px-3 py-1"
               onClick={() => handleInput(answer, num)}
             >
@@ -396,6 +397,7 @@ export default function TarifQCM() {
             <span className="text-2xl">{total.toFixed(2)} €</span>
           </p>
           <Link
+            aria-label="to_contact"
             className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue font-semibold text-base md:text-lg transition-all duration-300 ease-in-out w-fit rounded-xl px-3 py-1"
             href={{
               pathname: "/contact",
@@ -421,6 +423,7 @@ export default function TarifQCM() {
 
         {question.id === 8 && (
           <Button
+            aria-label="next"
             className="bg-sandy-brown hover:!bg-sandy-brown/90 hover:cursor-pointer active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-base md:text-lg transition-all duration-300 ease-in-out w-fit rounded-xl px-3 py-1"
             onClick={() => handleValidateChecks(question.answers!)}
           >

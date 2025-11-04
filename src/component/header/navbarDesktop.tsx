@@ -40,12 +40,14 @@ export default function NavbarDesktop() {
               ease: "easeInOut",
             }}
           >
-            <Link href={"/"}>
+            <Link aria-label="to_home" href={"/"}>
               <Image
                 src={LogoL}
                 alt="Image coté gauche du logo de la société"
                 width={157}
                 height={329}
+                priority
+                fetchPriority="high"
               />
             </Link>
           </motion.div>
@@ -60,7 +62,7 @@ export default function NavbarDesktop() {
               ease: "easeInOut",
             }}
           >
-            <Link href={"/"}>
+            <Link aria-label="to_home" href={"/"}>
               <Image
                 src={LogoR}
                 alt="Image coté droit du logo de la société"
@@ -107,6 +109,7 @@ export default function NavbarDesktop() {
           {menus.map((menu) => (
             <Link
               key={menu[0]}
+              aria-label={menu[0]}
               href={menu[1]}
               className="w-20 hover:font-bold hover:text-copper text-center text-lg transition-all duration:200 ease-in-out"
             >

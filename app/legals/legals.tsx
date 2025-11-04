@@ -98,6 +98,7 @@ export default function Legals() {
                 <span className="font-medium">contact@lepoteauduweb.be</span>
               ) : (
                 <span
+                  aria-label="show_mail"
                   className="cursor-pointer underline hover:text-white transition-colors"
                   onClick={() => setShowEmail(true)}
                 >

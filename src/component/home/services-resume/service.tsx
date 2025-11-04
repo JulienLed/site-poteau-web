@@ -73,8 +73,13 @@ export default function ServiceResume() {
                       </p>
                     </li>
                   </ul>
-                  <Button className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-base md:text-lg transition-all duration-300 ease-in-out">
-                    <Link href={"/tarifs"}>En savoir plus</Link>
+                  <Button
+                    aria-label="more_1"
+                    className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-base md:text-lg transition-all duration-300 ease-in-out"
+                  >
+                    <Link aria-label="more_1" href={"/tarifs"}>
+                      En savoir plus
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -109,8 +114,13 @@ export default function ServiceResume() {
                       </p>
                     </li>
                   </ul>
-                  <Button className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-base md:text-lg transition-all duration-300 ease-in-out">
-                    <Link href={"/tarifs"}>En savoir plus</Link>
+                  <Button
+                    aria-label="more_2"
+                    className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-base md:text-lg transition-all duration-300 ease-in-out"
+                  >
+                    <Link aria-label="more_2" href={"/tarifs"}>
+                      En savoir plus
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -145,8 +155,13 @@ export default function ServiceResume() {
                       </p>
                     </li>
                   </ul>
-                  <Button className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-base md:text-lg transition-all duration-300 ease-in-out">
-                    <Link href={"/tarifs"}>En savoir plus</Link>
+                  <Button
+                    aria-label="more_3"
+                    className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-base md:text-lg transition-all duration-300 ease-in-out"
+                  >
+                    <Link aria-label="more_3" href={"/tarifs"}>
+                      En savoir plus
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -155,12 +170,14 @@ export default function ServiceResume() {
         </Carousel>
         <div className="flex justify-center gap-5 my-5">
           <button
+            aria-label="next"
             className="bg-sandy-brown hover:!bg-copper hover:!scale-110 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-lg transition-all duration-300 ease-in-out rounded-xl p-1"
             onClick={() => api?.scrollNext()}
           >
             <GrFormPreviousLink size={35} />
           </button>
           <button
+            aria-label="prev"
             className="bg-sandy-brown hover:!bg-copper hover:!scale-110 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-lg transition-all duration-300 ease-in-out rounded-xl p-1"
             onClick={() => api?.scrollPrev()}
           >

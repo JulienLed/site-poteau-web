@@ -64,8 +64,11 @@ export default function Projets() {
                   width={projet.img.width}
                   height={projet.img.height}
                   className="rounded-lg shadow-2xl"
+                  priority
+                  fetchPriority="high"
                 />
                 <Button
+                  aria-label="more_1"
                   onClick={() => handleClick(i)}
                   className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-base md:text-lg transition-all duration-200 ease-in-out w-fit self-end animate-vibrate"
                 >
@@ -81,12 +84,21 @@ export default function Projets() {
                   {projet.description}
                 </p>
                 <div className="flex gap-5">
-                  <Button className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none hover:!scale-105 shadow-2xs text-logo-blue text-base transition-all duration-200 ease-in-out w-fit">
-                    <Link target="_blank" href={projet.site}>
+                  <Button
+                    aria-label="to_site"
+                    className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none hover:!scale-105 shadow-2xs text-logo-blue text-base transition-all duration-200 ease-in-out w-fit"
+                  >
+                    <Link
+                      aria-label="to_site"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      href={projet.site}
+                    >
                       Vers le site
                     </Link>
                   </Button>
                   <Button
+                    aria-label="flip"
                     onClick={() => handleClick(i)}
                     className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none hover:!scale-105 shadow-2xs text-logo-blue text-base transition-all duration-200 ease-in-out w-fit"
                   >

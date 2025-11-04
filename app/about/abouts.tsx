@@ -94,6 +94,8 @@ export default function About() {
               height={555}
               className="w-[40vw] md:w-[20vw]"
               style={{ animation: "var(--animate-move)" }}
+              priority
+              fetchPriority="high"
             />
             <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl">
               <CardHeader>

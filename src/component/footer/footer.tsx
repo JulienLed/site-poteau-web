@@ -21,14 +21,31 @@ export default function Footer() {
     <div className="grid grid-cols-[20%_80%] bg-gradient-to-t from-black/30 to-transparent text-logo-blue h-fit w-full">
       <div className="flex flex-col gap-5 p-5">
         <section id="logo" className="w-30 sm:w-40">
-          <Image src={Logo} alt="Logo de la société" width={604} height={329} />
+          <Image
+            src={Logo}
+            alt="Logo de la société"
+            width={604}
+            height={329}
+            priority
+            fetchPriority="high"
+          />
         </section>
 
         <section id="social-logos" className="flex gap-5">
-          <a href="https://github.com/JulienLed" target="_blank">
+          <a
+            aria-label="to_github"
+            rel="noopener noreferrer"
+            href="https://github.com/JulienLed"
+            target="_blank"
+          >
             <FaGithub size={25} />
           </a>
-          <a href="https://linkedin.com/in/julien-l-121357235" target="_blank">
+          <a
+            aria-label="to_linkedin"
+            rel="noopener noreferrer"
+            href="https://linkedin.com/in/julien-l-121357235"
+            target="_blank"
+          >
             <FaLinkedin size={25} />
           </a>
         </section>
@@ -63,7 +80,7 @@ export default function Footer() {
             © 2025 Le Poteau du Web
           </p>
           <span>-</span>
-          <Link href={"/legals"}>
+          <Link aria-label="to_legals" href={"/legals"}>
             <p className="font-text text-sm sm:text-base">
               Politique de confidentialité
             </p>

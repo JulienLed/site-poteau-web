@@ -151,6 +151,7 @@ export default function ContactForm({ history, total }: Props) {
                   />
                 </div>
                 <Button
+                  aria-label="send"
                   className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none shadow-2xs text-logo-blue text-base md:text-lg transition-all duration-300 ease-in-out w-fit rounded-xl px-3 py-1"
                   type="submit"
                 >
