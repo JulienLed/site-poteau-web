@@ -89,7 +89,7 @@ export default function Presentation() {
                     </p>
                     <p className="text-justify row-start-2 col-start-2">
                       {
-                        " C'est cette approche qui me permet de concevoir et de maintenir des solutions numériques simples ou complexe, et fonctionnelles pour votre institution, votre association ou pour votre entreprise."
+                        " C'est cette approche qui me permet de concevoir et de maintenir des solutions numériques simples ou complexes, et fonctionnelles pour votre institution, votre association ou pour votre entreprise."
                       }
                     </p>
                     <Image
