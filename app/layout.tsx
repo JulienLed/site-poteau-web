@@ -10,7 +10,24 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Le site du Poteau du Web",
   description:
-    "Bienvenue sur le site du Poteau du Web, le developpeur web qui vous accompagne et vous soutien dans la création de votre site web",
+    "Bienvenue sur le site du Poteau du Web, le developpeur web qui vous accompagne et vous soutien dans la création de votre site web à Wavre",
+  keywords: [
+    "développeur web",
+    "création site internet",
+    "Next.js",
+    "Wavre",
+    "freelance",
+    "site vitrine",
+  ],
+  openGraph: {
+    title: "Le site du Poteau du Web",
+    description:
+      "Bienvenue sur le site du Poteau du Web, le developpeur web qui vous accompagne et vous soutien dans la création de votre site web à Wavre",
+    url: "https://www.lepoteauduweb.be/",
+    siteName: "Le Poteau du Web",
+    locale: "fr_BE",
+    type: "website",
+  },
 };
 
 export const montserrat = Montserrat({
