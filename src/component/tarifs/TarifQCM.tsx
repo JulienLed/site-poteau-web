@@ -22,7 +22,7 @@ type Answer = {
 
 export default function TarifQCM() {
   const [total, setTotal] = useState(0);
-  const [nextQuestion, setNextQuestion] = useState<number | null>(null);
+  const [nextQuestion, setNextQuestion] = useState<number>(2);
   const [num, setNum] = useState(0);
   const [checkList, setCheckList] = useState<number[]>([]);
   const [history, setHistory] = useState<
@@ -30,15 +30,6 @@ export default function TarifQCM() {
   >([]);
 
   const qcm = [
-    {
-      id: 1,
-      question:
-        "Souhaitez-vous déterminer votre prix en répondant à différentes questions ?",
-      answers: [
-        { text: "Oui", next: 2 },
-        { text: "Télécharger les tarifs en PDF", link: "/tarif.pdf" },
-      ],
-    },
     {
       id: 2,
       question: "Quel genre de site souhaitez-vous ?",
@@ -193,17 +184,6 @@ export default function TarifQCM() {
     { id: 10, href: "/contact" },
   ];
 
-  //Download du tarif
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = "/Tarif du Poteau.pdf";
-    link.download = "";
-    link.target = "_blank";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   const handleCheck = (id: number) => {
     setCheckList((prev) =>
       prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
@@ -277,18 +257,6 @@ export default function TarifQCM() {
   };
 
   const renderAnswer = (answer: Answer) => {
-    if (answer.link)
-      return (
-        <div className="flex">
-          <p
-            className="cursor-pointer text-base md:text-lg text-sandy-brown w-fit px-3 py-1 hover:bg-lapis-lazuli active:translate-0.5 rounded-md animate-pulse hover:animate-pause transition-all duration-300 ease-in-out"
-            onClick={handleDownload}
-          >
-            {answer.text}
-          </p>
-        </div>
-      );
-
     if (answer.inputType === "check")
       return (
         <div className="flex items-center gap-3">
@@ -347,8 +315,9 @@ export default function TarifQCM() {
   };
 
   const renderQuestion = () => {
-    const question = qcm.find((q) => q.id === nextQuestion) || qcm[0];
+    const question = qcm.find((q) => q.id === nextQuestion);
 
+    if (!question) return null;
     if (question.id === 0)
       return (
         <Card className="flex flex-col items-center bg-logo-blue border-0 text-sandy-brown shadow-2xl md:px-6 py-10 text-center">
@@ -393,8 +362,13 @@ export default function TarifQCM() {
           </div>
 
           <p className="text-xl font-semibold mt-4">
-            Total estimé pour un an :{" "}
+            Total estimé :{" "}
             <span className="text-2xl">{total.toFixed(2)} €</span>
+          </p>
+          <p className="text-sandy-brown/80 text-sm italic mt-2 max-w-[80%]">
+            * Cette estimation est indicative. Le prix final sera établi lors
+            d&apos;une consultation et pourra varier selon la complexité réelle
+            de votre projet.
           </p>
           <Link
             aria-label="to_contact"

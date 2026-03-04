@@ -10,18 +10,17 @@ import { MdClose } from "react-icons/md";
 
 export default function NavbarSmartphone() {
   const [visible, setVisible] = useState(false);
-  const [screenDim, setScreenDim] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
+  // Fix SSR crash : pas d'accès à window à l'initialisation
+  const [screenDim, setScreenDim] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
     const handleResize = () => {
       setScreenDim({ width: window.innerWidth, height: window.innerHeight });
     };
-    window.addEventListener("resize", handleResize);
     handleResize();
-    return () => window.removeEventListener("resise", handleResize);
+    window.addEventListener("resize", handleResize);
+    // Fix typo "resise" → "resize" (l'event listener n'était jamais retiré)
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const toggleVisible = () => setVisible((prev) => !prev);
@@ -35,7 +34,6 @@ export default function NavbarSmartphone() {
     ["Contact", "/contact"],
   ];
 
-  // Animations
   const openAnim = {
     container: {
       rotateZ: 90,
@@ -71,8 +69,8 @@ export default function NavbarSmartphone() {
       {visible && (
         <motion.div
           className="fixed top-[35px]
-                     w-[198px] flex flex-col gap-3 uppercase items-center 
-                     justify-center py-4 bg-lapis-lazuli/90 text-sandy-brown 
+                     w-[198px] flex flex-col gap-3 uppercase items-center
+                     justify-center py-4 bg-lapis-lazuli/90 text-sandy-brown
                      text-center rounded-xl z-1"
           style={{
             left: screenDim.width / 2 - 118,
@@ -86,7 +84,6 @@ export default function NavbarSmartphone() {
               : { duration: 0.2, times: [0, 0.5, 1] }
           }
         >
-          {/* Bouton fermer */}
           <button
             aria-label="Bouton de fermeture du menu"
             onClick={toggleVisible}
@@ -95,7 +92,6 @@ export default function NavbarSmartphone() {
             <MdClose size={25} />
           </button>
 
-          {/* Liens */}
           {menus.map((menu: string[]) => (
             <Link
               key={menu[0]}
@@ -111,7 +107,7 @@ export default function NavbarSmartphone() {
       )}
       <section id="logo" className="py-2 px-4 z-50">
         <motion.div
-          className="flex justify-center items-center w-fit h-hit cursor-pointer z-5"
+          className="flex justify-center items-center w-fit h-fit cursor-pointer z-5"
           onClick={toggleVisible}
           animate={visible ? openAnim.container : closeAnim.container}
         >

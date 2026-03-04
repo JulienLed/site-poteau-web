@@ -9,7 +9,7 @@ type ServicesMenuProps = {
 
 const services = [
   {
-    name: "Création de site internet",
+    name: "Création de site",
     key: "site",
     img: {
       src: "/vitrine.png",
@@ -52,17 +52,17 @@ const services = [
 
 export default function ServicesMenu({ scrollToService }: ServicesMenuProps) {
   return (
-    <div className="grid grid-cols-2 gap-2 md:flex md:justify-center md:items-center w-full md:w-fit mx-auto md:mb-50 md:mt-5 md:gap-5">
+    <div className="grid grid-cols-2 justify-items-center gap-3 md:flex md:justify-center md:items-center w-full md:w-fit mx-auto md:mb-50 md:mt-5 md:gap-5">
       {services.map(({ name, key, img, delay }) => {
         return (
           <Card
             key={key}
             onClick={() => scrollToService(key)}
-            className="bg-logo-blue/70 hover:bg-logo-blue hover:scale-110 transition-all duration-300 ease-in-out border-0 text-sandy-brown px-0 md:px-5 py-5 w-[40vw] md:w-[15vw] h-[30vh] cursor-pointer animate-jump-in"
+            className="bg-logo-blue/70 hover:bg-logo-blue hover:scale-110 transition-all duration-300 ease-in-out border-0 text-sandy-brown px-0 md:px-5 py-5 w-[44vw] md:w-[15vw] h-[22vh] md:h-[30vh] cursor-pointer animate-jump-in"
             style={{ animationDelay: delay }}
           >
             <CardContent className="px-2">
-              <h2 className="text-base md:text-xl font-title text-center pb-2">
+              <h2 className="text-sm md:text-xl font-title text-center pb-2">
                 {name}
               </h2>
               <Image
@@ -70,7 +70,7 @@ export default function ServicesMenu({ scrollToService }: ServicesMenuProps) {
                 src={img.src}
                 width={img.widht}
                 height={img.height}
-                className="hover:animate-move"
+                className="hover:animate-move w-[75%] mx-auto"
                 priority
                 fetchPriority="high"
               />

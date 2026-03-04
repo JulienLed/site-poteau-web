@@ -2,21 +2,30 @@
 
 import { motion } from "motion/react";
 import { useInView } from "react-intersection-observer";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 export default function AnimHeroDesktop() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
   const { ref, inView } = useInView({
     threshold: 0.9,
     triggerOnce: true,
     initialInView: true,
   });
+
   return (
     <div ref={ref} className="grid grid-cols-2 items-center">
       <motion.div
         className="grid grid-cols-2 bg-logo-blue sm:w-[40vw] md:w-[60vw] h-fit shadow-lg rounded-3xl text-sandy-brown p-10"
-        initial={{ x: -100 }}
+        initial={{ x: "-100vw" }}
         animate={
-          inView ? { x: ["-100vw", "-30vw"] } : { x: ["-30vw", "-100vw"] }
+          !mounted
+            ? { x: "-100vw" }
+            : inView
+              ? { x: ["-100vw", "-30vw"] }
+              : { x: ["-30vw", "-100vw"] }
         }
         transition={{
           duration: 0.6,
@@ -40,10 +49,17 @@ export default function AnimHeroDesktop() {
           </div>
         </div>
       </motion.div>
+
       <motion.div
         className="grid grid-cols-[40vw_10vw] bg-logo-blue w-[50vw] md:w-[70vw] h-fit shadow-lg rounded-3xl text-sandy-brown p-5 md:p-10"
         initial={{ x: "100vw" }}
-        animate={inView ? { x: ["100vw", "6vw"] } : { x: ["6vw", "100vw"] }}
+        animate={
+          !mounted
+            ? { x: "100vw" }
+            : inView
+              ? { x: ["100vw", "6vw"] }
+              : { x: ["6vw", "100vw"] }
+        }
         transition={{
           duration: 0.6,
           ease: "easeOut",
