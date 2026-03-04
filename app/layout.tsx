@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
-import Loading from "./loading";
 import { Montserrat, Roboto } from "next/font/google";
 import Footer from "@/src/component/footer/footer";
 import Header from "@/src/component/header/header";
@@ -150,7 +148,6 @@ export default function RootLayout({
             }),
           }}
         />
-        <Suspense fallback={<Loading />}>
           <Header />
           <div className="md:pt-30 px-5 sm:px-50 flex-1 selection:!text-logo-blue selection:bg-sandy-brown overflow-clip">
             {children}
@@ -159,7 +156,6 @@ export default function RootLayout({
           <div className="selection:!bg-logo-blue selection:text-sandy-brown">
             <Footer />
           </div>
-        </Suspense>
       </body>
     </html>
   );
