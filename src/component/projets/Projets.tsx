@@ -106,16 +106,16 @@ function ProjetCard({
           </Card>
 
           {/* Face arrière */}
-          <Card className="absolute w-full h-full flex items-center md:justify-center border-0 backface-hidden rotate-y-180 bg-logo-blue/50 text-sandy-brown shadow-2xl py-5 md:py-10 mb-20">
-            <CardContent className="relative flex flex-col justify-between h-full items-center gap-1 md:gap-5">
-              <p className="md:text-justify text-sm md:text-base w-[90%] md:w-[70%]">
+          <Card className="absolute w-full h-full border-0 backface-hidden rotate-y-180 bg-logo-blue/50 text-sandy-brown shadow-2xl">
+            <CardContent className="flex flex-col justify-between h-full items-center py-5 md:py-8 gap-4 md:gap-6">
+              <p className="text-justify text-xs md:text-base w-[90%] md:w-[75%] overflow-y-auto">
                 {projet.description}
               </p>
-              <div className="flex gap-5">
+              <div className="flex flex-col md:flex-row gap-3 md:gap-5 items-center">
                 {projet.site ? (
                   <Button
                     aria-label="to_site"
-                    className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none hover:!scale-105 shadow-2xs text-logo-blue text-base transition-all duration-200 ease-in-out w-fit"
+                    className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none hover:!scale-105 shadow-2xs text-logo-blue text-xs md:text-base transition-all duration-200 ease-in-out w-fit"
                   >
                     <Link
                       aria-label="to_site"
@@ -130,7 +130,7 @@ function ProjetCard({
                   <Button
                     aria-label="in_progress"
                     disabled
-                    className="bg-sandy-brown/30 text-logo-blue/50 text-base cursor-not-allowed w-fit"
+                    className="bg-sandy-brown/30 text-logo-blue/50 text-xs md:text-base cursor-not-allowed w-fit"
                   >
                     En cours de finalisation
                   </Button>
@@ -138,7 +138,7 @@ function ProjetCard({
                 <Button
                   aria-label="flip"
                   onClick={() => setFlipped(false)}
-                  className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none hover:!scale-105 shadow-2xs text-logo-blue text-base transition-all duration-200 ease-in-out w-fit"
+                  className="bg-sandy-brown hover:!bg-sandy-brown/90 active:!translate-0.5 hover:!text-lapis-lazuli hover:!shadow-none hover:!scale-105 shadow-2xs text-logo-blue text-xs md:text-base transition-all duration-200 ease-in-out w-fit"
                 >
                   Retourner
                 </Button>
