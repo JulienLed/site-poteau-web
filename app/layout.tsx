@@ -8,25 +8,33 @@ import Cookies from "@/src/component/cookies/cookies";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Le site du Poteau du Web",
+  metadataBase: new URL("https://www.lepoteauduweb.be"),
+  title: "Le Poteau du Web — Développeur web freelance à Wavre",
   description:
-    "Bienvenue sur le site du Poteau du Web, le developpeur web qui vous accompagne et vous soutien dans la création de votre site web à Wavre",
+    "Création de sites internet sur mesure à Wavre. Design, SEO, hébergement et maintenance. Solutions pour associations, TPE et indépendants. Devis gratuit.",
   keywords: [
-    "développeur web",
-    "création site internet",
-    "Next.js",
-    "Wavre",
-    "freelance",
-    "site vitrine",
+    "développeur web Wavre",
+    "création site internet Belgique",
+    "freelance web Wavre",
+    "site vitrine Belgique",
+    "Next.js développeur",
+    "site internet association",
+    "développeur web freelance",
   ],
   openGraph: {
-    title: "Le site du Poteau du Web",
+    title: "Le Poteau du Web — Développeur web freelance à Wavre",
     description:
-      "Bienvenue sur le site du Poteau du Web, le developpeur web qui vous accompagne et vous soutien dans la création de votre site web à Wavre",
+      "Création de sites internet sur mesure à Wavre. Design, SEO, hébergement et maintenance. Solutions pour associations, TPE et indépendants.",
     url: "https://www.lepoteauduweb.be/",
     siteName: "Le Poteau du Web",
     locale: "fr_BE",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Le Poteau du Web — Développeur web freelance à Wavre",
+    description:
+      "Création de sites internet sur mesure à Wavre. Design, SEO, hébergement et maintenance.",
   },
 };
 
@@ -46,13 +54,102 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
         className={`${montserrat.variable} ${roboto.variable} flex flex-col w-full min-h-screen bg-[url(/bg.svg)] bg-no-repeat bg-cover`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "ProfessionalService",
+                  "@id": "https://www.lepoteauduweb.be/#business",
+                  name: "Le Poteau du Web",
+                  url: "https://www.lepoteauduweb.be",
+                  description:
+                    "Développeur web freelance à Wavre proposant la création de sites internet sur mesure, référencement SEO, hébergement et maintenance.",
+                  address: {
+                    "@type": "PostalAddress",
+                    addressLocality: "Wavre",
+                    addressCountry: "BE",
+                  },
+                  email: "contact@lepoteauduweb.be",
+                  priceRange: "€€",
+                  areaServed: ["Wavre", "Belgique"],
+                  hasOfferCatalog: {
+                    "@type": "OfferCatalog",
+                    name: "Services web",
+                    itemListElement: [
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Création de site internet",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Référencement SEO",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Hébergement web",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Maintenance web",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "CRM et gestion des contacts",
+                        },
+                      },
+                    ],
+                  },
+                  founder: { "@id": "https://www.lepoteauduweb.be/#person" },
+                },
+                {
+                  "@type": "Person",
+                  "@id": "https://www.lepoteauduweb.be/#person",
+                  name: "Julien Ledent",
+                  jobTitle: "Développeur Web Full-Stack",
+                  url: "https://www.lepoteauduweb.be",
+                  email: "contact@lepoteauduweb.be",
+                  knowsAbout: [
+                    "Next.js",
+                    "React",
+                    "JavaScript",
+                    "TypeScript",
+                    "SEO",
+                    "Tailwind CSS",
+                    "Node.js",
+                    "PostgreSQL",
+                  ],
+                  worksFor: {
+                    "@id": "https://www.lepoteauduweb.be/#business",
+                  },
+                },
+              ],
+            }),
+          }}
+        />
         <Suspense fallback={<Loading />}>
           <Header />
           <div className="md:pt-30 px-5 sm:px-50 flex-1 selection:!text-logo-blue selection:bg-sandy-brown overflow-clip">

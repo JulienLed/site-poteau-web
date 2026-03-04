@@ -1,25 +1,30 @@
 import Contact from "./contact";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "Contacter le Poteau",
+export const metadata: Metadata = {
+  title: "Contact — Le Poteau du Web",
   description:
-    "Comment contacter le Poteau pour poser une question ou débuter un projet de site intenet",
+    "Contactez Le Poteau du Web pour démarrer votre projet de site internet ou obtenir un devis gratuit. Réponse rapide garantie.",
   keywords: [
-    "développeur web",
-    "création site internet",
-    "Next.js",
-    "Wavre",
-    "freelance",
-    "site vitrine",
+    "contact développeur web Wavre",
+    "devis site internet gratuit Belgique",
+    "développeur web freelance contact",
+    "créer site internet Wavre",
   ],
   openGraph: {
-    title: "Contacter Poteau",
+    title: "Contact — Le Poteau du Web",
     description:
-      "Comment contacter le Poteau pour poser une question ou débuter un projet de site intenet",
+      "Contactez Le Poteau du Web pour démarrer votre projet de site internet ou obtenir un devis gratuit.",
     url: "https://www.lepoteauduweb.be/contact",
-    siteName: "Le Poteau du web",
+    siteName: "Le Poteau du Web",
     locale: "fr_BE",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact — Le Poteau du Web",
+    description:
+      "Contactez Le Poteau du Web pour démarrer votre projet de site internet ou obtenir un devis gratuit.",
   },
 };
 
