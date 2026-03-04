@@ -38,7 +38,7 @@ export default function ServiceResume() {
           <CarouselContent className="w-[85vw] md:w-[50vw] mx-auto">
             {services.map((service, index) => (
               <CarouselItem key={index} className="px-1">
-                <Card className="bg-logo-blue border-0 w-full h-[520px] md:h-[600px]">
+                <Card className="bg-logo-blue border-0 w-full h-[520px] md:h-[550px]">
                   <CardContent className="flex flex-col items-center h-full justify-between">
                     <h3 className="text-xl md:text-2xl text-center text-sandy-brown font-title font-bold py-5">
                       {service.title}
@@ -48,7 +48,7 @@ export default function ServiceResume() {
                       alt={service.imageAlt}
                       width={688}
                       height={688}
-                      className="w-[50%] md:w-[40%] rounded-xl animate-move"
+                      className="w-[40%] md:w-[28%] rounded-xl animate-move"
                     />
                     <ul className="flex flex-col items-left list-disc text-sandy-brown gap-2 p-5">
                       {service.items.map((item, i) => (

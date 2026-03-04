@@ -6,6 +6,15 @@ import Logo from "@/public/logo-bg-free.png";
 import Link from "next/link";
 import { useState } from "react";
 
+const navLinks = [
+  ["Accueil", "/"],
+  ["À propos", "/about"],
+  ["Services", "/services"],
+  ["Projets", "/portfolio"],
+  ["Tarifs", "/tarifs"],
+  ["Contact", "/contact"],
+];
+
 export default function Footer() {
   const [isClick, setIsClick] = useState({ phone: false, mail: false });
   const infos = {
@@ -18,7 +27,7 @@ export default function Footer() {
       ? "cursor-default font-medium transition-all duration-200 ease-in-out w-[50vw] md:w-[20vw] text-sm md:text-base"
       : "hover:cursor-pointer hover:font-bold transition-all duration-200 ease-in-out w-[50vw] md:w-[20vw] text-sm md:text-base";
   return (
-    <div className="grid grid-cols-1 md:grid-cols-[20%_80%] bg-gradient-to-t from-black/30 to-transparent text-logo-blue h-fit w-full">
+    <div className="grid grid-cols-1 md:grid-cols-[20%_1fr_auto] bg-gradient-to-t from-black/30 to-transparent text-logo-blue h-fit w-full">
       <div className="flex flex-col gap-5 p-5 items-center md:items-start md:pl-10">
         <section id="logo" className="w-30 sm:w-40">
           <Image
@@ -52,7 +61,7 @@ export default function Footer() {
       </div>
       <section
         id="contact"
-        className="md:col-start-2 md:self-end justify-self-center md:justify-self-end px-5 pb-3 md:pb-5 text-center md:text-left"
+        className="md:col-start-3 md:row-start-1 md:self-end justify-self-center md:justify-self-end px-5 pb-3 md:pb-5 text-center md:text-left"
       >
         <p
           className={getClass(isClick.mail)}
@@ -71,9 +80,30 @@ export default function Footer() {
         </p>
         <p className="text-xs md:text-base">{`BCE : ${infos.BCE}`}</p>
       </section>
+
+      <nav
+        id="nav-links"
+        className="hidden md:flex md:col-span-full md:row-start-2 items-center gap-3 justify-center py-3 border-t border-logo-blue/20"
+      >
+        {navLinks.map(([label, href], i) => (
+          <span key={label} className="flex items-center gap-3">
+            <Link
+              aria-label={label}
+              href={href}
+              className="text-sm hover:text-copper transition-colors duration-200 ease-in-out"
+            >
+              {label}
+            </Link>
+            {i < navLinks.length - 1 && (
+              <span className="text-logo-blue/30 select-none">|</span>
+            )}
+          </span>
+        ))}
+      </nav>
+
       <section
         id="copyright"
-        className="col-span-full md:row-start-2 mx-auto flex gap-5"
+        className="col-span-full md:row-start-3 mx-auto flex gap-5"
       >
         <div className="flex justify-center gap-1 md:gap-5">
           <p className="font-text text-sm sm:text-base">

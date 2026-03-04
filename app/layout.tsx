@@ -3,6 +3,7 @@ import { Montserrat, Roboto } from "next/font/google";
 import Footer from "@/src/component/footer/footer";
 import Header from "@/src/component/header/header";
 import Cookies from "@/src/component/cookies/cookies";
+import BackToTop from "@/src/component/back-to-top/BackToTop";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -149,6 +150,7 @@ export default function RootLayout({
           }}
         />
           <Header />
+          <BackToTop />
           <div className="md:pt-30 px-5 sm:px-50 flex-1 selection:!text-logo-blue selection:bg-sandy-brown overflow-clip">
             {children}
             <Cookies />
