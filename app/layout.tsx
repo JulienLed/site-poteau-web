@@ -41,12 +41,21 @@ export const metadata: Metadata = {
     siteName: "Le Poteau du Web",
     locale: "fr_BE",
     type: "website",
+    images: [
+      {
+        url: "/Le Poteau du Web.png",
+        width: 1200,
+        height: 630,
+        alt: "Le Poteau du Web — Développeur web freelance à Wavre",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Le Poteau du Web — Développeur web freelance à Wavre",
     description:
       "Création de sites internet sur mesure à Wavre. Design, SEO, hébergement et maintenance.",
+    images: ["/Le Poteau du Web.png"],
   },
 };
 

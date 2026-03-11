@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     "site internet association Wavre",
     "CMS site web Belgique",
   ],
+  alternates: {
+    canonical: "https://www.lepoteauduweb.be/services",
+  },
   openGraph: {
     title: "Services — Le Poteau du Web",
     description:
