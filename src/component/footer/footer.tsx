@@ -1,10 +1,7 @@
-"use client";
-
 import Image from "next/image";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import Logo from "@/public/logo-bg-free.png";
 import Link from "next/link";
-import { useState } from "react";
 
 const navLinks = [
   ["Accueil", "/"],
@@ -16,16 +13,6 @@ const navLinks = [
 ];
 
 export default function Footer() {
-  const [isClick, setIsClick] = useState({ phone: false, mail: false });
-  const infos = {
-    phone: "+32 456 99 16 53",
-    mail: "contact@lepoteauduweb.be",
-    BCE: "BE23 7320 8347 2591",
-  };
-  const getClass = (clicked: boolean) =>
-    clicked
-      ? "cursor-default font-medium transition-all duration-200 ease-in-out w-[50vw] md:w-[20vw] text-sm md:text-base"
-      : "hover:cursor-pointer hover:font-bold transition-all duration-200 ease-in-out w-[50vw] md:w-[20vw] text-sm md:text-base";
   return (
     <div className="grid grid-cols-1 md:grid-cols-[20%_1fr_auto] bg-gradient-to-t from-black/30 to-transparent text-logo-blue h-fit w-full">
       <div className="flex flex-col gap-5 p-5 items-center md:items-start md:pl-10">
@@ -63,22 +50,19 @@ export default function Footer() {
         id="contact"
         className="md:col-start-3 md:row-start-1 md:self-end justify-self-center md:justify-self-end px-5 pb-3 md:pb-5 text-center md:text-left"
       >
-        <p
-          className={getClass(isClick.mail)}
-          style={isClick.mail ? { cursor: "default" } : { cursor: "pointer" }}
-          onClick={() => setIsClick((prev) => ({ ...prev, mail: true }))}
+        <a
+          href="mailto:contact@lepoteauduweb.be"
+          className="font-medium hover:font-bold transition-all duration-200 ease-in-out w-[50vw] md:w-[20vw] text-sm md:text-base block"
         >
-          {isClick.mail
-            ? `E-Mail : ${infos.mail}`
-            : `E-mail : Cliquez pour voir`}
-        </p>
-        <p
-          className={getClass(isClick.phone)}
-          onClick={() => setIsClick((prev) => ({ ...prev, phone: true }))}
+          E-mail : contact@lepoteauduweb.be
+        </a>
+        <a
+          href="tel:+32456991653"
+          className="font-medium hover:font-bold transition-all duration-200 ease-in-out w-[50vw] md:w-[20vw] text-sm md:text-base block"
         >
-          {isClick.phone ? `Tel : ${infos.phone}` : `Tel : Cliquez pour voir`}
-        </p>
-        <p className="text-xs md:text-base">{`BCE : ${infos.BCE}`}</p>
+          Tél : +32 456 99 16 53
+        </a>
+        <p className="text-xs md:text-base">BCE : BE23 7320 8347 2591</p>
       </section>
 
       <nav

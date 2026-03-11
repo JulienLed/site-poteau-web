@@ -1,12 +1,7 @@
-"use client";
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PageTitle } from "@/utils/utils";
-import { useState } from "react";
 
 export default function Legals() {
-  const [showEmail, setShowEmail] = useState(false);
-
   return (
     <div>
       <div className="py-15">
@@ -94,17 +89,12 @@ export default function Legals() {
             </ul>
             <p>
               Pour exercer vos droits, contactez-moi à :{" "}
-              {showEmail ? (
-                <span className="font-medium">contact@lepoteauduweb.be</span>
-              ) : (
-                <span
-                  aria-label="show_mail"
-                  className="cursor-pointer underline hover:text-white transition-colors"
-                  onClick={() => setShowEmail(true)}
-                >
-                  {"Afficher l'e-mail"}
-                </span>
-              )}
+              <a
+                href="mailto:contact@lepoteauduweb.be"
+                className="font-medium underline hover:text-white transition-colors"
+              >
+                contact@lepoteauduweb.be
+              </a>
             </p>
           </CardContent>
         </Card>
