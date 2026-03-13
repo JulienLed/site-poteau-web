@@ -59,7 +59,7 @@ function ProjetCard({
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.15 });
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className="w-[90vw] md:w-auto">
       <motion.div
         initial={{ x: fromLeft ? "-100vw" : "100vw", opacity: 0 }}
         animate={inView ? { x: 0, opacity: 1 } : {}}
@@ -68,7 +68,7 @@ function ProjetCard({
         <motion.div
           animate={{ rotateY: flipped ? "180deg" : "0deg" }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="relative w-[85vw] md:w-[40vw] h-[50vh] md:h-[60vh] transform-3d"
+          className="relative w-full md:w-[40vw] h-[50vh] md:h-[60vh] transform-3d"
         >
           {/* Face avant */}
           <Card className="absolute w-full h-full flex flex-col justify-between border-0 backface-hidden bg-logo-blue/50 text-sandy-brown shadow-2xl px-2 md:px-5 py-1 md:py-10 md:mb-20">

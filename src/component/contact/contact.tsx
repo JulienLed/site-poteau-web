@@ -100,7 +100,7 @@ export default function ContactForm({ history, total }: Props) {
   return (
     <>
       <div className="flex justify-center animate-fade-right w-full">
-        <Card className="w-[85vw] md:w-[50vw] bg-logo-blue border-0 text-sandy-brown shadow-2xl px-2 md:px-5 py-5 md:py-10">
+        <Card className="w-full md:w-[50vw] bg-logo-blue border-0 text-sandy-brown shadow-2xl px-2 md:px-5 py-5 md:py-10">
           <CardContent className="w-full">
             <form className="w-full" onSubmit={handleFetchContact}>
               <div className="flex flex-col gap-5 w-full">

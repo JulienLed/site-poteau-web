@@ -4,7 +4,11 @@
       "WebFetch(domain:github.com)",
       "Bash(curl:*)",
       "Bash(npm install:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(cd \"C:\\\\Users\\\\jledent\\\\OneDrive - ABC SCRL\\\\Bureau\\\\Programme\\\\Projets\\\\Site\\\\site-poteau-web\" && npx tsc --noEmit 2>&1 | head -50)",
+      "Bash(find \"C:\\\\Users\\\\jledent\\\\OneDrive - ABC SCRL\\\\Bureau\\\\Programme\\\\Projets\\\\Site\\\\site-poteau-web\" -name \"tailwind.config*\" -o -name \"globals.css\" 2>/dev/null | grep -v node_modules)",
+      "Bash(cd \"C:\\\\Users\\\\jledent\\\\OneDrive - ABC SCRL\\\\Bureau\\\\Programme\\\\Projets\\\\Site\\\\site-poteau-web\" && npm run build 2>&1 | grep -E \"\\(error|Error|✓|✗|Failed|warning\\)\" | grep -v \"^$\" | head -20)",
+      "Bash(cd \"C:\\\\Users\\\\jledent\\\\OneDrive - ABC SCRL\\\\Bureau\\\\Programme\\\\Projets\\\\Site\\\\site-poteau-web\" && npm run build 2>&1 | grep -E \"\\(error|Error|✓|✗|Failed\\)\" | grep -v \"^$\" | head -10)"
     ]
   }
 }

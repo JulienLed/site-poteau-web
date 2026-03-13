@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="hidden md:flex">
         <AnimHeroDesktop />
       </div>
-      <div className="md:hidden flex">
+      <div className="md:hidden flex w-full">
         <AnimHeroMobile />
       </div>
     </>

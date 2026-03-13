@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     "développeur web freelance Belgique",
     "reconversion développeur web",
   ],
+  alternates: {
+    canonical: "https://www.lepoteauduweb.be/about",
+  },
   openGraph: {
     title: "À propos — Le Poteau du Web",
     description:

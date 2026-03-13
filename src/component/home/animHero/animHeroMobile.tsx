@@ -14,11 +14,11 @@ export default function AnimHeroMobile() {
   return (
     <div
       ref={ref}
-      className="flex flex-col items-center justify-center gap-5 px-4 py-8"
+      className="h-full flex flex-col items-center justify-center gap-5 py-8"
     >
       {/* Bloc titre/logo */}
       <motion.div
-        className="flex flex-col items-center bg-logo-blue w-[85vw] shadow-lg rounded-3xl text-sandy-brown p-5 mt-15"
+        className="flex flex-col items-center bg-logo-blue w-full shadow-lg rounded-3xl text-sandy-brown p-5"
         initial={{ y: -100 }}
         animate={inView ? { y: [-200, 0] } : { y: [0, -200] }}
         transition={{
@@ -33,16 +33,17 @@ export default function AnimHeroMobile() {
           width={400}
           className="w-[70vw]"
         />
-        <p className="text-center text-base mt-2">
-          <span className="mask-text">
-            Un pilier solide pour bâtir votre site web
+        <div className="flex flex-col items-center text-center text-base mt-2 gap-0.5">
+          <span className="mask-text">Un pilier solide pour</span>
+          <span className="mask-text" style={{ animationDelay: "2.5s" }}>
+            bâtir votre site web
           </span>
-        </p>
+        </div>
       </motion.div>
 
       {/* Bloc portrait + texte */}
       <motion.div
-        className="flex flex-col items-center bg-logo-blue w-[85vw] shadow-lg rounded-3xl text-sandy-brown p-5"
+        className="flex flex-col items-center bg-logo-blue w-full shadow-lg rounded-3xl text-sandy-brown p-5"
         initial={{ y: 100 }}
         animate={inView ? { y: [200, 0] } : { y: [0, 200] }}
         transition={{

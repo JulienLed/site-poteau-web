@@ -9,6 +9,8 @@ const navLinks = [
   ["Services", "/services"],
   ["Projets", "/portfolio"],
   ["Tarifs", "/tarifs"],
+  ["Articles", "/articles"],
+  ["FAQ", "/faq"],
   ["Contact", "/contact"],
 ];
 
@@ -87,9 +89,9 @@ export default function Footer() {
 
       <section
         id="copyright"
-        className="col-span-full md:row-start-3 mx-auto flex gap-5"
+        className="col-span-full md:row-start-3 w-full flex justify-center py-2"
       >
-        <div className="flex justify-center gap-1 md:gap-5">
+        <div className="flex flex-wrap justify-center gap-1 md:gap-5">
           <p className="font-text text-sm sm:text-base">
             © 2025 Le Poteau du Web
           </p>

@@ -13,6 +13,8 @@ export default function NavbarDesktop() {
     ["Services", "/services"],
     ["Projets", "/portfolio"],
     ["Tarifs", "/tarifs"],
+    ["Articles", "/articles"],
+    ["FAQ", "/faq"],
     ["Contact", "/contact"],
   ];
 

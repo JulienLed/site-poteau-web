@@ -196,7 +196,7 @@ export default function RootLayout({
         />
           <Header />
           <BackToTop />
-          <div className="md:pt-30 px-5 sm:px-50 flex-1 selection:!text-logo-blue selection:bg-sandy-brown overflow-clip">
+          <div className="pt-14 md:pt-30 px-5 sm:px-50 flex-1 selection:!text-logo-blue selection:bg-sandy-brown overflow-clip">
             {children}
             <Cookies />
           </div>
