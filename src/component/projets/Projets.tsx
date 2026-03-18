@@ -44,15 +44,16 @@ const projets: Projet[] = [
     img: null,
     site: null,
   },
+  {
+    title: "Suivo — CRM SaaS pour travailleurs sociaux",
+    description:
+      "CRM SaaS pour travailleurs sociaux d'ASBL belges. Centralise le suivi des bénéficiaires, les notes enrichies par l'IA, les acquis sociaux, les contacts réseau et les rendez-vous, et génère des rapports sociaux automatiquement. Architecture multi-tenant, RGPD by design, PWA mobile.\n\nStack : Next.js 15 · TypeScript · Prisma · Neon · Auth.js v5 · shadcn/ui · Groq API · Vercel",
+    img: { src: "/suivo.png", width: 1100, height: 584 },
+    site: "https://suivo-rho.vercel.app/fr",
+  },
 ];
 
-function ProjetCard({
-  projet,
-  index,
-}: {
-  projet: Projet;
-  index: number;
-}) {
+function ProjetCard({ projet, index }: { projet: Projet; index: number }) {
   const [flipped, setFlipped] = useState(false);
   const fromLeft = index % 2 === 0;
 
@@ -84,7 +85,7 @@ function ProjetCard({
                   src={projet.img.src}
                   width={projet.img.width}
                   height={projet.img.height}
-                  className="rounded-lg shadow-2xl"
+                  className="rounded-lg shadow-2xl w-full object-cover max-h-[28vh]"
                   priority
                   fetchPriority="high"
                 />
