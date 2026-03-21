@@ -64,7 +64,10 @@ export default function Footer() {
         >
           Tél : +32 456 99 16 53
         </a>
-        <p className="text-xs md:text-base">BCE : BE23 7320 8347 2591</p>
+        <p className="text-xs md:text-base">
+          Compte Bancaire : BE23 7320 8347 2591
+        </p>
+        <p className="text-xs md:text-base">BCE : BE 1027.661.649</p>
       </section>
 
       <nav
