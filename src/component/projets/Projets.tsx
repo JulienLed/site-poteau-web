@@ -33,9 +33,9 @@ const projets: Projet[] = [
   {
     title: "Plateforme e-commerce",
     description:
-      "Développement d'une plateforme e-commerce complète avec catalogue produits et recherche, panier persistant, paiement sécurisé via Stripe, confirmations par e-mail automatisées et tableau de bord administrateur pour la gestion des stocks et des commandes.",
-    img: null,
-    site: null,
+      "Développement d'une plateforme e-commerce complète : catalogue produits avec recherche et filtrage en temps réel, panier persistant, paiement sécurisé via Stripe (webhooks et confirmations e-mail automatisées), autocomplétion d'adresse via Google Places et tableau de bord administrateur pour la gestion des stocks, des commandes et des statistiques.\n\nStack : Next.js 14 · TypeScript · Prisma 6 · PostgreSQL · Auth.js (Google OAuth) · Stripe · Resend · shadcn/ui · Vercel",
+    img: { src: "/e-commerce.png", width: 1858, height: 878 },
+    site: "https://e-commerce-rho-blue-93.vercel.app",
   },
   {
     title: "Site d'une fédération sportive",
