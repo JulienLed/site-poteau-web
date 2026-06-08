@@ -45,6 +45,13 @@ const projets: Projet[] = [
     site: null,
   },
   {
+    title: "Room Reservation — Réservation de salles multi-sites",
+    description:
+      "Application de réservation de salles de réunion multi-sites. Permet aux collaborateurs de consulter la disponibilité des salles et de créer, modifier ou supprimer des réservations via un calendrier interactif, avec authentification Google et validation des données en temps réel.\n\nStack : Next.js 16 (App Router) · TypeScript · Prisma 7 · PostgreSQL (Neon) · Auth.js v5 · shadcn/ui · schedule-x · Zod · Vitest · Vercel",
+    img: { src: "/room-reservation.png", width: 1906, height: 861 },
+    site: "https://room-reservation-blue.vercel.app",
+  },
+  {
     title: "Suivo — CRM SaaS pour travailleurs sociaux",
     description:
       "CRM SaaS pour travailleurs sociaux d'ASBL belges. Centralise le suivi des bénéficiaires, les notes enrichies par l'IA, les acquis sociaux, les contacts réseau et les rendez-vous, et génère des rapports sociaux automatiquement. Architecture multi-tenant, RGPD by design, PWA mobile.\n\nStack : Next.js 15 · TypeScript · Prisma · Neon · Auth.js v5 · shadcn/ui · Groq API · Vercel",
