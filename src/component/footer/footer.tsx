@@ -96,7 +96,8 @@ export default function Footer() {
       >
         <div className="flex flex-wrap justify-center gap-1 md:gap-5">
           <p className="font-text text-sm sm:text-base">
-            © 2025 Le Poteau du Web
+            {/* Année calculée côté serveur (au build pour les pages statiques). */}
+            {`© 2025–${new Date().getFullYear()} Le Poteau du Web`}
           </p>
           <span>-</span>
           <Link aria-label="to_legals" href={"/legals"}>
