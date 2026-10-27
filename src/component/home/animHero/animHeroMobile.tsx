@@ -3,6 +3,8 @@
 import { motion } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
+import Link from "next/link";
+import { asblLinkClassName } from "./heroLink";
 
 export default function AnimHeroMobile() {
   const { ref, inView } = useInView({
@@ -59,9 +61,12 @@ export default function AnimHeroMobile() {
           className="w-[40vw] max-w-[150px] rounded-full shadow-2xl mb-4"
         />
         <p className="text-center text-sm">
-          <strong>Julien, Developpeur Web.</strong> <br />
-          Avec Le Poteau du Web, je vous propose de réaliser votre site web
-          professionnellement et en toute sérénité.
+          <strong>Julien, Développeur Web.</strong> <br />
+          Avec Le Poteau du Web, je réalise le site de votre{" "}
+          <Link href="/articles/site-internet-asbl-belgique" className={asblLinkClassName}>
+            ASBL
+          </Link>{" "}
+          ou association à Wavre, de façon professionnelle et sereine.
         </p>
       </motion.div>
     </div>
