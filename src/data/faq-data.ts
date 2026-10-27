@@ -52,6 +52,26 @@ export const faqs: Faq[] = [
   {
     question: "Travaillez-vous avec les ASBL et associations ?",
     answer:
-      "Oui, et c'est même une de mes spécialités. Mon parcours d'assistant social me donne une sensibilité particulière aux réalités du secteur associatif : budgets contraints, besoins spécifiques (agenda d'événements, espace membres, transparence), et importance de la communication vers le public. Je propose des solutions adaptées aux contraintes des ASBL.",
+      "Oui, et c'est même une de mes spécialités. Assistant social de formation et de métier, je connais les réalités du secteur associatif : budgets contraints, équipes bénévoles qui changent, besoins spécifiques (agenda d'événements, espace membres, formulaire d'adhésion) et importance de communiquer clairement vers le public. Je propose des solutions adaptées : un pack de base à 900 €, des options à la carte, et un CMS pour que votre équipe mette le site à jour sans toucher au code. Basé à Wavre, j'accompagne les associations de tout le Brabant wallon et d'ailleurs, à distance. Vous trouverez plus de détails dans l'article consacré aux sites internet pour ASBL, sur la page Articles.",
+  },
+  {
+    question: "Combien coûte un site internet pour une ASBL ?",
+    answer:
+      "Le pack de base est à 900 € : une page d'accueil personnalisée, 5 pages statiques, un formulaire de contact sécurisé, un SEO de base et un an d'hébergement. Vous pouvez ajouter un CMS (200 à 350 €) pour publier vous-même vos actualités et vos événements, soit 1 100 à 1 250 € au total la première année. Ensuite, l'hébergement et la maintenance coûtent 250 € par an. Prix sans TVA (non assujetti). Le devis est gratuit : faites une première estimation avec le calculateur de la page Tarifs, puis contactez-moi via la page Contact.",
+  },
+  {
+    question: "Pourquoi choisir un développeur web basé à Wavre, en Brabant wallon ?",
+    answer:
+      "Parce qu'un interlocuteur proche de chez vous connaît votre contexte et reste facile à joindre. Je suis basé à Wavre et j'interviens dans tout le Brabant wallon — Ottignies, Louvain-la-Neuve, Nivelles, Waterloo, Rixensart… — ainsi que dans les provinces de Namur et du Hainaut et en région bruxelloise. On peut se rencontrer pour lancer le projet : la première réunion, pour établir le devis, ne donne lieu à aucun frais de déplacement. Et si vous êtes ailleurs, tout peut se faire à distance : la qualité du site est la même.",
+  },
+  {
+    question: "Pourquoi un assistant social qui crée des sites internet ?",
+    answer:
+      "Je suis assistant social de formation et de métier, et développeur web freelance. Ce double parcours change la façon dont je travaille : j'écoute d'abord ce que vous faites et pour qui, avant de parler technique. Je connais les réalités du secteur associatif et social — budgets serrés, équipes bénévoles, besoin de communiquer simplement avec le public. Mon objectif est de vous livrer un site utile et compréhensible, pas une vitrine technologique.",
+  },
+  {
+    question: "De quoi une ASBL a-t-elle besoin pour démarrer son site ?",
+    answer:
+      "De peu de choses pour commencer : une présentation de vos activités (même en brouillon), votre logo, quelques photos, et les informations légales de l'ASBL. Le Code des sociétés et des associations (article 2:20) prévoit notamment que le site mentionne la dénomination, la forme légale, l'adresse du siège, le numéro d'entreprise et la mention « RPM » suivie du tribunal du siège. Si vous avez déjà un nom de domaine, prévoyez ses accès. Il vous manque des textes ? Je vous aide à les rédiger.",
   },
 ];
