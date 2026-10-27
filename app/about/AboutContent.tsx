@@ -149,7 +149,7 @@ export default function AboutContent() {
             width={500}
             height={500}
             onClick={() => setIsClick(!isClick)}
-            alt="Certificat Ingénieur Fullstack"
+            alt="Certificat « Full-Stack Engineer » de Codecademy"
             className={`w-[40vw] md:hidden transition-all duration-600 ease-in-out ${
               isClick ? "" : "animate-pulse"
             }`}
@@ -168,7 +168,7 @@ export default function AboutContent() {
             <CardContent className="flex flex-col items-center text-base md:text-lg">
               <p className="text-center md:text-justify">
                 {
-                  "Le 16 septembre 2025, j'ai franchi une nouvelle étape en lançant mon activité en tant qu'indépendant complémentaire, prêt à offrir des prestations de qualité, à la hauteur des standards du métier. J'ai d'ailleurs obtenu une certification d'ingénieur Full-Stack par le site CodeCademy."
+                  "Le 16 septembre 2025, j'ai franchi une nouvelle étape en lançant mon activité en tant qu'indépendant complémentaire, prêt à offrir des prestations de qualité, à la hauteur des standards du métier. J'ai d'ailleurs obtenu une certification « Full-Stack Engineer » de Codecademy."
                 }
               </p>
             </CardContent>
@@ -177,7 +177,7 @@ export default function AboutContent() {
             src={"/certificate-fullstack.png"}
             width={500}
             height={500}
-            alt="Certificat Ingénieur Fullstack"
+            alt="Certificat « Full-Stack Engineer » de Codecademy"
             className="hidden md:block w-[20vw] hover:scale-220 transition-all duration-600 ease-in-out"
           />
         </motion.div>

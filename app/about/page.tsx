@@ -5,7 +5,7 @@ import { DEFAULT_OG_IMAGE } from "@/src/lib/site";
 export const metadata: Metadata = {
   title: "À propos — Le Poteau du Web",
   description:
-    "Julien Ledent, développeur web full-stack freelance à Wavre. Certifié ingénieur Full-Stack, passionné par Next.js et les nouvelles technologies. Ancien assistant social reconverti dans le développement web.",
+    "Julien Ledent, développeur web full-stack freelance à Wavre. Certification Full-Stack Engineer (Codecademy). Assistant social de formation et de métier.",
   keywords: [
     "Julien Ledent développeur web",
     "développeur full-stack Wavre",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "À propos — Le Poteau du Web",
     description:
-      "Julien Ledent, développeur web full-stack freelance à Wavre. Certifié ingénieur Full-Stack, passionné par Next.js et les nouvelles technologies.",
+      "Julien Ledent, développeur web full-stack freelance à Wavre. Certification Full-Stack Engineer (Codecademy). Assistant social de formation et de métier.",
     url: "https://www.lepoteauduweb.be/about",
     siteName: "Le Poteau du Web",
     locale: "fr_BE",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "À propos — Le Poteau du Web",
     description:
-      "Julien Ledent, développeur web full-stack freelance à Wavre. Certifié ingénieur Full-Stack.",
+      "Julien Ledent, développeur web full-stack freelance à Wavre. Certification Full-Stack Engineer (Codecademy). Assistant social de formation et de métier.",
   },
 };
 
