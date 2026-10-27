@@ -3,12 +3,27 @@ export type ArticleSection = {
   content: string | string[];
 };
 
+export type ArticleFaq = {
+  question: string;
+  answer: string;
+};
+
 export type Article = {
   title: string;
   slug: string;
+  /** Date de publication, format AAAA-MM-JJ. */
   date: string;
+  /** Date de mise à jour (AAAA-MM-JJ), affichée seulement si présente. */
+  updated?: string;
+  /** Chapeau affiché sous le titre ; sert aussi de meta description par défaut. */
   excerpt: string;
+  /** Meta description dédiée ; repli sur excerpt. */
+  description?: string;
   sections: ArticleSection[];
+  /** Questions affichées en bas de l'article (H2 « Questions fréquentes », H3 par question). */
+  faq?: ArticleFaq[];
+  /** Slugs d'articles affichés dans « À lire aussi ». */
+  related?: string[];
 };
 
 export const articles: Article[] = [
