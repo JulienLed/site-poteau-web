@@ -281,7 +281,7 @@ export default function AboutContent() {
           <Card className="bg-logo-blue border-0 text-sandy-brown shadow-2xl">
             <CardHeader>
               <CardTitle className="text-center md:text-left text-lg md:text-2xl font-title font-semibold">
-                Zone d'intervention & Valeurs
+                Zone d&apos;intervention & Valeurs
               </CardTitle>
             </CardHeader>
             <CardContent className="flex flex-col items-center text-base md:text-lg gap-4">

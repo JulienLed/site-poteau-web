@@ -9,7 +9,7 @@ export default function Tarifs() {
 
       <PageIntro>
         <p className="text-base md:text-lg text-center md:text-justify">
-          Des tarifs clairs et transparents, sans mauvaise surprise. Le pack de base couvre l'essentiel pour lancer votre présence en ligne. Des options viennent s'y ajouter selon vos besoins. Utilisez le calculateur ci-dessous pour estimer votre projet en quelques clics.
+          Des tarifs clairs et transparents, sans mauvaise surprise. Le pack de base couvre l&apos;essentiel pour lancer votre présence en ligne. Des options viennent s&apos;y ajouter selon vos besoins. Utilisez le calculateur ci-dessous pour estimer votre projet en quelques clics.
         </p>
       </PageIntro>
 

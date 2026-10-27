@@ -42,7 +42,7 @@ function ArticleCard({
           href={`/articles/${article.slug}`}
           className="w-fit mt-2 px-5 py-2 rounded-xl bg-sandy-brown text-logo-blue font-semibold text-base hover:bg-sandy-brown/90 transition-colors duration-200"
         >
-          Lire l'article
+          Lire l&apos;article
         </Link>
       </motion.article>
     </div>
@@ -55,7 +55,7 @@ export default function Articles() {
       <PageTitle title="Articles" />
       <PageIntro>
         <p className="text-base md:text-lg text-center md:text-justify">
-          Bienvenue dans l'espace articles du Poteau du Web. Vous y trouverez des conseils pratiques sur la création de sites internet, le référencement SEO et le choix de votre prestataire web — rédigés sans jargon, pour vous aider à prendre les bonnes décisions.
+          Bienvenue dans l&apos;espace articles du Poteau du Web. Vous y trouverez des conseils pratiques sur la création de sites internet, le référencement SEO et le choix de votre prestataire web — rédigés sans jargon, pour vous aider à prendre les bonnes décisions.
         </p>
       </PageIntro>
       <section id="articles" className="pt-4 pb-16 px-1 flex flex-col items-center gap-10">

@@ -8,7 +8,7 @@ export default function Faq() {
       <PageTitle title="FAQ" />
       <PageIntro>
         <p className="text-base md:text-lg text-center md:text-justify">
-          Vous avez des questions avant de vous lancer ? C'est normal. Voici les réponses aux interrogations les plus fréquentes sur la création de site, les tarifs, les délais et mon fonctionnement. Si votre question n'est pas là, n'hésitez pas à me contacter directement.
+          Vous avez des questions avant de vous lancer ? C&apos;est normal. Voici les réponses aux interrogations les plus fréquentes sur la création de site, les tarifs, les délais et mon fonctionnement. Si votre question n&apos;est pas là, n&apos;hésitez pas à me contacter directement.
         </p>
       </PageIntro>
       <section id="faq-list" className="pt-4 pb-16 px-1 flex flex-col items-center gap-4">

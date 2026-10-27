@@ -9,8 +9,8 @@ export default function Portfolio() {
       </section>
       <PageIntro>
         <p className="text-base md:text-lg text-center md:text-justify">
-          Voici un aperçu de sites que j'ai développés, couvrant différents types de projets : site vitrine express, site multi-pages avec CMS intégré, plateforme e-commerce et site associatif. Chaque projet illustre une approche adaptée à un besoin spécifique. Cliquez sur{" "}
-          <span className="font-semibold">"En savoir plus"</span> pour découvrir les détails et les technologies utilisées.
+          Voici un aperçu de sites que j&apos;ai développés, couvrant différents types de projets : site vitrine express, site multi-pages avec CMS intégré, plateforme e-commerce et site associatif. Chaque projet illustre une approche adaptée à un besoin spécifique. Cliquez sur{" "}
+          <span className="font-semibold">&quot;En savoir plus&quot;</span> pour découvrir les détails et les technologies utilisées.
         </p>
       </PageIntro>
       <section id="projets" className="py-15">
