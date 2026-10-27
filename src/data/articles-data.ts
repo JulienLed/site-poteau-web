@@ -295,41 +295,152 @@ export const articles: Article[] = [
     ],
   },
   {
-    title: "Créer un site internet pour une ASBL en Belgique : ce qu'il faut savoir",
+    title: "Création de site internet pour ASBL et associations",
     slug: "site-internet-asbl-belgique",
     date: "2026-01-14",
     updated: CONTENT_UPDATE_DATE,
     excerpt:
-      "Les associations ont des besoins spécifiques : budgets contraints, agenda d'événements, espace membres, communication vers le public. Voici comment aborder la création de site pour une ASBL en Belgique.",
+      "Petit budget, équipe bénévole, personne pour s'occuper du numérique : créer le site internet d'une association soulève des questions très concrètes. Voici les réponses, sans jargon, d'un assistant social devenu développeur web.",
+    description:
+      "Création de site internet pour ASBL et associations : budget, fonctionnalités utiles, obligations légales. Site sur mesure à Wavre, devis gratuit.",
     sections: [
       {
         type: "p",
         content:
-          "Une ASBL n'est pas une entreprise comme les autres. Elle a des objectifs sociaux, culturels ou sportifs, des bénévoles impliqués, et souvent un budget serré. Son site internet doit refléter ces réalités : lisible, accessible, facile à mettre à jour, et capable de convaincre à la fois des membres potentiels, des donateurs et des partenaires institutionnels.",
-      },
-      {
-        type: "h2",
-        content: "Les besoins typiques d'une ASBL",
-      },
-      {
-        type: "ul",
-        content: [
-          "Présentation claire des activités et de la mission",
-          "Agenda des événements ou activités régulières",
-          "Formulaire d'adhésion ou de contact",
-          "Espace membres pour accéder à des documents ou infos privées",
-          "Intégration de dons en ligne (si applicable)",
-          "Section actualités ou blog pour maintenir le site vivant",
-        ],
-      },
-      {
-        type: "h2",
-        content: "Le budget, un facteur déterminant",
+          "Vous cherchez une solution de **création de site internet pour votre ASBL** ? Une ASBL n'est pas une entreprise comme les autres. Elle a des objectifs sociaux, culturels ou sportifs, des bénévoles impliqués, et souvent un budget serré. Son site internet doit refléter ces réalités : lisible, accessible, facile à mettre à jour, et capable de convaincre à la fois des membres potentiels, des donateurs et des partenaires institutionnels.",
       },
       {
         type: "p",
         content:
-          "Beaucoup d'associations hésitent à investir dans un site professionnel par peur des coûts. Pourtant, un site bien fait est un outil de communication qui travaille pour vous 24h/24. Chez Le Poteau du Web, je propose des solutions adaptées aux réalités des ASBL : pack de base à 900 €, avec des options à la carte selon vos besoins réels — sans vous vendre des fonctionnalités inutiles.",
+          "Dans ce guide, je vous explique ce qu'un site internet pour association doit vraiment contenir, ce qu'il coûte, quels points légaux vérifier, et comment je travaille avec les ASBL. Je suis développeur web freelance à Wavre, et assistant social de formation et de métier : le secteur associatif, je le connais de l'intérieur.",
+      },
+      {
+        type: "h2",
+        content: "Pourquoi la création d'un site internet est compliquée pour une ASBL",
+      },
+      {
+        type: "p",
+        content:
+          "Dans beaucoup d'associations, le site internet arrive en bas de la liste des priorités. Ce n'est pas un manque d'intérêt : c'est une question de moyens, de temps et de compétences disponibles.",
+      },
+      {
+        type: "h3",
+        content: "Un petit budget, réservé d'abord à la mission",
+      },
+      {
+        type: "p",
+        content:
+          "Les ressources d'une ASBL servent d'abord à ses activités. Beaucoup d'associations hésitent donc à investir dans un site professionnel par peur des coûts, surtout quand elles ne savent pas combien ça coûte ni ce qu'elles obtiendront en échange. Pourtant, un site bien fait est un outil de communication qui travaille pour vous 24h/24.",
+      },
+      {
+        type: "h3",
+        content: "Des bénévoles qui changent",
+      },
+      {
+        type: "p",
+        content:
+          "Le site est souvent lancé par un bénévole motivé, qui finit un jour par passer la main. Plus personne ne connaît les mots de passe, l'hébergement arrive à échéance, et le site se fige. Un bon site associatif doit pouvoir être repris facilement par la personne suivante.",
+      },
+      {
+        type: "h3",
+        content: "Pas de référent numérique",
+      },
+      {
+        type: "p",
+        content:
+          "La plupart des associations n'ont personne de dédié au numérique. Face à un devis technique, difficile de savoir ce qui est utile et ce qui ne l'est pas. C'est là qu'un interlocuteur qui parle votre langue fait la différence.",
+      },
+      {
+        type: "h2",
+        content: "Combien coûte un site internet pour une association ?",
+      },
+      {
+        type: "p",
+        content:
+          "Parlons chiffres, en toute transparence. Chez Le Poteau du Web, le **pack de base est à 900 €**. Il comprend une page d'accueil personnalisée, 5 pages statiques, un formulaire de contact sécurisé, un SEO de base et un an d'hébergement. Vous ajoutez ensuite uniquement ce dont votre association a besoin — sans vous vendre des fonctionnalités inutiles.",
+      },
+      {
+        type: "ul",
+        content: [
+          "Pages supplémentaires : 60 à 100 € par page",
+          "CMS pour modifier vous-même vos contenus : 200 à 350 €",
+          "Espace membres : 150 à 300 €",
+          "Hébergement et maintenance à partir de la 2e année : 250 € par an",
+          "Mises à jour de contenu que je réalise pour vous : 45 € de l'heure",
+        ],
+      },
+      {
+        type: "p",
+        content:
+          "Par exemple, un site avec page d'accueil + 5 pages et un CMS revient à **1 100 à 1 250 €** la première année, hébergement compris, puis 250 € par an. Mes prix sont sans TVA : je ne suis pas assujetti à la TVA, le prix annoncé est donc le prix que vous payez. Le devis est gratuit et sans engagement, et vous pouvez faire une première estimation avec le [calculateur de la page Tarifs](/tarifs).",
+      },
+      {
+        type: "p",
+        content:
+          "Pour comparer avec les autres solutions — constructeurs de sites, agences, freelances — j'ai détaillé les fourchettes du marché dans l'article [combien coûte un site web en Belgique](/articles/combien-coute-un-site-web-en-belgique).",
+      },
+      {
+        type: "h2",
+        content: "Les fonctionnalités vraiment utiles pour un site web d'association",
+      },
+      {
+        type: "p",
+        content:
+          "Inutile de tout prévoir dès le départ. Voici les besoins typiques d'une ASBL, ceux que l'on retrouve le plus souvent, avec ce qu'ils impliquent concrètement.",
+      },
+      {
+        type: "h3",
+        content: "Une présentation claire des activités et de la mission",
+      },
+      {
+        type: "p",
+        content:
+          "C'est la base : qui vous êtes, ce que vous faites, pour qui et où. Un visiteur doit comprendre en quelques secondes s'il est au bon endroit. C'est aussi la page que liront vos partenaires et vos financeurs.",
+      },
+      {
+        type: "h3",
+        content: "Un agenda des événements ou des activités régulières",
+      },
+      {
+        type: "p",
+        content:
+          "Stages, permanences, assemblées, fêtes : un agenda à jour évite les appels et les messages répétés. Pour qu'il reste à jour, il faut pouvoir le modifier soi-même — d'où l'intérêt du CMS, présenté plus bas.",
+      },
+      {
+        type: "h3",
+        content: "Un formulaire d'adhésion ou de contact",
+      },
+      {
+        type: "p",
+        content:
+          "Le formulaire de contact sécurisé est inclus dans le pack de base. Un formulaire d'adhésion fait partie du pack de base, en plus du formulaire de contact sécurisé.",
+      },
+      {
+        type: "h3",
+        content: "Un espace membres",
+      },
+      {
+        type: "p",
+        content:
+          "Pour partager des documents internes — procès-verbaux, plannings, informations pour les bénévoles — sans les rendre publics, un espace membres protégé par identifiant est très pratique. Il est proposé en option, entre 150 et 300 € selon la complexité.",
+      },
+      {
+        type: "h3",
+        content: "Les dons en ligne",
+      },
+      {
+        type: "p",
+        content:
+          "Votre association fait appel à la générosité du public ? Je peux mettre en place des dons en ligne : un QR code de don, ou un paiement en ligne branché sur Stripe. Le prix dépend de la solution choisie et figure dans le devis. Les frais de transaction sont ceux du prestataire de paiement.",
+      },
+      {
+        type: "h3",
+        content: "Des actualités ou un blog",
+      },
+      {
+        type: "p",
+        content:
+          "Une section actualités ou un blog permet de maintenir le site vivant. Publier régulièrement quelques nouvelles montre que l'association est active, et c'est bon pour votre visibilité sur Google.",
       },
       {
         type: "h2",
@@ -338,11 +449,48 @@ export const articles: Article[] = [
       {
         type: "p",
         content:
-          "Pour une association, pouvoir mettre à jour les actualités, modifier les dates d'événements ou ajouter une photo sans faire appel au développeur à chaque fois, c'est essentiel. C'est pourquoi je propose l'intégration d'un CMS (système de gestion de contenu) en option. Vous gérez votre contenu via une interface simple, sans toucher au code.",
+          "Pour une association, pouvoir mettre à jour les actualités, modifier les dates d'événements ou ajouter une photo sans faire appel au développeur à chaque fois, c'est essentiel. C'est pourquoi je propose l'intégration d'un CMS (système de gestion de contenu) en option, entre 200 et 350 €. Vous gérez votre contenu via une interface simple, sans toucher au code.",
+      },
+      {
+        type: "p",
+        content:
+          "C'est aussi la réponse au problème des bénévoles qui changent : quand quelqu'un passe la main, la personne suivante reprend la même interface. Si besoin, une formation peut être prévue au tarif horaire de 45 €.",
       },
       {
         type: "h2",
-        content: "L'accessibilité, une priorité pour les ASBL",
+        content: "Les points légaux et d'accessibilité à vérifier",
+      },
+      {
+        type: "p",
+        content:
+          "Je ne suis pas juriste : voici les points à vérifier, avec les sources officielles quand je les ai trouvées. En cas de doute, renseignez-vous auprès d'un professionnel du droit ou de votre fédération.",
+      },
+      {
+        type: "h3",
+        content: "Les mentions obligatoires de l'ASBL",
+      },
+      {
+        type: "p",
+        content:
+          "L'[article 2:20 du **Code des sociétés et des associations**](https://www.ejustice.just.fgov.be/eli/loi/2019/03/23/2019A40586/justel) prévoit que les sites internet d'une personne morale — une ASBL en est une — mentionnent notamment : sa dénomination, sa forme légale (ASBL), l'adresse précise de son siège, son numéro d'entreprise, les termes « registre des personnes morales » ou « RPM » suivis du tribunal du siège et, le cas échéant, son adresse e-mail et son site internet.",
+      },
+      {
+        type: "p",
+        content:
+          "Sur les sites que je réalise, ces informations figurent sur une page dédiée (mentions légales).",
+      },
+      {
+        type: "h3",
+        content: "Les données personnelles (RGPD)",
+      },
+      {
+        type: "p",
+        content:
+          "Dès que votre site collecte des données — formulaire de contact, adhésion, newsletter — le RGPD s'applique, associations comprises. Il impose notamment d'informer les personnes au moment où leurs données sont collectées (article 13). Une politique de confidentialité claire est donc indispensable. Son contenu est à adapter à chaque ASBL : en cas de doute, consultez le site de l'[Autorité de protection des données](https://www.autoriteprotectiondonnees.be). Si le site utilise des cookies de mesure d'audience, un consentement doit en principe être demandé.",
+      },
+      {
+        type: "h3",
+        content: "L'accessibilité",
       },
       {
         type: "p",
@@ -350,8 +498,13 @@ export const articles: Article[] = [
           "Un site pour une ASBL doit être accessible au plus grand nombre : personnes âgées, personnes peu à l'aise avec le numérique, utilisateurs sur smartphone. Je veille à ce que chaque site soit lisible, responsive, rapide à charger et conforme aux bonnes pratiques d'accessibilité web (contrastes, taille des polices, navigation claire).",
       },
       {
+        type: "p",
+        content:
+          "Côté obligations, des règles spécifiques existent pour les sites des organismes du secteur public (loi du 19 juillet 2018 au niveau fédéral, et textes régionaux). Si votre ASBL est financée ou contrôlée par des pouvoirs publics, vérifiez si elle entre dans leur champ d'application.",
+      },
+      {
         type: "h2",
-        content: "Mon expérience avec le secteur associatif",
+        content: "Pourquoi un assistant social développe votre site",
       },
       {
         type: "p",
@@ -359,16 +512,82 @@ export const articles: Article[] = [
           "Mon parcours d'assistant social m'a donné une connaissance directe du monde associatif belge : ses contraintes, ses enjeux de communication, et la réalité des équipes bénévoles. Je comprends ce que vous faites et pourquoi vous le faites. C'est cette compréhension qui me permet de vous proposer un site vraiment adapté, et pas un site générique.",
       },
       {
+        type: "p",
+        content: "Concrètement, voici ce que ça change pour votre association :",
+      },
+      {
+        type: "ul",
+        content: [
+          "**Un seul interlocuteur**, qui parle votre langue plutôt que celle du code",
+          "**Un site sur mesure**, développé avec Next.js, une technologie moderne qui produit des sites rapides et optimisés pour le référencement",
+          "**Un devis transparent et gratuit** : vous savez ce que vous payez, option par option",
+          "**L'hébergement inclus la première année**",
+          "**Un accompagnement sans jargon**, de la définition des contenus à la mise en ligne",
+        ],
+      },
+      {
+        type: "p",
+        content:
+          "Mon objectif : un site tout aussi professionnel que celui d'une agence, à un tarif adapté aux moyens d'une association.",
+      },
+      {
+        type: "p",
+        content:
+          "Et le prix ? Une agence mobilise plusieurs personnes — designer, développeur, chef de projet — et ses tarifs le reflètent. C'est un modèle pertinent pour les gros projets. Pour un site associatif, un freelance est souvent plus adapté : j'en parle en détail dans [freelance ou agence web : que choisir](/articles/freelance-vs-agence-web). Vous pouvez aussi [découvrir mes réalisations](/portfolio).",
+      },
+      {
         type: "quote",
         content:
           "Un bon site pour une ASBL, c'est un site qui parle à ses membres, rassure ses partenaires, et donne envie de s'impliquer.",
       },
       {
+        type: "h2",
+        content: "Une ASBL à Wavre ou en Brabant wallon ?",
+      },
+      {
         type: "p",
         content:
-          "Vous êtes une ASBL ou une association en Brabant Wallon, à Bruxelles ou en Belgique ? Contactez-moi pour discuter de votre projet — le devis est gratuit et sans engagement.",
+          "Je suis basé à Wavre et j'interviens dans tout le Brabant wallon, ainsi que dans les provinces de Namur et du Hainaut et en région bruxelloise. Une association de Wavre, d'Ottignies ou de Nivelles peut donc travailler avec un développeur proche de chez elle. Et si votre ASBL est ailleurs en Wallonie ou en Belgique, tout peut se faire à distance.",
+      },
+      {
+        type: "p",
+        content:
+          "Vous avez un projet de site pour votre association ? [Demandez votre devis gratuit](/contact) : on en discute sans engagement. Et si vous avez d'autres questions, la page [questions fréquentes sur mes services](/faq) y répond sans doute.",
       },
     ],
+    faq: [
+      {
+        question: "Combien coûte un site internet pour une ASBL ?",
+        answer:
+          "Le pack de base est à 900 € : un site avec page d'accueil + 5 pages, un formulaire de contact sécurisé, un SEO de base et un an d'hébergement. Avec un CMS pour gérer vous-même vos contenus, comptez 1 100 à 1 250 € la première année, puis 250 € par an pour l'hébergement et la maintenance. Le devis est gratuit.",
+      },
+      {
+        question: "Notre association pourra-t-elle mettre le site à jour elle-même ?",
+        answer:
+          "Oui, avec l'option CMS (200 à 350 €). Vous modifiez vos textes, vos photos, vos actualités et vos dates d'événements depuis une interface simple, sans toucher au code. Si vous préférez me confier ces mises à jour, c'est 45 € de l'heure.",
+      },
+      {
+        question: "Quelles mentions légales doivent figurer sur le site d'une ASBL ?",
+        answer:
+          "L'[article 2:20 du Code des sociétés et des associations](https://www.ejustice.just.fgov.be/eli/loi/2019/03/23/2019A40586/justel) prévoit notamment la dénomination, la forme légale, l'adresse du siège, le numéro d'entreprise et la mention « RPM » suivie du tribunal du siège. Si le site collecte des données, une politique de confidentialité est aussi nécessaire (RGPD). En cas de doute, vérifiez auprès d'un professionnel du droit.",
+      },
+      {
+        question: "Que faut-il préparer avant de commencer ?",
+        answer:
+          "Vos textes de présentation (même en brouillon), votre logo, quelques photos, et les informations légales de l'ASBL : numéro d'entreprise et adresse du siège. Si vous n'avez pas tout, ce n'est pas un problème : je vous aide à définir et à rédiger vos contenus.",
+      },
+      {
+        question: "Faut-il être en Brabant wallon pour travailler ensemble ?",
+        answer:
+          "Non. Je suis basé à Wavre et j'interviens dans tout le Brabant wallon, les provinces de Namur et du Hainaut et la région bruxelloise. Partout ailleurs, tout peut se faire à distance.",
+      },
+      {
+        question: "Vous occupez-vous aussi de l'hébergement ?",
+        answer:
+          "Oui. La première année d'hébergement est incluse dans le pack de base. Ensuite, l'hébergement et la maintenance coûtent 250 € par an : mises à jour techniques, sauvegardes et petites corrections.",
+      },
+    ],
+    related: ["combien-coute-un-site-web-en-belgique", "freelance-vs-agence-web"],
   },
   {
     title: "Pourquoi votre site doit être adapté au mobile en 2025",
