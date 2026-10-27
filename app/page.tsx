@@ -3,6 +3,7 @@ import AnimHero from "@/src/component/home/animHero/animHero";
 import ServiceResume from "@/src/component/home/services-resume/service";
 import ButtonDown from "@/src/component/home/button-down/ButtonDown";
 import type { Metadata } from "next";
+import { DEFAULT_OG_IMAGE } from "@/src/lib/site";
 
 export const metadata: Metadata = {
   title: "Le Poteau du Web — Développeur web freelance à Wavre",
@@ -28,6 +29,9 @@ export const metadata: Metadata = {
     "site vitrine indépendant",
     "création site internet pas cher Belgique",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Le Poteau du Web — Développeur web freelance à Wavre",
     description:
@@ -36,6 +40,7 @@ export const metadata: Metadata = {
     siteName: "Le Poteau du Web",
     locale: "fr_BE",
     type: "website",
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",

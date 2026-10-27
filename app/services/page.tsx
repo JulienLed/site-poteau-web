@@ -1,5 +1,6 @@
 import Services from "./services";
 import type { Metadata } from "next";
+import { DEFAULT_OG_IMAGE } from "@/src/lib/site";
 
 export const metadata: Metadata = {
   title: "Services — Le Poteau du Web",
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
     siteName: "Le Poteau du Web",
     locale: "fr_BE",
     type: "website",
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",

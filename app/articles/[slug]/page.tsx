@@ -2,6 +2,7 @@ import { articles, ArticleSection } from "@/src/data/articles-data";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { DEFAULT_OG_IMAGE } from "@/src/lib/site";
 
 type Params = { slug: string };
 
@@ -17,19 +18,27 @@ export async function generateMetadata({
   const { slug } = await params;
   const article = articles.find((a) => a.slug === slug);
   if (!article) return {};
+  const title = `${article.title} — Le Poteau du Web`;
   return {
-    title: `${article.title} — Le Poteau du Web`,
+    title,
     description: article.excerpt,
     alternates: {
       canonical: `https://www.lepoteauduweb.be/articles/${article.slug}`,
     },
     openGraph: {
-      title: `${article.title} — Le Poteau du Web`,
+      title,
       description: article.excerpt,
       url: `https://www.lepoteauduweb.be/articles/${article.slug}`,
       siteName: "Le Poteau du Web",
       locale: "fr_BE",
       type: "article",
+      images: [DEFAULT_OG_IMAGE],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: article.excerpt,
+      images: [DEFAULT_OG_IMAGE.url],
     },
   };
 }

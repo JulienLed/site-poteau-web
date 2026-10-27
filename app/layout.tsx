@@ -4,10 +4,11 @@ import Footer from "@/src/component/footer/footer";
 import Header from "@/src/component/header/header";
 import Cookies from "@/src/component/cookies/cookies";
 import BackToTop from "@/src/component/back-to-top/BackToTop";
+import { DEFAULT_OG_IMAGE, SITE_URL } from "@/src/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.lepoteauduweb.be"),
+  metadataBase: new URL(SITE_URL),
   title: "Le Poteau du Web — Développeur web freelance à Wavre",
   description:
     "Création de sites internet sur mesure à Wavre. Design, SEO, hébergement et maintenance. Solutions pour associations, TPE et indépendants. Devis gratuit.",
@@ -41,14 +42,7 @@ export const metadata: Metadata = {
     siteName: "Le Poteau du Web",
     locale: "fr_BE",
     type: "website",
-    images: [
-      {
-        url: "/Le Poteau du Web.png",
-        width: 1200,
-        height: 630,
-        alt: "Le Poteau du Web — Développeur web freelance à Wavre",
-      },
-    ],
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
