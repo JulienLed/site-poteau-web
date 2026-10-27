@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DEFAULT_OG_IMAGE } from "@/src/lib/site";
+import { renderInline } from "./renderInline";
 
 type Params = { slug: string };
 
@@ -67,7 +68,7 @@ function renderSection(section: ArticleSection, i: number) {
   if (section.type === "p") {
     return (
       <p key={i} className="text-base md:text-lg text-justify leading-relaxed">
-        {section.content as string}
+        {renderInline(section.content as string)}
       </p>
     );
   }
@@ -75,7 +76,7 @@ function renderSection(section: ArticleSection, i: number) {
     return (
       <ul key={i} className="list-disc list-inside space-y-1 text-base md:text-lg pl-2">
         {(section.content as string[]).map((item, j) => (
-          <li key={j}>{item}</li>
+          <li key={j}>{renderInline(item)}</li>
         ))}
       </ul>
     );
@@ -86,7 +87,7 @@ function renderSection(section: ArticleSection, i: number) {
         key={i}
         className="border-l-4 border-sandy-brown pl-4 italic opacity-80 text-base md:text-lg my-4"
       >
-        {section.content as string}
+        {renderInline(section.content as string)}
       </blockquote>
     );
   }
