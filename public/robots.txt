@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://www.lepoteauduweb.be
-
-# Sitemaps
-Sitemap: https://www.lepoteauduweb.be/sitemap.xml

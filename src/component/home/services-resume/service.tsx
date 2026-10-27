@@ -40,9 +40,9 @@ export default function ServiceResume() {
               <CarouselItem key={index} className="px-1">
                 <Card className="bg-logo-blue border-0 w-full h-[520px] md:h-[550px]">
                   <CardContent className="flex flex-col items-center h-full justify-between">
-                    <h3 className="text-xl md:text-2xl text-center text-sandy-brown font-title font-bold py-5">
+                    <h2 className="text-xl md:text-2xl text-center text-sandy-brown font-title font-bold py-5">
                       {service.title}
-                    </h3>
+                    </h2>
                     <Image
                       src={service.image}
                       alt={service.imageAlt}

@@ -4,6 +4,8 @@ import { motion } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { asblLinkClassName } from "./heroLink";
 
 export default function AnimHeroDesktop() {
   const [mounted, setMounted] = useState(false);
@@ -42,11 +44,11 @@ export default function AnimHeroDesktop() {
             width={637}
             className="!w-[50vw]"
           />
-          <div className="relative text-center text-sm md:text-lg max-w-[80%] mx-auto">
+          <h1 className="relative text-center text-sm md:text-lg max-w-[80%] mx-auto">
             <span className="mask-text break-words">
               Un pilier solide pour bâtir votre site web
             </span>
-          </div>
+          </h1>
         </div>
       </motion.div>
 
@@ -75,9 +77,12 @@ export default function AnimHeroDesktop() {
             className="w-[15vw] rounded-full shadow-2xl"
           />
           <p className="border-l-2 border-sandy-brown md:text-xs lg:text-lg text-left lg:text-justify pl-1 md:pl-5 m-2 md:m-5">
-            <strong>Julien, Developpeur Web.</strong> <br /> Avec Le Poteau du
-            Web, je vous propose de réaliser votre site web de façon
-            professionnelle et en toute sérénité.
+            <strong>Julien, Développeur Web.</strong> <br /> Avec Le Poteau du
+            Web, je réalise le site de votre{" "}
+            <Link href="/articles/site-internet-asbl-belgique" className={asblLinkClassName}>
+              ASBL
+            </Link>{" "}
+            ou association à Wavre, de façon professionnelle et sereine.
           </p>
         </div>
       </motion.div>

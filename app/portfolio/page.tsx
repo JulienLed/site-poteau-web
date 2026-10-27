@@ -1,5 +1,6 @@
 import Portfolio from "./portfolio";
 import type { Metadata } from "next";
+import { DEFAULT_OG_IMAGE } from "@/src/lib/site";
 
 export const metadata: Metadata = {
   title: "Réalisations — Le Poteau du Web",
@@ -13,6 +14,9 @@ export const metadata: Metadata = {
     "exemples sites web Next.js",
     "e-commerce développeur Wavre",
   ],
+  alternates: {
+    canonical: "/portfolio",
+  },
   openGraph: {
     title: "Réalisations — Le Poteau du Web",
     description:
@@ -21,6 +25,7 @@ export const metadata: Metadata = {
     siteName: "Le Poteau du Web",
     locale: "fr_BE",
     type: "website",
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
