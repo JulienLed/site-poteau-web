@@ -717,17 +717,17 @@ export const articles: Article[] = [
     related: ["combien-coute-un-site-web-en-belgique", "freelance-vs-agence-web"],
   },
   {
-    title: "Pourquoi votre site doit être adapté au mobile en 2025",
+    title: "Pourquoi votre site doit être adapté au mobile en 2026",
     slug: "site-mobile-responsive-2025",
     date: "2026-02-05",
     updated: CONTENT_UPDATE_DATE,
     excerpt:
-      "Plus de 60 % du trafic web mondial vient des smartphones. Un site non adapté au mobile, c'est une mauvaise expérience utilisateur, un mauvais référencement, et des visiteurs perdus. Voici pourquoi le responsive est incontournable.",
+      "Plus de la moitié du trafic web mondial vient des smartphones. Un site non adapté au mobile, c'est une mauvaise expérience utilisateur, un mauvais référencement, et des visiteurs perdus. Voici pourquoi le responsive est incontournable.",
     sections: [
       {
         type: "p",
         content:
-          "En 2025, ignorer le mobile n'est plus une option. La majorité des internautes consultent les sites sur leur téléphone — que ce soit pour chercher un artisan, lire un article, remplir un formulaire ou trouver les horaires d'une association. Si votre site ne s'affiche pas bien sur un écran de 6 pouces, vous perdez des visiteurs, et Google vous pénalise.",
+          "Aujourd'hui, ignorer le mobile n'est plus une option. La majorité des internautes consultent les sites sur leur téléphone — que ce soit pour chercher un artisan, lire un article, remplir un formulaire ou trouver les horaires d'une association. Si votre site ne s'affiche pas bien sur un écran de 6 pouces, vous perdez des visiteurs, et Google vous pénalise.",
       },
       {
         type: "h2",
@@ -745,14 +745,14 @@ export const articles: Article[] = [
       {
         type: "p",
         content:
-          "Depuis 2019, Google utilise le « mobile-first indexing » : c'est la version mobile de votre site qui est analysée en priorité pour déterminer votre position dans les résultats de recherche. Un site qui ne s'affiche pas bien sur mobile sera donc moins bien référencé, même si la version desktop est parfaite.",
+          "Google utilise le « mobile-first indexing » : c'est la version mobile de votre site qui est analysée en priorité pour déterminer votre position dans les résultats de recherche. Un site qui ne s'affiche pas bien sur mobile sera donc moins bien référencé, même si la version desktop est parfaite.",
       },
       {
         type: "ul",
         content: [
-          "Google indexe la version mobile en priorité depuis 2019",
+          "Google indexe la version mobile en priorité",
           "Un site lent sur mobile est pénalisé dans les résultats",
-          "Les Core Web Vitals (LCP, FID, CLS) sont mesurés sur mobile",
+          "Les Core Web Vitals (LCP, INP, CLS) sont mesurés sur mobile et sur ordinateur",
           "Un mauvais affichage mobile augmente le taux de rebond",
         ],
       },
