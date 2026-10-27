@@ -57,11 +57,11 @@
   @keyframes reveal {
     0% {
       opacity: 0.5;
-      clip-path: inset(0 100% 0 0);
+      background-position: 100% 0;
     }
     100% {
       opacity: 1;
-      clip-path: inset(0 0 0 0);
+      background-position: 0 0;
     }
   }
 
@@ -163,18 +163,22 @@
     border-right-color: orange;
     animation: l2 1s infinite linear;
   }
+  /* Révélation du texte de gauche à droite : le texte est peint par un dégradé
+     (moitié couleur, moitié transparente) que l'animation fait glisser.
+     Pas de clip-path animé : Chrome le dessine mal sous un parent déplacé
+     en translateX (carte du hero sur ordinateur). inline-block : le dégradé
+     couvre une seule boîte, même si le texte tient sur plusieurs lignes. */
   .mask-text {
+    display: inline-block;
     position: relative;
     opacity: 0;
-    color: #f19953ff;
-    -webkit-mask-image: linear-gradient(
-      to right,
-      #f19953ff 0%,
-      #f19953ff 50%,
-      transparent 50%
-    );
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: 200% 100%;
+    color: transparent;
+    background-image: linear-gradient(to right, #f19953ff 50%, transparent 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
     animation: reveal 1.5s ease-in-out forwards;
     animation-delay: 1s;
   }

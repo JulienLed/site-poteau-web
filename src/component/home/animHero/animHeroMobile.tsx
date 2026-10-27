@@ -21,7 +21,7 @@ export default function AnimHeroMobile() {
       {/* Bloc titre/logo */}
       <motion.div
         className="flex flex-col items-center bg-logo-blue w-full shadow-lg rounded-3xl text-sandy-brown p-5"
-        initial={{ y: -100 }}
+        initial={{ y: -200 }}
         animate={inView ? { y: [-200, 0] } : { y: [0, -200] }}
         transition={{
           duration: 0.6,
@@ -46,7 +46,7 @@ export default function AnimHeroMobile() {
       {/* Bloc portrait + texte */}
       <motion.div
         className="flex flex-col items-center bg-logo-blue w-full shadow-lg rounded-3xl text-sandy-brown p-5"
-        initial={{ y: 100 }}
+        initial={{ y: 200 }}
         animate={inView ? { y: [200, 0] } : { y: [0, 200] }}
         transition={{
           duration: 0.6,
