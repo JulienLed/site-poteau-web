@@ -42,11 +42,11 @@ export default function AnimHeroDesktop() {
             width={637}
             className="!w-[50vw]"
           />
-          <div className="relative text-center text-sm md:text-lg max-w-[80%] mx-auto">
+          <h1 className="relative text-center text-sm md:text-lg max-w-[80%] mx-auto">
             <span className="mask-text break-words">
               Un pilier solide pour bâtir votre site web
             </span>
-          </div>
+          </h1>
         </div>
       </motion.div>
 
