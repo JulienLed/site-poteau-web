@@ -26,11 +26,42 @@ export type Article = {
   related?: string[];
 };
 
+// Date de mise en ligne de la dernière révision des contenus (AAAA-MM-JJ),
+// utilisée comme `updated` des articles révisés. Elle doit être la date RÉELLE
+// de mise en production : jamais une date future, ni la date de rédaction.
+// `date` (publication) ne change jamais.
+export const CONTENT_UPDATE_DATE = "2026-10-27";
+
+const ONE_DAY_MS = 24 * 60 * 60 * 1000;
+
+// Garde-fou appelé au build : échoue si `updated` dépasse de plus d'un jour la
+// date du build (tolérance pour les fuseaux horaires) ou précède `date`.
+export function assertArticleDates(now: Date = new Date()) {
+  for (const article of articles) {
+    if (!article.updated) continue;
+    const updated = new Date(article.updated).getTime();
+    if (Number.isNaN(updated)) {
+      throw new Error(`Article "${article.slug}" : updated invalide (${article.updated}).`);
+    }
+    if (updated > now.getTime() + ONE_DAY_MS) {
+      throw new Error(
+        `Article "${article.slug}" : updated (${article.updated}) est postérieure à la date du build (${now.toISOString().slice(0, 10)}).`
+      );
+    }
+    if (updated < new Date(article.date).getTime()) {
+      throw new Error(
+        `Article "${article.slug}" : updated (${article.updated}) est antérieure à date (${article.date}).`
+      );
+    }
+  }
+}
+
 export const articles: Article[] = [
   {
     title: "Combien coûte un site web en Belgique en 2025 ?",
     slug: "combien-coute-un-site-web-en-belgique",
     date: "2025-10-15",
+    updated: CONTENT_UPDATE_DATE,
     excerpt:
       "Wix, agence, freelance : les prix varient du simple au décuple. Voici un guide honnête pour comprendre ce que vous payez vraiment — et ce que ça devrait vous coûter.",
     sections: [
@@ -267,6 +298,7 @@ export const articles: Article[] = [
     title: "Créer un site internet pour une ASBL en Belgique : ce qu'il faut savoir",
     slug: "site-internet-asbl-belgique",
     date: "2026-01-14",
+    updated: CONTENT_UPDATE_DATE,
     excerpt:
       "Les associations ont des besoins spécifiques : budgets contraints, agenda d'événements, espace membres, communication vers le public. Voici comment aborder la création de site pour une ASBL en Belgique.",
     sections: [
@@ -342,6 +374,7 @@ export const articles: Article[] = [
     title: "Pourquoi votre site doit être adapté au mobile en 2025",
     slug: "site-mobile-responsive-2025",
     date: "2026-02-05",
+    updated: CONTENT_UPDATE_DATE,
     excerpt:
       "Plus de 60 % du trafic web mondial vient des smartphones. Un site non adapté au mobile, c'est une mauvaise expérience utilisateur, un mauvais référencement, et des visiteurs perdus. Voici pourquoi le responsive est incontournable.",
     sections: [

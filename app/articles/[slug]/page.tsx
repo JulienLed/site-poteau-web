@@ -1,4 +1,4 @@
-import { articles, Article, ArticleSection } from "@/src/data/articles-data";
+import { articles, Article, ArticleSection, assertArticleDates } from "@/src/data/articles-data";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -8,6 +8,7 @@ import { renderInline } from "./renderInline";
 type Params = { slug: string };
 
 export function generateStaticParams() {
+  assertArticleDates();
   return articles.map((a) => ({ slug: a.slug }));
 }
 
