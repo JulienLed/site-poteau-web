@@ -270,7 +270,7 @@ export const articles: Article[] = [
       {
         type: "p",
         content:
-          "Quand on cherche un prestataire pour créer son site internet, on se retrouve souvent face à deux grandes options : faire appel à une agence web ou à un développeur freelance. Les deux ont leurs avantages. Mais pour une ASBL, un indépendant ou un petit commerce, le choix est souvent plus évident qu'il n'y paraît.",
+          "Quand on cherche un prestataire pour créer son site internet, on se retrouve souvent face à deux grandes options : faire appel à une agence web ou à un développeur freelance. Les deux ont leurs avantages. Mais pour une [ASBL](/articles/site-internet-asbl-belgique), un indépendant ou un petit commerce, le choix est souvent plus évident qu'il n'y paraît.",
       },
       {
         type: "h2",
@@ -298,7 +298,7 @@ export const articles: Article[] = [
       {
         type: "ul",
         content: [
-          "Tarifs plus accessibles (pas de frais de structure à absorber)",
+          "[Tarifs plus accessibles](/articles/combien-coute-un-site-web-en-belgique) (pas de frais de structure à absorber)",
           "Réactivité : un interlocuteur direct, joignable rapidement",
           "Flexibilité : adaptation facile en cours de projet",
           "Relation humaine : on se parle, on se comprend",
