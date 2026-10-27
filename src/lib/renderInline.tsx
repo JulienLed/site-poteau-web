@@ -1,7 +1,8 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-// Syntaxe minimale reconnue dans le texte des articles :
+// Syntaxe minimale reconnue dans le texte des articles et des réponses de la FAQ
+// (utilisable côté serveur comme dans un composant client) :
 //   [texte](/chemin)  → lien (next/link si interne, <a> sinon)
 //   **texte**         → gras
 // Le texte du lien peut contenir du **gras**. Un texte sans syntaxe est

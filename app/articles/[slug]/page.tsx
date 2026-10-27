@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DEFAULT_OG_IMAGE, SITE_URL } from "@/src/lib/site";
-import { renderInline } from "./renderInline";
+import { renderInline } from "@/src/lib/renderInline";
 
 type Params = { slug: string };
 

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { useInView } from "react-intersection-observer";
+import { renderInline } from "@/src/lib/renderInline";
 
 export default function FaqItem({
   question,
@@ -57,7 +58,7 @@ export default function FaqItem({
           className="overflow-hidden"
         >
           <div className="px-6 md:px-8 pb-6 text-base md:text-lg leading-relaxed opacity-90 text-justify">
-            {answer}
+            {renderInline(answer)}
           </div>
         </motion.div>
       </motion.div>
