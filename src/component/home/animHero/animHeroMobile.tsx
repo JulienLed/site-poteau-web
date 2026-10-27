@@ -33,12 +33,12 @@ export default function AnimHeroMobile() {
           width={400}
           className="w-[70vw]"
         />
-        <div className="flex flex-col items-center text-center text-base mt-2 gap-0.5">
-          <span className="mask-text">Un pilier solide pour</span>
+        <h1 className="flex flex-col items-center text-center text-base mt-2 gap-0.5">
+          <span className="mask-text">Un pilier solide pour</span>{" "}
           <span className="mask-text" style={{ animationDelay: "2.5s" }}>
             bâtir votre site web
           </span>
-        </div>
+        </h1>
       </motion.div>
 
       {/* Bloc portrait + texte */}

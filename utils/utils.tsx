@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion } from "motion/react";
 
@@ -14,18 +13,13 @@ export function PageIntro({ children }: { children: React.ReactNode }) {
   );
 }
 
+// Rendu dès le serveur : le <h1> est présent dans le HTML initial, seule
+// l'animation d'entrée attend l'hydratation (initial = hors écran).
 export function PageTitle({ title }: { title: string }) {
-  const [hasMounted, setHasMounted] = useState(false);
   const [ref, inView] = useInView({
     threshold: 0.8,
     triggerOnce: true,
   });
-
-  useEffect(() => {
-    setHasMounted(true);
-  }, []);
-
-  if (!hasMounted) return null;
 
   return (
     <div ref={ref} className="flex justify-center">
@@ -38,9 +32,9 @@ export function PageTitle({ title }: { title: string }) {
           ease: "easeOut",
         }}
       >
-        <h2 className="text-xl md:text-2xl text-sandy-brown text-right py-5 font-title font-bold col-start-2 col-span-2 animate-move">
+        <h1 className="text-xl md:text-2xl text-sandy-brown text-right py-5 font-title font-bold col-start-2 col-span-2 animate-move">
           {title}
-        </h2>
+        </h1>
       </motion.div>
     </div>
   );

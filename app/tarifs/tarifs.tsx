@@ -19,9 +19,9 @@ export default function Tarifs() {
 
       <section id="tarifs" className="py-10 w-full md:w-[60vw] mx-auto animate-fade-up animate-duration-700 animate-ease-out animate-delay-200">
         <div className="flex flex-col gap-2 mb-8">
-          <h3 className="text-xl md:text-2xl font-title font-semibold text-sandy-brown">
+          <h2 className="text-xl md:text-2xl font-title font-semibold text-sandy-brown">
             Estimez votre projet
-          </h3>
+          </h2>
           <p className="text-lapis-lazuli text-sm md:text-base italic">
             * Cette estimation est indicative. Le prix final sera établi
             ensemble lors d&apos;une consultation et pourra varier selon la
