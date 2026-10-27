@@ -2,7 +2,7 @@ import { articles, Article, ArticleSection } from "@/src/data/articles-data";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { DEFAULT_OG_IMAGE } from "@/src/lib/site";
+import { DEFAULT_OG_IMAGE, SITE_URL } from "@/src/lib/site";
 import { renderInline } from "./renderInline";
 
 type Params = { slug: string };
@@ -124,6 +124,40 @@ function formatDate(dateStr: string) {
   });
 }
 
+// BlogPosting + BreadcrumbList. author/publisher renvoient aux entités
+// #person et #business déclarées dans le JSON-LD du layout.
+function articleJsonLd(article: Article) {
+  const url = `${SITE_URL}/articles/${article.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": `${url}#article`,
+        headline: article.title,
+        description: article.description ?? article.excerpt,
+        datePublished: article.date,
+        dateModified: article.updated ?? article.date,
+        author: { "@id": `${SITE_URL}/#person` },
+        publisher: { "@id": `${SITE_URL}/#business` },
+        mainEntityOfPage: { "@type": "WebPage", "@id": url },
+        url,
+        image: new URL(DEFAULT_OG_IMAGE.url, SITE_URL).href,
+        inLanguage: "fr-BE",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${url}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Accueil", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Articles", item: `${SITE_URL}/articles` },
+          { "@type": "ListItem", position: 3, name: article.title, item: url },
+        ],
+      },
+    ],
+  };
+}
+
 function getRelated(article: Article) {
   return (article.related ?? []).map((slug) => {
     const related = articles.find((a) => a.slug === slug);
@@ -156,6 +190,13 @@ export default async function ArticlePage({
 
   return (
     <div className="py-15 flex justify-center">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          // "<" échappé pour qu'un texte d'article ne puisse pas fermer la balise.
+          __html: JSON.stringify(articleJsonLd(article)).replace(/</g, "\\u003c"),
+        }}
+      />
       <div className="w-full md:w-[62vw] flex flex-col gap-6">
         {/* Bouton retour */}
         <Link
