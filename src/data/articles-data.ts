@@ -175,7 +175,7 @@ export const articles: Article[] = [
       {
         type: "p",
         content:
-          "Les associations ont souvent un budget serré et des besoins précis : agenda, espace membres, formulaire d'adhésion. Bonne nouvelle : elles n'ont pas besoin d'un site d'agence à plusieurs milliers d'euros. Chez moi, un site avec page d'accueil + 5 pages et un CMS pour gérer vous-même vos actualités revient à **1 100 à 1 250 €** la première année, hébergement compris. J'ai rassemblé tout ce qu'il faut savoir dans un guide dédié : [créer le site internet de votre ASBL](/articles/site-internet-asbl-belgique).",
+          "Les associations ont souvent un budget serré et des besoins précis : agenda, espace membres, formulaire d'adhésion. Bonne nouvelle : elles n'ont pas besoin d'un site d'agence à plusieurs milliers d'euros. Chez moi, un site avec page d'accueil + 5 pages et un CMS pour gérer vous-même vos actualités coûte entre **1 100 et 1 250 €** la première année, hébergement compris. J'ai rassemblé tout ce qu'il faut savoir dans un guide dédié : [créer le site internet de votre ASBL](/articles/site-internet-asbl-belgique).",
       },
       {
         type: "h2",
@@ -255,7 +255,7 @@ export const articles: Article[] = [
       {
         question: "Combien coûte un site pour une ASBL ?",
         answer:
-          "Avec mon pack de base, un site avec page d'accueil + 5 pages et un CMS revient à 1 100 à 1 250 € la première année, hébergement compris, puis 250 € par an. Tous les détails sont dans le guide [créer le site internet de votre ASBL](/articles/site-internet-asbl-belgique).",
+          "Avec mon pack de base, un site avec page d'accueil + 5 pages et un CMS coûte entre 1 100 et 1 250 € la première année, hébergement compris, puis 250 € par an. Tous les détails sont dans le guide [créer le site internet de votre ASBL](/articles/site-internet-asbl-belgique).",
       },
     ],
     related: ["site-internet-asbl-belgique", "freelance-vs-agence-web"],
@@ -427,7 +427,7 @@ export const articles: Article[] = [
     date: "2026-01-14",
     updated: CONTENT_UPDATE_DATE,
     excerpt:
-      "Petit budget, équipe bénévole, personne pour s'occuper du numérique : créer le site internet d'une association soulève des questions très concrètes. Voici les réponses, sans jargon, d'un assistant social devenu développeur web.",
+      "Petit budget, équipe bénévole, personne pour s'occuper du numérique : créer le site internet d'une association soulève des questions très concrètes. Voici les réponses, sans jargon, d'un assistant social et développeur web freelance.",
     description:
       "Création de site internet pour ASBL et associations : budget, fonctionnalités utiles, obligations légales. Site sur mesure à Wavre, devis gratuit.",
     sections: [
@@ -475,7 +475,7 @@ export const articles: Article[] = [
       {
         type: "p",
         content:
-          "La plupart des associations n'ont personne de dédié au numérique. Face à un devis technique, difficile de savoir ce qui est utile et ce qui ne l'est pas. C'est là qu'un interlocuteur qui parle votre langue fait la différence.",
+          "Beaucoup d'associations n'ont personne de dédié au numérique. Face à un devis technique, difficile de savoir ce qui est utile et ce qui ne l'est pas. C'est là qu'un interlocuteur qui parle votre langue fait la différence.",
       },
       {
         type: "h2",
@@ -499,7 +499,7 @@ export const articles: Article[] = [
       {
         type: "p",
         content:
-          "Par exemple, un site avec page d'accueil + 5 pages et un CMS revient à **1 100 à 1 250 €** la première année, hébergement compris, puis 250 € par an. Mes prix sont sans TVA : je ne suis pas assujetti à la TVA, le prix annoncé est donc le prix que vous payez. Le devis est gratuit et sans engagement, et vous pouvez faire une première estimation avec le [calculateur de la page Tarifs](/tarifs).",
+          "Par exemple, un site avec page d'accueil + 5 pages et un CMS coûte entre **1 100 et 1 250 €** la première année, hébergement compris, puis 250 € par an. Mes prix sont sans TVA : je ne suis pas assujetti à la TVA, le prix annoncé est donc le prix que vous payez. Le devis est gratuit et sans engagement, et vous pouvez faire une première estimation avec le [calculateur de la page Tarifs](/tarifs).",
       },
       {
         type: "p",
@@ -540,7 +540,7 @@ export const articles: Article[] = [
       {
         type: "p",
         content:
-          "Le formulaire de contact sécurisé est inclus dans le pack de base. Un formulaire d'adhésion fait partie du pack de base, en plus du formulaire de contact sécurisé.",
+          "Le pack de base inclut un formulaire de contact sécurisé ainsi qu'un formulaire d'adhésion.",
       },
       {
         type: "h3",
@@ -723,6 +723,8 @@ export const articles: Article[] = [
     updated: CONTENT_UPDATE_DATE,
     excerpt:
       "Plus de la moitié du trafic web mondial vient des smartphones. Un site non adapté au mobile, c'est une mauvaise expérience utilisateur, un mauvais référencement, et des visiteurs perdus. Voici pourquoi le responsive est incontournable.",
+    description:
+      "Pourquoi adapter votre site au mobile en 2026 : confort des visiteurs, référencement Google en mobile-first et erreurs classiques à éviter.",
     sections: [
       {
         type: "p",
