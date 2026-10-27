@@ -58,17 +58,19 @@ export function assertArticleDates(now: Date = new Date()) {
 
 export const articles: Article[] = [
   {
-    title: "Combien coûte un site web en Belgique en 2025 ?",
+    title: "Combien coûte un site web en Belgique en 2026 ?",
     slug: "combien-coute-un-site-web-en-belgique",
     date: "2025-10-15",
     updated: CONTENT_UPDATE_DATE,
     excerpt:
       "Wix, agence, freelance : les prix varient du simple au décuple. Voici un guide honnête pour comprendre ce que vous payez vraiment — et ce que ça devrait vous coûter.",
+    description:
+      "Prix de création d'un site web en Belgique en 2026 : Wix, agence ou freelance, coûts cachés, cas des ASBL. Fourchettes indicatives et devis gratuit.",
     sections: [
       {
         type: "p",
         content:
-          "C'est souvent la première question que l'on se pose avant de lancer un projet web : combien ça coûte ? Et c'est une bonne question, parce que les prix varient énormément selon la solution choisie. Entre un site fait maison sur Wix, une agence web bruxelloise et un développeur freelance local, on peut passer de quelques centaines à plusieurs dizaines de milliers d'euros. Voici un tour d'horizon honnête.",
+          "C'est souvent la première question que l'on se pose avant de lancer un projet web : combien ça coûte ? Et c'est une bonne question, parce que les prix varient énormément selon la solution choisie. Entre un site fait maison sur Wix, une agence web bruxelloise et un développeur freelance local, on peut passer de quelques centaines à plusieurs dizaines de milliers d'euros. Voici un tour d'horizon honnête des **prix de création d'un site internet en Belgique**, à titre indicatif en 2026.",
       },
       {
         type: "h2",
@@ -77,7 +79,7 @@ export const articles: Article[] = [
       {
         type: "p",
         content:
-          "Les constructeurs de sites en ligne comme Wix ou Squarespace affichent des tarifs mensuels attractifs (entre 15 et 40 €/mois), ce qui représente 180 à 480 € par an. En apparence, c'est la solution la moins chère. Mais attention : vous payez à vie, vous êtes limité dans la personnalisation, vos données sont chez eux, et le SEO reste limité. Pour une ASBL ou un indépendant qui veut se démarquer réellement, cette solution a vite des limites.",
+          "Les constructeurs de sites en ligne comme Wix ou Squarespace affichent des tarifs mensuels attractifs : à titre indicatif en 2026, entre 15 et 40 €/mois, soit 180 à 480 € par an. En apparence, c'est la solution la moins chère. Mais attention : vous payez à vie, vous êtes limité dans la personnalisation, vos données sont chez eux, et le SEO reste limité. Pour une ASBL ou un indépendant qui veut se démarquer réellement, cette solution a vite des limites.",
       },
       {
         type: "h2",
@@ -86,7 +88,7 @@ export const articles: Article[] = [
       {
         type: "p",
         content:
-          "Une agence web propose généralement des sites à partir de 3 000 à 5 000 € pour un site vitrine simple, et peut monter à 15 000 € ou plus pour un projet complexe. Ce prix inclut le travail de plusieurs personnes (designer, développeur, chef de projet), ce qui se répercute inévitablement sur la facture. Pour une grande entreprise avec des besoins complexes, ça peut se justifier. Pour une association ou un petit commerce, c'est souvent surdimensionné.",
+          "Une agence web propose généralement des sites à partir de 3 000 à 5 000 € pour un site vitrine simple, et peut monter à 15 000 € ou plus pour un projet complexe (à titre indicatif en 2026). Ce prix inclut le travail de plusieurs personnes (designer, développeur, chef de projet), ce qui se répercute inévitablement sur la facture. Pour une grande entreprise avec des besoins complexes, ça peut se justifier. Pour une association ou un petit commerce, c'est souvent surdimensionné.",
       },
       {
         type: "h2",
@@ -95,11 +97,11 @@ export const articles: Article[] = [
       {
         type: "p",
         content:
-          "Un développeur freelance travaille seul ou en réseau limité. Ses frais fixes sont réduits, ce qui se traduit directement par des tarifs plus accessibles. Pour un site vitrine professionnel réalisé sur mesure, vous pouvez vous attendre à payer entre 800 et 2 500 € en Belgique, selon la complexité du projet.",
+          "Un développeur freelance travaille seul ou en réseau limité. Ses frais fixes sont réduits, ce qui se traduit directement par des tarifs plus accessibles. Pour un site vitrine professionnel réalisé sur mesure, vous pouvez vous attendre à payer entre 800 et 2 500 € en Belgique, selon la complexité du projet (à titre indicatif en 2026).",
       },
       {
         type: "h2",
-        content: "Ce qui influence le prix d'un site",
+        content: "Ce qui influence le prix de création d'un site web en Belgique",
       },
       {
         type: "ul",
@@ -114,12 +116,109 @@ export const articles: Article[] = [
       },
       {
         type: "h2",
+        content: "Les coûts cachés à surveiller",
+      },
+      {
+        type: "p",
+        content:
+          "Le prix de création n'est que le début. Le **coût d'un site web** se mesure sur plusieurs années : avant de signer, demandez toujours ce qui sera facturé chaque année.",
+      },
+      {
+        type: "h3",
+        content: "Le nom de domaine",
+      },
+      {
+        type: "p",
+        content:
+          "C'est l'adresse de votre site (par exemple, mon-asbl.be). Il se renouvelle chaque année : pour un .be, comptez à titre indicatif une dizaine à une quinzaine d'euros par an, selon le prestataire. Vérifiez qu'il est bien enregistré **à votre nom** : c'est ce qui vous permet de changer de prestataire sans perdre votre adresse.",
+      },
+      {
+        type: "h3",
+        content: "L'hébergement",
+      },
+      {
+        type: "p",
+        content:
+          "Un site doit être hébergé sur un serveur pour être visible. Chez Wix, l'hébergement est compris dans l'abonnement. Chez un freelance ou une agence, il est parfois inclus, parfois facturé à part : posez la question. Dans mon pack de base, la première année d'hébergement est incluse.",
+      },
+      {
+        type: "h3",
+        content: "La maintenance et les mises à jour",
+      },
+      {
+        type: "p",
+        content:
+          "Un site n'est pas figé : la technologie évolue, des correctifs de sécurité sortent, des sauvegardes sont nécessaires. Sur un site WordPress, par exemple, le cœur du CMS et ses extensions doivent être mis à jour régulièrement. Renseignez-vous sur qui s'en charge, et à quel prix.",
+      },
+      {
+        type: "h3",
+        content: "Les licences et extensions payantes",
+      },
+      {
+        type: "p",
+        content:
+          "Certains outils fonctionnent avec des extensions payantes. Sur Wix, par exemple, les applications premium de l'App Market s'ajoutent à l'abonnement. Côté WordPress, de nombreux thèmes et extensions premium sont vendus sous forme de licence, souvent renouvelable chaque année.",
+      },
+      {
+        type: "h3",
+        content: "Le temps passé sur les contenus",
+      },
+      {
+        type: "p",
+        content:
+          "Modifier un texte, ajouter une actualité, changer une photo : si vous ne pouvez pas le faire vous-même, chaque modification devient une petite facture. C'est pourquoi un CMS est souvent rentable sur la durée.",
+      },
+      {
+        type: "h2",
+        content: "Combien coûte un site pour une ASBL ou une association ?",
+      },
+      {
+        type: "p",
+        content:
+          "Les associations ont souvent un budget serré et des besoins précis : agenda, espace membres, formulaire d'adhésion. Bonne nouvelle : elles n'ont pas besoin d'un site d'agence à plusieurs milliers d'euros. Chez moi, un site avec page d'accueil + 5 pages et un CMS pour gérer vous-même vos actualités revient à **1 100 à 1 250 €** la première année, hébergement compris. J'ai rassemblé tout ce qu'il faut savoir dans un guide dédié : [créer le site internet de votre ASBL](/articles/site-internet-asbl-belgique).",
+      },
+      {
+        type: "h2",
+        content: "Les prix en Wallonie et à Bruxelles : y a-t-il une différence ?",
+      },
+      {
+        type: "p",
+        content:
+          "Les guides de prix publiés en Belgique donnent des fourchettes nationales, sans distinction par région ou par ville, et je n'ai pas trouvé de donnée fiable qui compare la Wallonie et Bruxelles.",
+      },
+      {
+        type: "p",
+        content:
+          "Ce qui fait varier le prix, ce n'est pas l'adresse : c'est le type de prestataire (constructeur en ligne, freelance, studio, agence), le nombre de pages et les fonctionnalités. Une agence installée à Bruxelles peut avoir des frais fixes plus élevés, mais ce n'est pas une règle. Pour comparer, le plus sûr reste de demander plusieurs devis détaillés, sur la même base.",
+      },
+      {
+        type: "p",
+        content:
+          "Mes tarifs sont ceux de la [page Tarifs](/tarifs), que vous soyez à Wavre, à Namur, à Charleroi ou à Bruxelles, ou ailleurs en Wallonie à distance. La première réunion pour établir votre devis ne donne lieu à aucun frais de déplacement.",
+      },
+      {
+        type: "h2",
         content: "Mes tarifs en toute transparence",
       },
       {
         type: "p",
         content:
           "Chez Le Poteau du Web, le pack de base démarre à 900 € et inclut une page d'accueil personnalisée, 5 pages statiques, un formulaire de contact sécurisé, un SEO de base et un an d'hébergement. Des options viennent s'ajouter selon vos besoins : pages supplémentaires, CMS, espace client, Google Analytics, maintenance annuelle...",
+      },
+      {
+        type: "ul",
+        content: [
+          "Pages supplémentaires : 60 à 100 € par page",
+          "CMS : 200 à 350 €",
+          "Espace client ou membres : 150 à 300 €",
+          "Hébergement et maintenance à partir de la 2e année : 250 € par an",
+          "Gestion de contenu : 45 € de l'heure",
+        ],
+      },
+      {
+        type: "p",
+        content:
+          "Mes prix sont sans TVA : je ne suis pas assujetti à la TVA, le prix annoncé est donc le prix que vous payez.",
       },
       {
         type: "quote",
@@ -129,9 +228,37 @@ export const articles: Article[] = [
       {
         type: "p",
         content:
-          "Vous pouvez estimer votre projet directement via le calculateur interactif sur la page Tarifs, et me contacter pour en discuter sans engagement.",
+          "Vous pouvez estimer votre projet directement via le [calculateur interactif de la page Tarifs](/tarifs), puis me [demander un devis gratuit](/contact) pour en discuter sans engagement.",
       },
     ],
+    faq: [
+      {
+        question: "Quel est le prix d'un site vitrine en Belgique en 2026 ?",
+        answer:
+          "À titre indicatif en 2026 : 180 à 480 € par an avec un constructeur comme Wix (sans compter votre temps), 800 à 2 500 € avec un freelance, et, avec une agence, à partir de 3 000 à 5 000 € pour un site vitrine simple, jusqu'à 15 000 € ou plus pour un projet complexe. Les écarts dépendent du nombre de pages, des fonctionnalités et du niveau de personnalisation.",
+      },
+      {
+        question: "Comment obtenir un devis de site web en Belgique ?",
+        answer:
+          "Décrivez votre projet (nombre de pages, fonctionnalités, exemples de sites que vous aimez) et demandez plusieurs devis détaillés sur la même base. Vérifiez ce qui est inclus : hébergement, nom de domaine, maintenance. Chez moi, le devis est gratuit et sans engagement, et le [calculateur de la page Tarifs](/tarifs) donne une première estimation.",
+      },
+      {
+        question: "Quels sont les coûts annuels d'un site web ?",
+        answer:
+          "Le nom de domaine (une dizaine à une quinzaine d'euros par an pour un .be, à titre indicatif), l'hébergement, et la maintenance si vous la confiez à quelqu'un. Chez moi, la première année d'hébergement est incluse, puis l'hébergement et la maintenance coûtent 250 € par an.",
+      },
+      {
+        question: "Un site moins cher est-il forcément moins bien ?",
+        answer:
+          "Pas forcément : tout dépend de vos besoins. Un constructeur en ligne peut suffire pour un projet simple. Mais il faut comparer sur plusieurs années, en intégrant l'abonnement, les extensions payantes et les limites de personnalisation et de SEO.",
+      },
+      {
+        question: "Combien coûte un site pour une ASBL ?",
+        answer:
+          "Avec mon pack de base, un site avec page d'accueil + 5 pages et un CMS revient à 1 100 à 1 250 € la première année, hébergement compris, puis 250 € par an. Tous les détails sont dans le guide [créer le site internet de votre ASBL](/articles/site-internet-asbl-belgique).",
+      },
+    ],
+    related: ["site-internet-asbl-belgique", "freelance-vs-agence-web"],
   },
   {
     title: "Freelance ou agence web : que choisir pour votre projet ?",
