@@ -11,9 +11,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { contactSchema } from "@/src/lib/contact-schema";
 import { z } from "zod";
 
-// Google test sitekey used as fallback in dev when NEXT_PUBLIC_SITE_KEY is not set
-const SITEKEY =
-  process.env.NEXT_PUBLIC_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
+const SITEKEY = process.env.NEXT_PUBLIC_SITE_KEY!;
 
 type History = {
   question: string;
@@ -47,10 +45,10 @@ export default function ContactForm({ history, total }: Props) {
         if (h.cost !== 0) return `${h.keyword} - ${h.cost}€\n`;
       });
       messageArr.unshift(
-        "Je souhaiterai discuter avec vous de mon projet.\nJ'aimerai que s'y retrouve :\n\n"
+        "Je souhaiterai discuter avec vous de mon projet.\nJ'aimerai que s'y retrouve :\n\n",
       );
       messageArr.push(
-        `Total: ${total}\nMerci de me recontacter pour en discuter\n\nBien à vous,\n${mail.name}`
+        `Total: ${total}\nMerci de me recontacter pour en discuter\n\nBien à vous,\n${mail.name}`,
       );
       setMail((prev) => ({ ...prev, message: messageArr.join("") }));
     }
@@ -84,11 +82,15 @@ export default function ContactForm({ history, total }: Props) {
       body: JSON.stringify({ mail, token }),
     });
     const data = await response.json();
-    if (data) setIsSent(true);
+    if (data.success) {
+      setIsSent(true);
+    } else {
+      alert("Une erreur s'est produite");
+    }
   };
 
   const handleOnChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const target = e.target;
     setMail((prev) => ({ ...prev, [target.id]: target.value }));
